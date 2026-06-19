@@ -1273,5 +1273,18 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+
+<style>
+#gh-nav{position:fixed;top:12px;right:16px;z-index:9999;display:flex;gap:8px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+.gh-nav-btn{display:inline-flex;align-items:center;gap:5px;padding:6px 13px;border-radius:20px;font-size:13px;font-weight:500;text-decoration:none;color:#fff;backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.15);transition:opacity .15s}
+.gh-nav-btn:hover{opacity:.8}
+.gh-nav-archive{background:rgba(30,136,229,.85)}
+.gh-nav-scripts{background:rgba(124,77,255,.85)}
+</style>
+<div id="gh-nav">
+  <a class="gh-nav-btn gh-nav-archive" href="./archive/">📊 Archive</a>
+  <a class="gh-nav-btn gh-nav-scripts" href="./scripts/">✍️ Scripts</a>
+</div>
+
 </body>
 </html>
