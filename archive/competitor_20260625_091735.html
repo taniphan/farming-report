@@ -76,14 +76,16 @@ a:hover{color:var(--blue);}
 
 /* Two columns */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.two-col>*{min-width:0;overflow:hidden;}
 
 /* News */
 .src-label{font-size:12px;font-weight:600;color:var(--t2);margin:10px 0 6px;}
 .news-list{display:flex;flex-direction:column;gap:4px;}
-.news-item{display:flex;justify-content:space-between;align-items:baseline;
-           gap:10px;padding:8px 10px;background:var(--bg2);border-radius:8px;}
-.news-title{font-size:13px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-.news-meta{font-size:11px;color:var(--t3);white-space:nowrap;}
+.news-item{display:flex;flex-direction:column;gap:2px;
+           padding:8px 10px;background:var(--bg2);border-radius:8px;}
+.news-title{font-size:13px;word-break:break-word;overflow-wrap:break-word;line-height:1.45;}
+.news-title-th{font-size:11px;color:var(--amber);line-height:1.4;word-break:break-word;}
+.news-meta{font-size:11px;color:var(--t3);}
 
 /* Blacklist tags */
 .tag{display:inline-block;background:var(--amber-bg);color:var(--amber);
@@ -208,369 +210,455 @@ a:hover{color:var(--blue);}
 <div class="two-col sec">  <div>    <div class="sec-title">🌐 EN News Headlines      <span style="font-size:10px;color:var(--t3);font-weight:400;">MacRumors · 9to5Mac · AppleInsider</span>    </div>    <p style="font-size:11px;color:var(--t3);margin-bottom:8px;line-height:1.5;">      ข่าว Apple จากอเมริกา — มาก่อน TH media 12-24h · ใช้เป็น content source สำหรับ cluster_rumor + cluster_business    </p>    <p class="src-label">MacRumors</p><div class="news-list">
       <div class="news-item">
         <a href="https://www.macrumors.com/2026/06/24/google-play-store-fee-change/" target="_blank" class="news-title">Google Lowering Play Store Fees and Allowing Alternative Payments Worldwide</a>
+        
         <span class="news-meta">24 Jun 11:30 ET</span>
       </div>
       <div class="news-item">
         <a href="https://www.macrumors.com/guide/ios-27-home/" target="_blank" class="news-title">iOS 27 Home App: 10+ New HomeKit Features</a>
+        
         <span class="news-meta">24 Jun 10:16 ET</span>
       </div>
       <div class="news-item">
         <a href="https://www.macrumors.com/2026/06/24/prime-day-deals-headphones/" target="_blank" class="news-title">Prime Day Brings Major Deals on Headphones and Speakers From Popular Brands</a>
+        
         <span class="news-meta">24 Jun 07:54 ET</span>
       </div>
       <div class="news-item">
         <a href="https://www.macrumors.com/guide/ios-27-airpods/" target="_blank" class="news-title">Every New AirPods Feature in iOS 27</a>
+        
         <span class="news-meta">24 Jun 06:58 ET</span>
       </div>
       <div class="news-item">
         <a href="https://www.macrumors.com/2026/06/24/prime-day-apple-watch-model/" target="_blank" class="news-title">Prime Day Brings Huge Discounts to Every Apple Watch Model</a>
+        
         <span class="news-meta">24 Jun 06:39 ET</span>
       </div>
       <div class="news-item">
         <a href="https://www.macrumors.com/2026/06/24/best-prime-day-tv-deals/" target="_blank" class="news-title">Best Prime Day TV Deals Feature Lowest Prices of the Year Across Top Brands</a>
+        
         <span class="news-meta">24 Jun 04:07 ET</span>
       </div>
       <div class="news-item">
-        <a href="https://www.macrumors.com/2026/06/24/prime-day-2026-macbook-pro/" target="_blank" class="news-title">Prime Day Discounts Hit 2026 MacBook Pro With Up to $299 Off Select Models</a>
+        <a href="https://www.macrumors.com/2026/06/24/prime-day-2026-macbook-pro/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Prime Day Discounts Hit 2026 MacBook Pro With Up to $299 Off Select Models</a>
+        
         <span class="news-meta">24 Jun 03:26 ET</span>
       </div>
       <div class="news-item">
         <a href="https://www.macrumors.com/2026/06/24/apple-store-in-ann-arbor-moving-soon/" target="_blank" class="news-title">Apple Store in Ann Arbor, Michigan is Moving Soon</a>
+        
         <span class="news-meta">24 Jun 03:15 ET</span>
       </div>
       <div class="news-item">
         <a href="https://www.macrumors.com/2026/06/24/last-chance-airpods-max-2/" target="_blank" class="news-title">This May Be Your Last Chance to Get AirPods Max 2 for $399 During Prime Day</a>
+        
         <span class="news-meta">24 Jun 03:03 ET</span>
       </div>
       <div class="news-item">
-        <a href="https://www.macrumors.com/2026/06/24/foldable-iphone-ultra-set-for-production-july/" target="_blank" class="news-title">Foldable iPhone 'Ultra' Set for Production in July Despite Hinge Issues</a>
+        <a href="https://www.macrumors.com/2026/06/24/foldable-iphone-ultra-set-for-production-july/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Foldable iPhone 'Ultra' Set for Production in July Despite Hinge Issues</a>
+        
         <span class="news-meta">24 Jun 02:29 ET</span>
       </div>
       <div class="news-item">
         <a href="https://www.macrumors.com/2026/06/24/ipad-mini-7-rare-99-discounts/" target="_blank" class="news-title">iPad Mini 7 Gets Rare $99 Discounts During Prime Day</a>
+        
         <span class="news-meta">24 Jun 02:28 ET</span>
       </div>
       <div class="news-item">
         <a href="https://www.macrumors.com/2026/06/24/the-best-prime-day-deals-accessories-3/" target="_blank" class="news-title">Prime Day 2026: Top Savings on Anker, Beats, TVs, and More Accessories</a>
+        
         <span class="news-meta">24 Jun 01:21 ET</span>
       </div>
       <div class="news-item">
         <a href="https://www.macrumors.com/2026/06/24/apple-killed-siri-ai-waitlist-workaround/" target="_blank" class="news-title">Apple Seemingly Killed Siri AI Waitlist Workaround in macOS 27 Beta 2</a>
+        
         <span class="news-meta">24 Jun 01:00 ET</span>
       </div>
       <div class="news-item">
         <a href="https://www.macrumors.com/guide/ios-27-weather/" target="_blank" class="news-title">iOS 27 Weather App: All the New Features</a>
+        
         <span class="news-meta">23 Jun 12:08 ET</span>
       </div>
       <div class="news-item">
         <a href="https://www.macrumors.com/2026/06/23/apple-airpods-beta-firmware-2-ios-27/" target="_blank" class="news-title">Apple Releases Updated AirPods Beta Firmware With iOS 27 Features</a>
+        
         <span class="news-meta">23 Jun 10:34 ET</span>
       </div>
       <div class="news-item">
         <a href="https://www.macrumors.com/2026/06/23/apple-invites-app-gets-co-hosting/" target="_blank" class="news-title">Apple Invites App Gets Co-Hosting</a>
+        
         <span class="news-meta">23 Jun 09:30 ET</span>
       </div>
       <div class="news-item">
         <a href="https://www.macrumors.com/guide/ios-27-wallet/" target="_blank" class="news-title">iOS 27 Wallet App Gets 7 New Features</a>
+        
         <span class="news-meta">23 Jun 08:32 ET</span>
       </div>
       <div class="news-item">
         <a href="https://www.macrumors.com/2026/06/23/apple-seeds-watchos-27-beta-2-to-developers/" target="_blank" class="news-title">Apple Seeds watchOS 27 Beta 2 to Developers</a>
+        
         <span class="news-meta">23 Jun 07:18 ET</span>
       </div>
       <div class="news-item">
         <a href="https://www.macrumors.com/2026/06/23/best-apple-prime-day-deals-under-100/" target="_blank" class="news-title">The 10 Best Apple Prime Day Deals You Can Get for Under $100</a>
+        
         <span class="news-meta">23 Jun 07:17 ET</span>
       </div>
       <div class="news-item">
         <a href="https://www.macrumors.com/2026/06/23/apple-watch-world-surf-league/" target="_blank" class="news-title">Apple Shares Video on How Pro Surfers Use Apple Watch During Competition</a>
+        
         <span class="news-meta">23 Jun 05:57 ET</span>
       </div></div><p class="src-label">9to5Mac</p><div class="news-list">
       <div class="news-item">
         <a href="https://9to5mac.com/2026/06/24/siri-ai-app-on-ios-27-lets-users-easily-switch-between-siri-and-chatgpt/" target="_blank" class="news-title">Siri AI app on iOS 27 lets users easily switch between Siri and ChatGPT</a>
+        
         <span class="news-meta">24 Jun 13:59 ET</span>
       </div>
       <div class="news-item">
         <a href="https://9to5mac.com/2026/06/24/best-prime-day-airpods-deals/" target="_blank" class="news-title">PSA: AirPods Max 2 for $399 are almost sold out, plus more AirPods deals</a>
+        
         <span class="news-meta">24 Jun 12:42 ET</span>
       </div>
       <div class="news-item">
         <a href="https://9to5mac.com/2026/06/24/mosyle-launches-new-services-to-help-parents-manage-mac-and-ipad-screen-time-for-k-12-devices-at-home/" target="_blank" class="news-title">Mosyle launches new service to help parents manage Mac and iPad screen time for K-12 devices at home</a>
+        
         <span class="news-meta">24 Jun 11:00 ET</span>
       </div>
       <div class="news-item">
         <a href="https://9to5mac.com/2026/06/24/ios-27-beta-2-apple-tells-siri-ai-to-clearly-refuse-requests-to-summarize-urls/" target="_blank" class="news-title">iOS 27 beta 2: Apple tells Siri AI to clearly refuse requests to summarize URLs</a>
+        
         <span class="news-meta">24 Jun 10:17 ET</span>
       </div>
       <div class="news-item">
         <a href="https://9to5mac.com/2026/06/24/silo-returns-next-week-with-three-major-changes-for-season-3/" target="_blank" class="news-title">Silo returns next week with three major changes for season 3</a>
+        
         <span class="news-meta">24 Jun 09:30 ET</span>
       </div>
       <div class="news-item">
         <a href="https://9to5mac.com/2026/06/24/hands-on-kuxius-d5-charging-station-boasts-unique-design-25w-charging-and-a-built-in-display/" target="_blank" class="news-title">Hands-on: Kuxiu’s D5 charging station boasts unique design, 25W charging, and a built-in display</a>
+        
         <span class="news-meta">24 Jun 09:00 ET</span>
       </div>
       <div class="news-item">
         <a href="https://9to5mac.com/2026/06/24/heres-how-the-airpods-heart-rate-sensor-fares-against-apple-watch-and-other-wearables/" target="_blank" class="news-title">Here’s how the AirPods’ heart rate sensor fares against Apple Watch and other wearables</a>
+        
         <span class="news-meta">24 Jun 08:58 ET</span>
       </div>
       <div class="news-item">
-        <a href="https://9to5mac.com/2026/06/24/macbook-ultra-is-coming-six-new-features-launching-this-fall/" target="_blank" class="news-title">MacBook Ultra is coming: Six new features launching this fall</a>
+        <a href="https://9to5mac.com/2026/06/24/macbook-ultra-is-coming-six-new-features-launching-this-fall/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">MacBook Ultra is coming: Six new features launching this fall</a>
+        
         <span class="news-meta">24 Jun 08:33 ET</span>
       </div>
       <div class="news-item">
-        <a href="https://9to5mac.com/2026/06/24/iphone-17-availability/" target="_blank" class="news-title">iPhone 17 set to break a record no flagship has touched in 15 years</a>
+        <a href="https://9to5mac.com/2026/06/24/iphone-17-availability/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone 17 set to break a record no flagship has touched in 15 years</a>
+        
         <span class="news-meta">24 Jun 08:28 ET</span>
       </div>
       <div class="news-item">
         <a href="https://9to5mac.com/2026/06/24/openai-just-updated-how-chatgpts-most-used-model-works-again-details-here/" target="_blank" class="news-title">OpenAI just updated how ChatGPT’s most-used model works again, details here</a>
+        
         <span class="news-meta">24 Jun 07:13 ET</span>
       </div>
       <div class="news-item">
         <a href="https://9to5mac.com/2026/06/24/apple-vision-pros-longest-immersive-concert-was-harder-to-film-than-youd-think/" target="_blank" class="news-title">Apple Vision Pro’s longest immersive concert was harder to film than you’d think</a>
+        
         <span class="news-meta">24 Jun 07:03 ET</span>
       </div>
       <div class="news-item">
-        <a href="https://9to5mac.com/2026/06/24/ios-27-gives-the-camera-app-on-iphone-a-brand-new-mode/" target="_blank" class="news-title">iOS 27 gives the Camera app on iPhone a brand new mode</a>
+        <a href="https://9to5mac.com/2026/06/24/ios-27-gives-the-camera-app-on-iphone-a-brand-new-mode/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iOS 27 gives the Camera app on iPhone a brand new mode</a>
+        
         <span class="news-meta">24 Jun 06:09 ET</span>
       </div>
       <div class="news-item">
         <a href="https://9to5mac.com/2026/06/24/daily-june-24-2026/" target="_blank" class="news-title">9to5Mac Daily: June 24, 2026 – New Messages features, watchOS 27 support</a>
+        
         <span class="news-meta">24 Jun 05:00 ET</span>
       </div>
       <div class="news-item">
-        <a href="https://9to5mac.com/2026/06/24/apples-new-macbook-lineup-could-be-its-biggest-ever-this-fall/" target="_blank" class="news-title">Apple’s new MacBook lineup could be its biggest ever this fall</a>
+        <a href="https://9to5mac.com/2026/06/24/apples-new-macbook-lineup-could-be-its-biggest-ever-this-fall/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Apple’s new MacBook lineup could be its biggest ever this fall</a>
+        
         <span class="news-meta">24 Jun 04:49 ET</span>
       </div>
       <div class="news-item">
-        <a href="https://9to5mac.com/2026/06/24/prime-day-2-deals-macbook-airpods-pro-3-apple-cables/" target="_blank" class="news-title">Prime Day 2 deals: MacBook Pro up to $250 off, MacBook Air up to $430 off, AirPods Pro 3, Apple accessories from $7, more</a>
+        <a href="https://9to5mac.com/2026/06/24/prime-day-2-deals-macbook-airpods-pro-3-apple-cables/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Prime Day 2 deals: MacBook Pro up to $250 off, MacBook Air up to $430 off, AirPods Pro 3, Apple accessories from $7, more</a>
+        
         <span class="news-meta">24 Jun 04:34 ET</span>
       </div>
       <div class="news-item">
         <a href="https://9to5mac.com/2026/06/24/apple-watch-series-11-vs-apple-watch-se/" target="_blank" class="news-title">Apple Watch Series 11 vs Apple Watch SE 3: Which should you buy?</a>
+        
         <span class="news-meta">24 Jun 04:30 ET</span>
       </div>
       <div class="news-item">
-        <a href="https://9to5mac.com/2026/06/24/iphone-18-pro-might-cost-less-than-expected-per-report/" target="_blank" class="news-title">iPhone 18 Pro might cost less than expected, per report</a>
+        <a href="https://9to5mac.com/2026/06/24/iphone-18-pro-might-cost-less-than-expected-per-report/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone 18 Pro might cost less than expected, per report</a>
+        
         <span class="news-meta">24 Jun 03:37 ET</span>
       </div>
       <div class="news-item">
-        <a href="https://9to5mac.com/2026/06/24/what-to-do-if-your-iphone-is-stolen-more-detailed-advice-from-apple/" target="_blank" class="news-title">What to do if your iPhone is stolen – more detailed advice from Apple</a>
+        <a href="https://9to5mac.com/2026/06/24/what-to-do-if-your-iphone-is-stolen-more-detailed-advice-from-apple/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">What to do if your iPhone is stolen – more detailed advice from Apple</a>
+        
         <span class="news-meta">24 Jun 03:23 ET</span>
       </div>
       <div class="news-item">
         <a href="https://9to5mac.com/2026/06/24/heres-everything-new-for-apple-calendar-in-ios-27/" target="_blank" class="news-title">Here’s everything new for Apple Calendar in iOS 27</a>
+        
         <span class="news-meta">24 Jun 03:06 ET</span>
       </div>
       <div class="news-item">
-        <a href="https://9to5mac.com/2026/06/24/iphone-ultra-3d-printed-hinge-problems-reportedly-solved-ready-for-september-launch/" target="_blank" class="news-title">iPhone Ultra 3D-printed hinge problems reportedly solved, ready for September launch</a>
+        <a href="https://9to5mac.com/2026/06/24/iphone-ultra-3d-printed-hinge-problems-reportedly-solved-ready-for-september-launch/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone Ultra 3D-printed hinge problems reportedly solved, ready for September launch</a>
+        
         <span class="news-meta">24 Jun 02:05 ET</span>
       </div></div><p class="src-label">AppleInsider</p><div class="news-list">
       <div class="news-item">
         <a href="https://appleinsider.com/articles/26/06/25/heavys-h1h-headphones-review-better-for-rock-listeners-than-airpods-max-for-half-the-price?utm_source=rss" target="_blank" class="news-title">Heavys H1H headphones review: Better for rock listeners than AirPods Max, for half the price</a>
+        
         <span class="news-meta">24 Jun 13:17 ET</span>
       </div>
       <div class="news-item">
         <a href="https://appleinsider.com/articles/26/06/25/googles-new-payment-policies-are-a-preview-of-what-could-come-to-apple-platforms?utm_source=rss" target="_blank" class="news-title">Google's new payment policies are a preview of what could come to Apple platforms</a>
+        
         <span class="news-meta">24 Jun 13:00 ET</span>
       </div>
       <div class="news-item">
         <a href="https://appleinsider.com/articles/26/06/24/best-prime-day-oled-tv-deals-from-lg-samsung-sony-start-at-just-797?utm_source=rss" target="_blank" class="news-title">Best Prime Day OLED TV deals from LG, Samsung, Sony start at just $797</a>
+        
         <span class="news-meta">24 Jun 09:16 ET</span>
       </div>
       <div class="news-item">
         <a href="https://appleinsider.com/articles/26/06/24/flash-deal-get-paramount-plus-for-just-099mo-for-two-months?utm_source=rss" target="_blank" class="news-title">Flash deal: Get Paramount Plus for just $0.99/mo for two months</a>
+        
         <span class="news-meta">24 Jun 07:31 ET</span>
       </div>
       <div class="news-item">
         <a href="https://appleinsider.com/articles/26/06/24/apple-ring-would-dominate-the-fitness-market-which-is-why-it-cant-exist?utm_source=rss" target="_blank" class="news-title">Apple Ring would dominate the fitness market, which is why it can't exist</a>
+        
         <span class="news-meta">24 Jun 07:17 ET</span>
       </div>
       <div class="news-item">
         <a href="https://appleinsider.com/articles/26/06/24/airtag-2-hits-24-and-gives-shoppers-one-of-the-best-apple-prime-day-deals?utm_source=rss" target="_blank" class="news-title">AirTag 2 hits $24 and gives shoppers one of the best Apple Prime Day deals</a>
+        
         <span class="news-meta">24 Jun 05:26 ET</span>
       </div>
       <div class="news-item">
         <a href="https://appleinsider.com/articles/26/06/24/learn-about-apples-history-with-prime-day-book-deals-at-up-to-65-off?utm_source=rss" target="_blank" class="news-title">Learn about Apple's history with Prime Day book deals at up to 65% off</a>
+        
         <span class="news-meta">24 Jun 02:50 ET</span>
       </div>
       <div class="news-item">
-        <a href="https://appleinsider.com/articles/26/06/24/folding-iphone-hinge-issues-may-have-been-worked-out-rumored-to-ship-in-fall?utm_source=rss" target="_blank" class="news-title">Folding iPhone hinge issues may have been worked out, rumored to ship in fall</a>
+        <a href="https://appleinsider.com/articles/26/06/24/folding-iphone-hinge-issues-may-have-been-worked-out-rumored-to-ship-in-fall?utm_source=rss" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Folding iPhone hinge issues may have been worked out, rumored to ship in fall</a>
+        
         <span class="news-meta">24 Jun 03:20 ET</span>
       </div>
       <div class="news-item">
         <a href="https://appleinsider.com/articles/26/06/24/developer-resource-swift-package-index-to-stay-open-source-after-apple-acquisition?utm_source=rss" target="_blank" class="news-title">Developer resource Swift Package Index to stay open source after Apple acquisition</a>
+        
         <span class="news-meta">24 Jun 02:43 ET</span>
       </div>
       <div class="news-item">
         <a href="https://appleinsider.com/articles/26/06/24/new-macos-security-flaw-could-let-hackers-disable-protection-tools-researchers-say?utm_source=rss" target="_blank" class="news-title">New macOS security flaw could let hackers disable protection tools, researchers say</a>
+        
         <span class="news-meta">24 Jun 02:10 ET</span>
       </div>
       <div class="news-item">
         <a href="https://appleinsider.com/articles/26/06/24/apple-watch-series-11-46mm-cellular-plunges-to-record-low-379-for-prime-day?utm_source=rss" target="_blank" class="news-title">Apple Watch Series 11 (46mm, cellular) plunges to record-low $379 for Prime Day</a>
+        
         <span class="news-meta">24 Jun 02:05 ET</span>
       </div>
       <div class="news-item">
         <a href="https://appleinsider.com/articles/26/06/24/best-apple-prime-day-2-deals-slash-prices-to-as-low-as-11?utm_source=rss" target="_blank" class="news-title">Best Apple Prime Day 2 deals slash prices to as low as $11</a>
+        
         <span class="news-meta">24 Jun 01:05 ET</span>
       </div>
       <div class="news-item">
-        <a href="https://appleinsider.com/articles/26/06/24/cops-will-soon-upgrade-to-license-plate-readers-that-can-track-your-iphone-and-airpods-in-public?utm_source=rss" target="_blank" class="news-title">Cops will soon upgrade to license plate readers that can track your iPhone and AirPods in public</a>
+        <a href="https://appleinsider.com/articles/26/06/24/cops-will-soon-upgrade-to-license-plate-readers-that-can-track-your-iphone-and-airpods-in-public?utm_source=rss" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Cops will soon upgrade to license plate readers that can track your iPhone and AirPods in public</a>
+        
         <span class="news-meta">24 Jun 04:55 ET</span>
       </div>
       <div class="news-item">
         <a href="https://appleinsider.com/articles/26/06/24/apples-ipad-mini-7-lands-prime-day-price-drop-to-399?utm_source=rss" target="_blank" class="news-title">Apple's iPad mini 7 lands Prime Day price drop to $399</a>
+        
         <span class="news-meta">23 Jun 23:28 ET</span>
       </div>
       <div class="news-item">
-        <a href="https://appleinsider.com/articles/26/06/24/grab-apples-15-inch-macbook-air-m4-for-just-949-today-only?utm_source=rss" target="_blank" class="news-title">Grab Apple's 15-inch MacBook Air M4 for just $949 today only</a>
+        <a href="https://appleinsider.com/articles/26/06/24/grab-apples-15-inch-macbook-air-m4-for-just-949-today-only?utm_source=rss" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Grab Apple's 15-inch MacBook Air M4 for just $949 today only</a>
+        
         <span class="news-meta">23 Jun 17:20 ET</span>
       </div>
       <div class="news-item">
-        <a href="https://appleinsider.com/articles/26/06/23/iphone-fold-touchscreen-macbook-pro-again-rumored-to-have-samsung-displays?utm_source=rss" target="_blank" class="news-title">iPhone Fold & touchscreen MacBook Pro again rumored to have Samsung displays</a>
+        <a href="https://appleinsider.com/articles/26/06/23/iphone-fold-touchscreen-macbook-pro-again-rumored-to-have-samsung-displays?utm_source=rss" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone Fold & touchscreen MacBook Pro again rumored to have Samsung displays</a>
+        
         <span class="news-meta">23 Jun 12:09 ET</span>
       </div>
       <div class="news-item">
         <a href="https://appleinsider.com/articles/26/06/23/co-hosting-guest-list-visibility-finally-arrives-for-apple-invites?utm_source=rss" target="_blank" class="news-title">Co-hosting & guest list visibility finally arrives for Apple Invites</a>
+        
         <span class="news-meta">23 Jun 11:06 ET</span>
       </div>
       <div class="news-item">
         <a href="https://appleinsider.com/articles/26/06/23/bump-up-your-storage-with-prime-day-nas-deals-at-up-to-215-off?utm_source=rss" target="_blank" class="news-title">Bump up your storage with Prime Day NAS deals at up to $215 off</a>
+        
         <span class="news-meta">23 Jun 09:23 ET</span>
       </div>
       <div class="news-item">
         <a href="https://appleinsider.com/articles/22/11/23/apple-will-not-buy-disney-no-matter-how-often-it-hears-that-it-will?utm_source=rss" target="_blank" class="news-title">Apple will not buy Disney, no matter how often it hears that it will</a>
+        
         <span class="news-meta">23 Jun 09:25 ET</span>
       </div>
       <div class="news-item">
         <a href="https://appleinsider.com/articles/26/06/23/apple-rolls-out-watchos-27-beta-2-for-apple-watch?utm_source=rss" target="_blank" class="news-title">Apple rolls out watchOS 27 beta 2 for Apple Watch</a>
+        
         <span class="news-meta">23 Jun 07:49 ET</span>
       </div></div>  </div>  <div>    <div class="sec-title">🇹🇭 TH News Latest      <span style="font-size:10px;color:var(--t3);font-weight:400;">iMod · iPhone iOS Thailand</span>    </div>    <p style="font-size:11px;color:var(--t3);margin-bottom:8px;line-height:1.5;">      ข่าว Apple ภาษาไทย — ดูว่า TH media cover อะไรแล้วบ้าง ก่อนทำ script    </p>    <p class="src-label">iMod</p><div class="news-list">
       <div class="news-item">
-        <a href="https://www.iphonemod.net/iphone-air-iphone-17-shopee-2026.html?utm_source=rss&utm_medium=rss&utm_campaign=iphone-air-iphone-17-shopee-2026" target="_blank" class="news-title">iPhone Air กับ iPhone 17 ที่ Shopee ลดราคาเหลือเท่ากัน – เลือกรุ่นไหนดี</a>
+        <a href="https://www.iphonemod.net/iphone-air-iphone-17-shopee-2026.html?utm_source=rss&utm_medium=rss&utm_campaign=iphone-air-iphone-17-shopee-2026" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone Air กับ iPhone 17 ที่ Shopee ลดราคาเหลือเท่ากัน – เลือกรุ่นไหนดี</a>
+        
         <span class="news-meta">24 Jun 11:04 ICT</span>
       </div>
       <div class="news-item">
         <a href="https://www.iphonemod.net/tvos-27-beta-homepod-apple-tv-apple-intelligence.html?utm_source=rss&utm_medium=rss&utm_campaign=tvos-27-beta-homepod-apple-tv-apple-intelligence" target="_blank" class="news-title">โค้ด tvOS 27 Beta 1 พบรหัสชี้ Apple Intelligence เตรียมลง HomePod, Apple TV</a>
+        
         <span class="news-meta">24 Jun 08:37 ICT</span>
       </div>
       <div class="news-item">
-        <a href="https://www.iphonemod.net/apple-foldable-iphone-resale-value-depreciation-study.html?utm_source=rss&utm_medium=rss&utm_campaign=apple-foldable-iphone-resale-value-depreciation-study" target="_blank" class="news-title">iPhone จอพับของ Apple ราคาอาจตกเกือบ 1,300 ดอลลาร์ในปีแรกที่เปิดตัว</a>
+        <a href="https://www.iphonemod.net/apple-foldable-iphone-resale-value-depreciation-study.html?utm_source=rss&utm_medium=rss&utm_campaign=apple-foldable-iphone-resale-value-depreciation-study" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone จอพับของ Apple ราคาอาจตกเกือบ 1,300 ดอลลาร์ในปีแรกที่เปิดตัว</a>
+        
         <span class="news-meta">24 Jun 07:22 ICT</span>
       </div>
       <div class="news-item">
         <a href="https://www.iphonemod.net/microsoft-surface-8gb-ram-models-pricing-combat.html?utm_source=rss&utm_medium=rss&utm_campaign=microsoft-surface-8gb-ram-models-pricing-combat" target="_blank" class="news-title">Microsoft รับ Surface แพงเกินไป ดันรุ่นแรม 8GB เริ่มต้นที่ 849 ดอลลาร์</a>
+        
         <span class="news-meta">24 Jun 05:06 ICT</span>
       </div>
       <div class="news-item">
         <a href="https://www.iphonemod.net/honor-privacy-display-supplies-rivals-next-flagships.html?utm_source=rss&utm_medium=rss&utm_campaign=honor-privacy-display-supplies-rivals-next-flagships" target="_blank" class="news-title">Honor กำลังพัฒนาจอ Privacy Display สำหรับเรือธงรุ่นถัดไป</a>
+        
         <span class="news-meta">24 Jun 04:50 ICT</span>
       </div>
       <div class="news-item">
         <a href="https://www.iphonemod.net/anthropic-launches-claude-tag-enterprise-collaborative-tool-slack.html?utm_source=rss&utm_medium=rss&utm_campaign=anthropic-launches-claude-tag-enterprise-collaborative-tool-slack" target="_blank" class="news-title">Anthropic เปิดตัวฟีเจอร์ “Claude Tag” ช่วยให้ทีมทำงานร่วมกับ AI ได้ดีขึ้น ขับเคลื่อนเวิร์กโฟลว์ด้วยระบบ Agent</a>
+        
         <span class="news-meta">24 Jun 03:20 ICT</span>
       </div>
       <div class="news-item">
         <a href="https://www.iphonemod.net/apple-oled-2569-samsung-lg-boe-out.html?utm_source=rss&utm_medium=rss&utm_campaign=apple-oled-2569-samsung-lg-boe-out" target="_blank" class="news-title">Samsung และ LG จะเป็นผู้ผลิตจอ OLED ให้ Apple ใช้ในสินค้าปี 2026 ทั้งหมด</a>
+        
         <span class="news-meta">24 Jun 02:57 ICT</span>
       </div>
       <div class="news-item">
         <a href="https://www.iphonemod.net/apple-seeds-watchos-27-beta-2-to-developers-siri-ai.html?utm_source=rss&utm_medium=rss&utm_campaign=apple-seeds-watchos-27-beta-2-to-developers-siri-ai" target="_blank" class="news-title">Apple ปล่อย watchOS 27 Beta 2 สำหรับนักพัฒนา แต่กลับไม่รองรับ Apple Watch Ultra 3</a>
+        
         <span class="news-meta">24 Jun 02:41 ICT</span>
       </div>
       <div class="news-item">
-        <a href="https://www.iphonemod.net/iphone-17-price-increase-2026-back-to-school.html?utm_source=rss&utm_medium=rss&utm_campaign=iphone-17-price-increase-2026-back-to-school" target="_blank" class="news-title">iPhone 17 อาจถูกขึ้นราคา เหตุ Apple แบกต้นทุนไม่ไหว รีบซื้อดีไหม</a>
+        <a href="https://www.iphonemod.net/iphone-17-price-increase-2026-back-to-school.html?utm_source=rss&utm_medium=rss&utm_campaign=iphone-17-price-increase-2026-back-to-school" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone 17 อาจถูกขึ้นราคา เหตุ Apple แบกต้นทุนไม่ไหว รีบซื้อดีไหม</a>
+        
         <span class="news-meta">24 Jun 02:30 ICT</span>
       </div>
       <div class="news-item">
         <a href="https://www.iphonemod.net/nothing-phone-4b-july-7-launch-2026.html?utm_source=rss&utm_medium=rss&utm_campaign=nothing-phone-4b-july-7-launch-2026" target="_blank" class="news-title">Nothing Phone (4b) เตรียมเปิดตัววันที่ 7 ก.ค. นี้</a>
+        
         <span class="news-meta">24 Jun 02:19 ICT</span>
       </div></div><p class="src-label">iPhone iOS Thailand (FB)</p><div class="news-list">
       <div class="news-item">
-        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid036j2H41MZLdGnpYTULmaLqhQ9C4kYEi9PSEVPBVyk4soJPqwyHAwPsp3uCsMXXmqtl" target="_blank" class="news-title">ชิป AI ทำพิษ! iPhone 18 จ่อแพงขึ้นอีก 💥 📱
+        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid036j2H41MZLdGnpYTULmaLqhQ9C4kYEi9PSEVPBVyk4soJPqwyHAwPsp3uCsMXXmqtl" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">ชิป AI ทำพิษ! iPhone 18 จ่อแพงขึ้นอีก 💥 📱
 
 สาวก Apple อาจต้องเตรียมใจรับราคาใหม่! หลังมีรายงานว่า Ti</a>
+        
         <span class="news-meta">♥ 289 · 25 Jun 09:16 ICT</span>
       </div>
       <div class="news-item">
-        <a href="https://www.facebook.com/reel/1584532273219723/" target="_blank" class="news-title">ทริคแก้ไข iPhone เสียงเบาผิดปกติตั้งค่าง่ายๆตามนี้ #iPhoneiOSThailand #iphone #ทริค #ความรู้เกี่ยวกั</a>
+        <a href="https://www.facebook.com/reel/1584532273219723/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">ทริคแก้ไข iPhone เสียงเบาผิดปกติตั้งค่าง่ายๆตามนี้ #iPhoneiOSThailand #iphone #ทริค #ความรู้เกี่ยวกั</a>
+        
         <span class="news-meta">♥ 767 · 25 Jun 09:16 ICT</span>
       </div>
       <div class="news-item">
-        <a href="https://www.facebook.com/reel/1718610252655684/" target="_blank" class="news-title">ทริคตั้งค่าปิดเสียงการแจ้งเตือนดังหลายครั้ง #iPhoneiOSThailand #iphone #ทริค #ความรู้เกี่ยวกับiPhone</a>
+        <a href="https://www.facebook.com/reel/1718610252655684/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">ทริคตั้งค่าปิดเสียงการแจ้งเตือนดังหลายครั้ง #iPhoneiOSThailand #iphone #ทริค #ความรู้เกี่ยวกับiPhone</a>
+        
         <span class="news-meta">♥ 127 · 25 Jun 09:16 ICT</span>
       </div>
       <div class="news-item">
-        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid0jGFHKDnXDNevg89aeJxgqF13wPvuF8XiJPR2m3J4QMRt6aY3hGibcYtdCd5c49qql" target="_blank" class="news-title">ใครที่ใช้ iPhone มานาน 
+        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid0jGFHKDnXDNevg89aeJxgqF13wPvuF8XiJPR2m3J4QMRt6aY3hGibcYtdCd5c49qql" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">ใครที่ใช้ iPhone มานาน 
 แต่ไม่รู้ว่า....
 ”กดปุ่มพาวเวอร์ 2 ครั้ง“
 สามารถตัดสายได้ 🤭</a>
+        
         <span class="news-meta">♥ 372 · 25 Jun 09:16 ICT</span>
       </div>
       <div class="news-item">
-        <a href="https://www.facebook.com/reel/2456699274830071/" target="_blank" class="news-title">ทริคใหม่ฟีเจอร์ Extend บนวอลเปเปอร์ใน iPhone 📱
+        <a href="https://www.facebook.com/reel/2456699274830071/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">ทริคใหม่ฟีเจอร์ Extend บนวอลเปเปอร์ใน iPhone 📱
 #iPhoneiOSThailand #ทริค #iphone #ความรู้เกี่ยวกับiph</a>
+        
         <span class="news-meta">♥ 243 · 25 Jun 09:16 ICT</span>
       </div>
       <div class="news-item">
-        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid037yDCXCsgqCisc288VGq4y6hhPkSeRcCcevHEFiZtEWnwnoULJy12U8YA3nuY3BKGl" target="_blank" class="news-title">iPhone ราคาถูกล้างสต๊อก 📍
+        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid037yDCXCsgqCisc288VGq4y6hhPkSeRcCcevHEFiZtEWnwnoULJy12U8YA3nuY3BKGl" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone ราคาถูกล้างสต๊อก 📍
 Houk & Bank X MacUp ขอนแก่น</a>
+        
         <span class="news-meta">♥ 5 · 25 Jun 09:16 ICT</span>
       </div>
       <div class="news-item">
-        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid0263i2iGYrZN6tNuvh3ezP3ManXoDBt14PXFC9WpjucXSqaEHYSpTYckz6ujVmhf76l" target="_blank" class="news-title">iPhone 17 ไม่ได้ไปต่อ! Siri AI ตัวโหดมีเฉพาะรุ่น Pro ⚡📱🌟
+        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid0263i2iGYrZN6tNuvh3ezP3ManXoDBt14PXFC9WpjucXSqaEHYSpTYckz6ujVmhf76l" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone 17 ไม่ได้ไปต่อ! Siri AI ตัวโหดมีเฉพาะรุ่น Pro ⚡📱🌟
 
 แม้ iPhone 17 จะรองรับการอัปเดตเป็น iOS 27</a>
+        
         <span class="news-meta">♥ 1K · 25 Jun 09:16 ICT</span>
       </div>
       <div class="news-item">
-        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid0374F7rupzaDzeGk4VoZvaBeoHMST5BzJAffuZZr1kweC3ozTN2cAPnmgpoHCdqVogl" target="_blank" class="news-title">iPhone 18 Pro หลุดดีไซน์ใหม่จาก Siri AI ในiOS27! 📱
+        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid0374F7rupzaDzeGk4VoZvaBeoHMST5BzJAffuZZr1kweC3ozTN2cAPnmgpoHCdqVogl" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone 18 Pro หลุดดีไซน์ใหม่จาก Siri AI ในiOS27! 📱
 
 Apple อาจกำลังซ่อนคำใบ้สำคัญของ iPhone 18 Pro ไว</a>
+        
         <span class="news-meta">♥ 537 · 25 Jun 09:16 ICT</span>
       </div>
       <div class="news-item">
-        <a href="https://www.facebook.com/reel/1263836342495282/" target="_blank" class="news-title">ทริคตั้งหน้าจอ วอลล์เปเปอร์ 3D ใน iPhone 📱⚡️🤩
+        <a href="https://www.facebook.com/reel/1263836342495282/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">ทริคตั้งหน้าจอ วอลล์เปเปอร์ 3D ใน iPhone 📱⚡️🤩
 #iPhoneiOSThailand #ทริค #iphone #ความรู้เกี่ยวกับipho</a>
+        
         <span class="news-meta">♥ 1K · 25 Jun 09:16 ICT</span>
       </div>
       <div class="news-item">
-        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid02DidWFwLgjeTDzJtwkXiGRjy81LhbtXDxK2Hap7w7dUb1PTz4U4vEkdfUrtFfq9QSl" target="_blank" class="news-title">iOS 27 
+        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid02DidWFwLgjeTDzJtwkXiGRjy81LhbtXDxK2Hap7w7dUb1PTz4U4vEkdfUrtFfq9QSl" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iOS 27 
 จะทำให้ iPhone 
 ของเราเร็วขึ้น โดยเฉพาะรุ่นเก่า คิดเห็นยังไงกันบ้าง 
 🧐✨</a>
+        
         <span class="news-meta">♥ 453 · 25 Jun 09:16 ICT</span>
       </div>
       <div class="news-item">
-        <a href="https://www.facebook.com/reel/27557528717269308/" target="_blank" class="news-title">ทริคแก้ไขปิดหน้าแล้วสายตัดเอง ตั้งค่าแก้ไขได้เองง่ายๆ #iPhoneiOSThailand #iPhone #ทริค #ความรู้เกี่ย</a>
+        <a href="https://www.facebook.com/reel/27557528717269308/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">ทริคแก้ไขปิดหน้าแล้วสายตัดเอง ตั้งค่าแก้ไขได้เองง่ายๆ #iPhoneiOSThailand #iPhone #ทริค #ความรู้เกี่ย</a>
+        
         <span class="news-meta">♥ 2K · 25 Jun 09:16 ICT</span>
       </div>
       <div class="news-item">
-        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid02NMMkRAoMJvAoogjEFo6ozY5a7tS9yXu67bLr2DkebNANV8AudSV9N2UjHzw3N2dsl" target="_blank" class="news-title">Apple รีดประสิทธิภาพ iOS 27 เน้นความเร็ว! บน iPhone อีกขั้น 
+        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid02NMMkRAoMJvAoogjEFo6ozY5a7tS9yXu67bLr2DkebNANV8AudSV9N2UjHzw3N2dsl" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Apple รีดประสิทธิภาพ iOS 27 เน้นความเร็ว! บน iPhone อีกขั้น 
 
 เร็วกว่า iOS 26 อย่างชัดเจน ⚡📱
 
 ขอบคุณ</a>
+        
         <span class="news-meta">♥ 339 · 25 Jun 09:16 ICT</span>
       </div>
       <div class="news-item">
         <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid02CvMG3nn7mhZhGNjXjaQ2fnAdSh9iFVKHATkRcgLVVstpCUXq5MgtpSegvx8cbELl" target="_blank" class="news-title">Facebook IG 
 ปรับใหม่ แอบไม่คุ้น
 แอบสับสนนิดหน่อย 😅</a>
+        
         <span class="news-meta">♥ 830 · 25 Jun 09:16 ICT</span>
       </div>
       <div class="news-item">
-        <a href="https://www.facebook.com/reel/2521397658365401/" target="_blank" class="news-title">ฟีเจอร์ Reframe ใน iOS27 ใหม่ ใช่ยังไงไปดู 👀📱
+        <a href="https://www.facebook.com/reel/2521397658365401/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">ฟีเจอร์ Reframe ใน iOS27 ใหม่ ใช่ยังไงไปดู 👀📱
 #iPhoneiOSThailand #iOS27 #reframe #iOS #iphone #WWDC2</a>
+        
         <span class="news-meta">♥ 104 · 25 Jun 09:16 ICT</span>
       </div>
       <div class="news-item">
         <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid0cNeVdfDAK11WWb81jZZpK1p1B7maXfbNi1xbBMekbJKJDPBx6FsAiggqXPRxEkaBl" target="_blank" class="news-title">ไอโฟนราคาถูกมาก เริ่มต้น 3000 บาท 
 Houk & Bank X MacUp ขอนแก่น</a>
+        
         <span class="news-meta">♥ 5 · 25 Jun 09:16 ICT</span>
       </div>
       <div class="news-item">
-        <a href="https://www.facebook.com/reel/4106301852993749/" target="_blank" class="news-title">รีวิว iOS27 ฟีเจอร์ขยายรูป #iPhoneiOSThailand #iOS27 #iOS #iPhone #WWDC26</a>
+        <a href="https://www.facebook.com/reel/4106301852993749/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">รีวิว iOS27 ฟีเจอร์ขยายรูป #iPhoneiOSThailand #iOS27 #iOS #iPhone #WWDC26</a>
+        
         <span class="news-meta">♥ 69 · 25 Jun 09:16 ICT</span>
       </div>
       <div class="news-item">
@@ -578,12 +666,14 @@ Houk & Bank X MacUp ขอนแก่น</a>
 เลยบันทึกไว้ในโน้ต สรุปเข้าหน้าหลักไม่ได้ สภาพ!!
 
 ปลอดภัยจัด ป้องกันแม้กระทั่งตัวเอง 😂😂</a>
+        
         <span class="news-meta">♥ 356 · 25 Jun 09:16 ICT</span>
       </div>
       <div class="news-item">
         <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid0juVGHZnmdTt4cJXek2i8d5HwWRoQxAZvjnLv6T7m3u8etoyBUYP1YgZXSE3rHNxzl" target="_blank" class="news-title">สรุป Facebook ล่ม!!
 
 ใครกดรีเซตการตั้งค่าบ้าง 😅😅</a>
+        
         <span class="news-meta">♥ 3K · 25 Jun 09:16 ICT</span>
       </div>
       <div class="news-item">
@@ -591,12 +681,14 @@ Houk & Bank X MacUp ขอนแก่น</a>
 วันที่ 11 มิถุนายน พุทธศักราช 2569 เวลา 19.48 นาฬิกา
 
 น้อมสำนึกในพระกรุณาธิคุณอัน</a>
+        
         <span class="news-meta">♥ 196 · 25 Jun 09:16 ICT</span>
       </div>
       <div class="news-item">
-        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid0ozURY7vcMGWnj98GeccfDmiz2J8qgZTLBxW78xCjQzPipKwHhf7u2LqacwRAhL61l" target="_blank" class="news-title">iPhone 11 จะมาดีใจอะไรก่อนหึ! 
+        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid0ozURY7vcMGWnj98GeccfDmiz2J8qgZTLBxW78xCjQzPipKwHhf7u2LqacwRAhL61l" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone 11 จะมาดีใจอะไรก่อนหึ! 
 ได้ไปต่อ iOS27 อะไร? 
 อันดับแรกไปเปลี่ยนแบตก่อนนะ แบตเสื่อมไม่ไหวแล้ว</a>
+        
         <span class="news-meta">♥ 1K · 25 Jun 09:16 ICT</span>
       </div></div>  </div></div>
 
