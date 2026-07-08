@@ -1,0 +1,2211 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Competitor Briefing · 08 Jul 10:38 ICT</title>
+<style>
+:root {
+  --bg:     #ffffff; --bg2: #f7f7f7; --bg3: #efefef;
+  --text:   #111111; --t2:  #555555; --t3:  #999999;
+  --border: #e4e4e4;
+  --red:    #dc2626; --red-bg: #fef2f2;
+  --amber:  #b45309; --amber-bg: #fffbeb;
+  --blue:   #1d4ed8; --blue-bg: #eff6ff;
+  --green:  #15803d;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:#1c1c1e; --bg2:#2c2c2e; --bg3:#3a3a3c;
+    --text:#f2f2f7; --t2:#aeaeb2; --t3:#636366;
+    --border:#38383a;
+    --red:#f87171; --red-bg:#3b1212;
+    --amber:#fbbf24; --amber-bg:#3b2a00;
+    --blue:#60a5fa; --blue-bg:#1e3a5f;
+    --green:#86efac;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+     background:var(--bg);color:var(--text);font-size:14px;line-height:1.55;}
+.wrap{max-width:980px;margin:0 auto;padding:2rem 1.25rem;}
+a{color:inherit;text-decoration:none;}
+a:hover{color:var(--blue);}
+
+/* Header */
+.hdr{display:flex;justify-content:space-between;align-items:baseline;
+     padding-bottom:1rem;border-bottom:1px solid var(--border);margin-bottom:1.75rem;}
+.hdr h1{font-size:17px;font-weight:600;}
+.hdr .meta{font-size:12px;color:var(--t3);text-align:right;}
+
+/* Metrics */
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:2rem;}
+.mc{background:var(--bg2);border-radius:10px;padding:14px 16px;}
+.mc .lbl{font-size:11px;color:var(--t3);margin-bottom:4px;}
+.mc .val{font-size:24px;font-weight:600;}
+.mc.red .val{color:var(--red);}
+.mc.amb .val{color:var(--amber);}
+
+/* Section */
+.sec{margin-bottom:2.25rem;}
+.sec-title{font-size:12px;font-weight:700;color:var(--t2);text-transform:uppercase;
+           letter-spacing:.07em;margin-bottom:.9rem;display:flex;align-items:center;gap:6px;}
+
+/* Viral */
+.viral-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.viral-card{background:var(--bg2);border-radius:10px;padding:14px;
+            border-left:3px solid var(--red);}
+.viral-meta{font-size:11px;color:var(--t3);margin-bottom:5px;}
+.viral-title{font-size:13px;font-weight:500;margin-bottom:8px;
+             display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.viral-stats{display:flex;gap:12px;font-size:12px;color:var(--t2);}
+.views-num{font-size:15px;font-weight:700;color:var(--red);}
+
+/* Chart */
+.chart-wrap{height:200px;margin-bottom:1.25rem;}
+
+/* Table */
+.tbl{width:100%;border-collapse:collapse;font-size:13px;}
+.tbl th{text-align:left;padding:7px 10px;font-size:11px;font-weight:700;
+        color:var(--t3);border-bottom:1px solid var(--border);
+        text-transform:uppercase;letter-spacing:.05em;}
+.tbl td{padding:7px 10px;border-bottom:1px solid var(--border);vertical-align:middle;}
+.tbl tr:last-child td{border-bottom:none;}
+.r{text-align:right;}
+.sub{font-size:11px;color:var(--t3);}
+
+/* Two columns */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.two-col>*{min-width:0;overflow:hidden;}
+
+/* News */
+.src-label{font-size:12px;font-weight:600;color:var(--t2);margin:10px 0 6px;}
+.news-list{display:flex;flex-direction:column;gap:4px;}
+.news-item{display:flex;flex-direction:column;gap:2px;
+           padding:8px 10px;background:var(--bg2);border-radius:8px;}
+.news-title{font-size:13px;word-break:break-word;overflow-wrap:break-word;line-height:1.45;}
+.news-title-th{font-size:11px;color:var(--t2);line-height:1.4;word-break:break-word;}
+.news-meta{font-size:11px;color:var(--t3);}
+
+/* Blacklist tags */
+.tag{display:inline-block;background:var(--amber-bg);color:var(--amber);
+     font-size:11px;padding:3px 9px;border-radius:99px;margin:3px 3px 3px 0;}
+.tag-box{padding:12px;background:var(--bg2);border-radius:10px;}
+
+/* Angle tips */
+.angle-box{display:flex;flex-direction:column;gap:4px;margin-top:0;}
+.angle-tip{font-size:12px;color:var(--t2);padding:7px 10px;
+           background:var(--blue-bg);border-radius:8px;line-height:1.4;}
+
+/* Per-channel */
+.ch-section{margin-bottom:1.25rem;}
+.ch-header{display:flex;justify-content:space-between;align-items:center;
+           padding:8px 12px;background:var(--bg2);border-radius:8px;
+           font-size:13px;font-weight:600;margin-bottom:6px;}
+
+/* Data range legend */
+.data-legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1.75rem;
+             padding:10px 14px;background:var(--bg2);border-radius:10px;}
+.dl-item{font-size:11px;color:var(--t2);}
+.dl-item strong{color:var(--text);}
+.dl-sep{color:var(--border);font-size:11px;align-self:center;}
+
+/* Errors */
+.err-box{background:var(--red-bg);border:1px solid #fca5a5;
+         border-radius:8px;padding:12px;}
+.err-item{font-size:12px;color:var(--red);padding:2px 0;}
+
+@media(max-width:640px){
+  .metrics{grid-template-columns:repeat(2,1fr);}
+  .viral-grid{grid-template-columns:1fr;}
+  .two-col{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hdr">  <div><h1>📊 Competitor Briefing</h1>  <span class="meta" style="font-size:11px; color:var(--t3);">full_scan_20260708_095757</span></div>  <div class="meta"><strong style="font-size:13px;">Full Scan</strong><br>08 Jul 10:38 ICT ICT</div></div>
+
+<div class="data-legend">  <span class="dl-item">🗓️ <strong>Scrape ล่าสุด:</strong> 08 Jul 10:38 ICT ICT</span>  <span class="dl-sep">·</span>  <span class="dl-item">📡 <strong>Posts ครอบคลุม:</strong> 1 Jul – 8 Jul 2026</span>  <span class="dl-sep">·</span>  <span class="dl-item">🔥 <strong>Viral window:</strong> 24 ชม. ล่าสุด (ไม่มีข้อมูล)</span>  <span class="dl-sep">·</span>  <span class="dl-item">🔍 <strong>Deep Dive:</strong> 7 วันล่าสุด (1 Jul – 8 Jul 2026)</span>  <span class="dl-sep">·</span>  <span class="dl-item">🌐 <strong>EN News:</strong> 48 ชม. ล่าสุด (6 Jul – 8 Jul 2026)</span></div>
+
+<div class="metrics">  <div class="mc"><div class="lbl">Posts scraped (total)</div><div class="val">240</div></div>  <div class="mc red">    <div class="lbl">Viral Alerts <span style="font-size:10px;font-weight:400;">(24 ชม. ล่าสุด)</span></div>    <div class="val">0</div>    <div style="font-size:10px;color:var(--t3);margin-top:3px;">วิดีโอคู่แข่งที่กำลัง viral → ดู format แล้วทำต่างมุม</div>  </div>  <div class="mc"><div class="lbl">Channels</div><div class="val">9</div></div>  <div class="mc amb">    <div class="lbl">EN Headlines</div>    <div class="val">74</div>    <div style="font-size:10px;color:var(--t3);margin-top:3px;">MacRumors · 9to5Mac · AppleInsider — สัญญาณล่วงหน้าก่อน TH media 12-24h</div>  </div></div>
+
+<div class="sec">  <div class="sec-title">🔥 Viral Alerts — 24 ชม. ล่าสุด    <span style="font-size:10px; color:var(--red); font-weight:400;">วัดจาก 2 เกณฑ์: (1) views ≥ 100K ใน 48h และ/หรือ (2) views > 5× avg ของช่องนั้นใน 30 วัน — ผ่านอย่างน้อย 1 ข้อถือว่า viral</span></div>  <p style="font-size:12px;color:var(--t2);margin-bottom:10px;line-height:1.6;">    วิดีโอที่ algorithm กำลังปล่อย — <strong>ใช้ทำอะไร:</strong>     ดู hook · format · duration ที่ได้ผล แล้วสร้าง 3-5 วิดีโอใหม่ในมุมต่าง     (ไม่ copy ตรงๆ) · ส่งต่อ Viral Forensics Agent เพื่อถอด pattern อัตโนมัติ  </p>  <p style="color:#999; font-size:13px; padding:12px 0;">ยังไม่มี viral alerts ในรอบนี้ (threshold: 100K views)</p></div>
+
+<div class="sec">  <div class="sec-title">📊 Channel Performance — Thai Competitors</div>  <div class="chart-wrap"><canvas id="chChart"></canvas></div>  
+  <table class="tbl">
+    <thead>
+      <tr>
+        <th>Channel</th>
+        <th class="r">Avg views / eng</th>
+        <th class="r">Posts/day</th>
+        <th class="r">Avg ER%</th>
+        <th class="r">Viral (30d)</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><span style="background:#111111; color:#ffffff; font-size:10px; padding:2px 8px; border-radius:99px; font-weight:600; letter-spacing:0.02em;">TikTok</span> &nbsp;<strong>ครูหนึ่งสอนดี</strong>
+          <br><span class="sub">@ครูหนึ่งสอนดี</span></td>
+      <td class="r">670K</td>
+      <td class="r">1.0</td>
+      <td class="r"><span style="color:#16a34a;">5.1%</span></td>
+      <td class="r" style="font-weight:600; color:#dc2626;">19</td>
+    </tr>
+    <tr>
+      <td><span style="background:#111111; color:#ffffff; font-size:10px; padding:2px 8px; border-radius:99px; font-weight:600; letter-spacing:0.02em;">TikTok</span> &nbsp;<strong>เอกวิทย์</strong>
+          <br><span class="sub">@พี่เอกวิทย์</span></td>
+      <td class="r">212K</td>
+      <td class="r">1.0</td>
+      <td class="r"><span style="color:#d97706;">3.3%</span></td>
+      <td class="r" style="font-weight:600; color:#dc2626;">14</td>
+    </tr>
+    <tr>
+      <td><span style="background:#1877F2; color:#ffffff; font-size:10px; padding:2px 8px; border-radius:99px; font-weight:600; letter-spacing:0.02em;">Facebook</span> &nbsp;<strong>iPhone iOS Thailand</strong>
+          <br><span class="sub">@iPhone iOS Thailand</span></td>
+      <td class="r"><span title="Facebook ไม่เปิด views — แสดง avg engagement/post แทน">494 eng</span></td>
+      <td class="r">1.0</td>
+      <td class="r"><span style="color:var(--t3); font-size:11px;">N/A (no views)</span></td>
+      <td class="r" style="color:#bbb;">0</td>
+    </tr>
+    <tr>
+      <td><span style="background:#1877F2; color:#ffffff; font-size:10px; padding:2px 8px; border-radius:99px; font-weight:600; letter-spacing:0.02em;">Facebook</span> &nbsp;<strong>Spin9</strong>
+          <br><span class="sub">@spin9</span></td>
+      <td class="r"><span title="Facebook ไม่เปิด views — แสดง avg engagement/post แทน">165 eng</span></td>
+      <td class="r">1.0</td>
+      <td class="r"><span style="color:var(--t3); font-size:11px;">N/A (no views)</span></td>
+      <td class="r" style="color:#bbb;">0</td>
+    </tr>
+    <tr>
+      <td><span style="background:#1877F2; color:#ffffff; font-size:10px; padding:2px 8px; border-radius:99px; font-weight:600; letter-spacing:0.02em;">Facebook</span> &nbsp;<strong>iPhonemod (FB)</strong>
+          <br><span class="sub">@iMoD</span></td>
+      <td class="r"><span title="Facebook ไม่เปิด views — แสดง avg engagement/post แทน">899 eng</span></td>
+      <td class="r">1.0</td>
+      <td class="r"><span style="color:var(--t3); font-size:11px;">N/A (no views)</span></td>
+      <td class="r" style="color:#bbb;">0</td>
+    </tr></tbody>
+  </table></div>
+
+<div class="two-col sec">  <div>    <div class="sec-title">🌐 EN News Headlines      <span style="font-size:10px;color:var(--t3);font-weight:400;">MacRumors · 9to5Mac · AppleInsider</span>    </div>    <p style="font-size:11px;color:var(--t3);margin-bottom:8px;line-height:1.5;">      ข่าว Apple จากอเมริกา — มาก่อน TH media 12-24h · ใช้เป็น content source สำหรับ cluster_rumor + cluster_business    </p>    <p class="src-label">MacRumors</p><div class="news-list">
+      <div class="news-item">
+        <a href="https://www.macrumors.com/guide/ios-27-messages/" target="_blank" class="news-title">iOS 27: 13 Ways the Messages App is Smarter and Less Annoying</a>
+        <span class="news-title-th">iOS 27: 13 วิธีที่แอปข้อความฉลาดขึ้นและน่ารำคาญน้อยลง</span>
+        <span class="news-meta">07 Jul 12:25 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/07/flighty-connection-assistant/" target="_blank" class="news-title">Flighty Update Adds Step-by-Step Guide for Connecting Flights</a>
+        <span class="news-title-th">Flighty อัปเดต เพิ่มคู่มือการต่อเครื่องแบบทีละขั้นตอน</span>
+        <span class="news-meta">07 Jul 11:14 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/07/apple-seeds-ios-26-6-public-beta-4/" target="_blank" class="news-title">Apple Seeds Fourth Public Betas of iOS 26.6, macOS Tahoe 26.6 and More</a>
+        <span class="news-title-th">Apple ปล่อย Beta สาธารณะรุ่นที่ 4 ของ iOS 26.6, macOS Tahoe 26.6 และอื่นๆ</span>
+        <span class="news-meta">07 Jul 09:16 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/07/claude-cowork-mobile-web/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Claude Cowork Expands to iPhone and the Web</a>
+        <span class="news-title-th">Claude Cowork ขยายสู่ iPhone และเว็บ</span>
+        <span class="news-meta">07 Jul 09:05 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/07/ios-27-public-beta-is-coming-soon/" target="_blank" class="news-title">iOS 27 Public Beta is Coming Soon</a>
+        <span class="news-title-th">iOS 27 Public Beta กำลังจะมาในไม่ช้า</span>
+        <span class="news-meta">07 Jul 08:03 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/07/google-pixel-11-event/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Google's Pixel 11 Event Set for August 12, a Month Before Apple Debuts Foldable iPhone</a>
+        <span class="news-title-th">Google กำหนดอีเวนต์ Pixel 11 วันที่ 12 ส.ค. ก่อน Apple เปิดตัว iPhone พับได้ 1 เดือน</span>
+        <span class="news-meta">07 Jul 07:48 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/07/apple-airpods-beta-firmware-9a5314b/" target="_blank" class="news-title">Apple Releases New AirPods Beta Firmware With iOS 27 Features</a>
+        <span class="news-title-th">Apple ปล่อยเฟิร์มแวร์ AirPods Beta ใหม่พร้อมคุณสมบัติ iOS 27</span>
+        <span class="news-meta">07 Jul 07:19 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/07/iphone-18-pro-could-be-noticeably-thicker/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone 18 Pro Could Be Noticeably Thicker Than iPhone 17 Pro</a>
+        <span class="news-title-th">iPhone 18 Pro อาจหนากว่า iPhone 17 Pro อย่างเห็นได้ชัด</span>
+        <span class="news-meta">07 Jul 03:56 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/07/wi-fi-ipad-mini-7-models/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Amazon Discounts All Wi-Fi iPad Mini 7 Models by Up to $130</a>
+        <span class="news-title-th">Amazon ลดราคา iPad Mini 7 รุ่น Wi-Fi ทุกรุ่นสูงสุด $130</span>
+        <span class="news-meta">07 Jul 03:14 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/07/airpods-max-condensation-lawsuit-largely-dismissed/" target="_blank" class="news-title">AirPods Max Condensation Lawsuit Largely Dismissed by NY Judge</a>
+        <span class="news-title-th">ผู้พิพากษา NY ยกฟ้องคดีความชื้น AirPods Max ส่วนใหญ่</span>
+        <span class="news-meta">07 Jul 01:47 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/07/free-dropbox-client-maestral-retired/" target="_blank" class="news-title">Free Dropbox Client Maestral Will Eventually Stop Working</a>
+        <span class="news-title-th">Maestral แอป Dropbox ฟรี จะเลิกทำงานในที่สุด</span>
+        <span class="news-meta">06 Jul 23:55 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/07/iphone-air-2-battery-capacity-3500mah/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone Air 2 Could Get an 11% Battery Capacity Boost</a>
+        <span class="news-title-th">iPhone Air 2 อาจได้รับแบตเตอรี่เพิ่มขึ้น 11%</span>
+        <span class="news-meta">06 Jul 22:58 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/06/ios-27-beta-3-features/" target="_blank" class="news-title">Everything New in iOS 27 Beta 3</a>
+        <span class="news-title-th">ทุกสิ่งใหม่ใน iOS 27 Beta 3</span>
+        <span class="news-meta">06 Jul 11:19 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/06/ios-27-home-app-features-icloud/" target="_blank" class="news-title">Apple Intelligence Home Features Require 2TB iCloud+ Plan in iOS 27</a>
+        <span class="news-title-th">ฟีเจอร์ Apple Intelligence Home ใน iOS 27 ต้องใช้แผน iCloud+ 2TB</span>
+        <span class="news-meta">06 Jul 10:13 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/06/siri-ai-apple-watch/" target="_blank" class="news-title">Siri AI Comes to Apple Watch in watchOS 27 Beta 3</a>
+        <span class="news-title-th">Siri AI มาถึง Apple Watch ใน watchOS 27 Beta 3</span>
+        <span class="news-meta">06 Jul 09:24 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/06/macos-golden-gate-wallpaper/" target="_blank" class="news-title">macOS Golden Gate Gets New Wallpaper</a>
+        <span class="news-title-th">macOS Golden Gate ได้วอลเปเปอร์ใหม่</span>
+        <span class="news-meta">06 Jul 08:22 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/06/apple-seeds-macos-27-beta-3/" target="_blank" class="news-title">macOS Golden Gate Beta 3 Now Available for Developers</a>
+        <span class="news-title-th">macOS Golden Gate Beta 3 พร้อมให้ใช้งานสำหรับนักพัฒนาแล้ว</span>
+        <span class="news-meta">06 Jul 06:25 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/06/apple-seeds-ios-27-beta-3/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Apple Seeds Third iOS 27 and iPadOS 27 Betas to Developers</a>
+        <span class="news-title-th">Apple ปล่อย iOS 27 และ iPadOS 27 Beta 3 ให้นักพัฒนา</span>
+        <span class="news-meta">06 Jul 06:24 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/06/apple-seeds-visionos-27-beta-3/" target="_blank" class="news-title">Apple Seeds Third visionOS 27 Beta to Developers</a>
+        <span class="news-title-th">Apple ปล่อย visionOS 27 Beta 3 ให้นักพัฒนา</span>
+        <span class="news-meta">06 Jul 06:23 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/06/apple-seeds-watchos-27-beta-3/" target="_blank" class="news-title">Apple Seeds watchOS 27 Beta 3 to Developers</a>
+        <span class="news-title-th">Apple ปล่อย watchOS 27 Beta 3 ให้นักพัฒนา</span>
+        <span class="news-meta">06 Jul 06:23 ET</span>
+      </div></div><p class="src-label">9to5Mac</p><div class="news-list">
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/07/trying-season-5-premiere-is-now-available-on-apple-tv/" target="_blank" class="news-title">‘Trying’ season 5 premiere is now available on Apple TV</a>
+        <span class="news-title-th">ซีรีส์ ‘Trying’ ซีซัน 5 ตอนแรกพร้อมให้รับชมบน Apple TV แล้ว</span>
+        <span class="news-meta">07 Jul 14:02 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/07/tim-cook-attends-sun-valley-conference-alongside-eddy-cue/" target="_blank" class="news-title">Tim Cook attends Sun Valley Conference alongside Eddy Cue [U: Ternus attends]</a>
+        <span class="news-title-th">Tim Cook, Eddy Cue และ John Ternus เข้าร่วมการประชุม Sun Valley</span>
+        <span class="news-meta">07 Jul 12:38 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/07/lamborghini-launches-apple-vision-pro-app-with-interactive-full-size-cars/" target="_blank" class="news-title">Lamborghini launches Apple Vision Pro app with interactive full-size cars</a>
+        <span class="news-title-th">Lamborghini เปิดตัวแอป Apple Vision Pro พร้อมรถขนาดจริงแบบโต้ตอบได้</span>
+        <span class="news-meta">07 Jul 10:18 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/07/tim-cook-and-john-ternus-hold-virtual-meeting-with-minister-president-of-bavaria/" target="_blank" class="news-title">Tim Cook and John Ternus hold virtual meeting with Minister-President of Bavaria</a>
+        <span class="news-title-th">Tim Cook และ John Ternus ประชุมเสมือนจริงกับนายกรัฐมนตรีแห่งบาวาเรีย</span>
+        <span class="news-meta">07 Jul 09:45 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/07/notion-just-launched-a-brand-new-iphone-app-called-agents/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Notion just launched a brand-new iPhone app called Agents</a>
+        <span class="news-title-th">Notion เพิ่งเปิดตัวแอป iPhone ใหม่ชื่อ Agents</span>
+        <span class="news-meta">07 Jul 08:30 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/07/meta-ai-app-adds-image-generation-also-powering-whatsapp-and-instagram-features/" target="_blank" class="news-title">Meta AI app adds image generation, also powering WhatsApp and Instagram features</a>
+        <span class="news-title-th">แอป Meta AI เพิ่มฟีเจอร์สร้างภาพ ขับเคลื่อนคุณสมบัติ WhatsApp และ Instagram</span>
+        <span class="news-meta">07 Jul 07:52 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/07/these-are-my-favorite-apple-charging-accessories-of-2026-so-far-video/" target="_blank" class="news-title">These are my favorite Apple charging accessories of 2026 so far [Video]</a>
+        <span class="news-title-th">นี่คืออุปกรณ์เสริมการชาร์จ Apple ที่ผมชื่นชอบในปี 2026 (วิดีโอ)</span>
+        <span class="news-meta">07 Jul 07:30 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/07/apple-releases-new-beta-firmware-for-airpods-pro-3-and-more/" target="_blank" class="news-title">Apple releases new beta firmware for AirPods Pro 3 and more</a>
+        <span class="news-title-th">Apple ปล่อยเฟิร์มแวร์เบต้าใหม่สำหรับ AirPods Pro 3 และอื่นๆ</span>
+        <span class="news-meta">07 Jul 07:25 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/07/flighty-update-adds-powerful-new-connection-assistant-feature/" target="_blank" class="news-title">Flighty update adds powerful new Connection Assistant feature</a>
+        <span class="news-title-th">Flighty อัปเดตเพิ่มฟีเจอร์ Connection Assistant ใหม่ที่ทรงพลัง</span>
+        <span class="news-meta">07 Jul 07:00 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/07/weibo-leaker-says-iphone-18-pro-thickness-will-be-surprising/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Weibo leaker says iPhone 18 Pro thickness will be ‘surprising’</a>
+        <span class="news-title-th">แหล่งข่าว Weibo เผย iPhone 18 Pro จะมีความหนาที่ ‘น่าประหลาดใจ’</span>
+        <span class="news-meta">07 Jul 06:42 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/07/xbox-family-settings-for-iphone-and-ipad-expands-console-parental-control-tools/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Xbox Family Settings for iPhone and iPad expands console parental control tools</a>
+        <span class="news-title-th">Xbox Family Settings สำหรับ iPhone และ iPad ขยายเครื่องมือควบคุมโดยผู้ปกครอง</span>
+        <span class="news-meta">07 Jul 06:19 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/07/anthropic-expanding-claude-cowork-to-mobile-and-web-details-here/" target="_blank" class="news-title">Anthropic expanding Claude Cowork to mobile and web, details here</a>
+        <span class="news-title-th">Anthropic ขยาย Claude Cowork สู่มือถือและเว็บ ดูรายละเอียดได้ที่นี่</span>
+        <span class="news-meta">07 Jul 05:24 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/07/broadband-consumer-labels-could-become-less-transparent-under-new-fcc-rules/" target="_blank" class="news-title">Broadband consumer labels could become less transparent under new FCC rules</a>
+        <span class="news-title-th">ฉลากผู้บริโภคบรอดแบนด์อาจโปร่งใสน้อยลงภายใต้กฎ FCC ใหม่</span>
+        <span class="news-meta">07 Jul 04:58 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/07/pocket-casts-update-brings-three-new-features-including-carplay-chapter-artwork/" target="_blank" class="news-title">Pocket Casts update brings three new features, including CarPlay chapter artwork</a>
+        <span class="news-title-th">Pocket Casts อัปเดตนำเสนอ 3 ฟีเจอร์ใหม่ รวมถึงภาพปกบท CarPlay</span>
+        <span class="news-meta">07 Jul 04:42 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/07/airpods-max-condensation-lawsuit-significantly-narrowed-by-judge/" target="_blank" class="news-title">AirPods Max condensation lawsuit significantly narrowed by judge</a>
+        <span class="news-title-th">ผู้พิพากษาจำกัดขอบเขตคดีความชื้น AirPods Max อย่างมีนัยสำคัญ</span>
+        <span class="news-meta">07 Jul 04:25 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/07/deals-macbook-pro-ultra-3-iphone-17-pro-max/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Deals: M5 Pro MacBook Pro $449 off, MacBook Air $250 off, Ultra 3, iPhone 17 Pro Max $449 off, more</a>
+        <span class="news-title-th">ดีล: M5 Pro MacBook Pro ลด $449, MacBook Air ลด $250, Ultra 3, iPhone 17 Pro Max ลด $449 และอื่นๆ</span>
+        <span class="news-meta">07 Jul 04:22 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/07/j-p-morgan-raises-apple-stock-target-to-345-despite-hardware-price-hikes/" target="_blank" class="news-title">J.P. Morgan raises Apple stock target to $345 despite hardware price hikes</a>
+        <span class="news-title-th">J.P. Morgan เพิ่มเป้าหมายหุ้น Apple เป็น $345 แม้ฮาร์ดแวร์ขึ้นราคา</span>
+        <span class="news-meta">07 Jul 03:41 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/07/apple-tvs-nocturne-drama-series-starring-liev-schreiber-gets-a-premiere-date/" target="_blank" class="news-title">Apple TV’s ‘Nocturne’ drama series starring Liev Schreiber gets a premiere date</a>
+        <span class="news-title-th">ซีรีส์ดราม่า ‘Nocturne’ ของ Apple TV นำแสดงโดย Liev Schreiber กำหนดวันฉายแล้ว</span>
+        <span class="news-meta">07 Jul 03:21 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/07/beats-continues-to-expand-lineup-of-popular-woven-usb-c-cables/" target="_blank" class="news-title">Beats continues to expand lineup of popular woven USB-C cables</a>
+        <span class="news-title-th">Beats ยังคงขยายกลุ่มผลิตภัณฑ์สาย USB-C แบบถักยอดนิยม</span>
+        <span class="news-meta">07 Jul 03:00 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/07/apple-stops-signing-ios-26-5-1-after-critical-security-fix-release/" target="_blank" class="news-title">Apple stops signing iOS 26.5.1 after critical security fix release</a>
+        <span class="news-title-th">Apple หยุดลงนาม iOS 26.5.1 หลังปล่อยแก้ไขความปลอดภัยที่สำคัญ</span>
+        <span class="news-meta">07 Jul 02:56 ET</span>
+      </div></div><p class="src-label">AppleInsider</p><div class="news-list">
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/08/boox-go-6-gen-ii-review-delightful-just-not-that-impressive?utm_source=rss" target="_blank" class="news-title">Boox Go 6 Gen II review: Delightful, just not that impressive</a>
+        <span class="news-title-th">รีวิว Boox Go 6 Gen II: น่าใช้ แต่ไม่น่าประทับใจเท่าไร</span>
+        <span class="news-meta">07 Jul 13:03 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/07/airpods-firmware-beta-lets-developers-use-new-ios-27-features?utm_source=rss" target="_blank" class="news-title">AirPods firmware beta lets developers use new iOS 27 features</a>
+        <span class="news-title-th">เฟิร์มแวร์ AirPods Beta ให้นักพัฒนาใช้ฟีเจอร์ iOS 27 ใหม่ได้</span>
+        <span class="news-meta">07 Jul 07:59 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/07/apples-15-inch-macbook-air-m5-dips-to-1349-in-todays-price-war?utm_source=rss" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Apple's 15-inch MacBook Air M5 dips to $1,349 in today's price war</a>
+        <span class="news-title-th">MacBook Air M5 15 นิ้วของ Apple ลดเหลือ $1,349 ในสงครามราคาวันนี้</span>
+        <span class="news-meta">07 Jul 07:08 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/07/iphone-18-pros-camera-bump-could-be-a-little-bit-thicker?utm_source=rss" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone 18 Pro's camera bump could be a little bit thicker</a>
+        <span class="news-title-th">กล้อง iPhone 18 Pro อาจนูนขึ้นเล็กน้อย</span>
+        <span class="news-meta">07 Jul 04:41 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/07/higher-memory-prices-squeeze-chinas-smartphone-market-despite-apples-discounts?utm_source=rss" target="_blank" class="news-title">Higher memory prices squeeze China's smartphone market despite Apple's discounts</a>
+        <span class="news-title-th">ราคาหน่วยความจำที่สูงขึ้นบีบตลาดสมาร์ทโฟนจีน แม้ Apple จะลดราคา</span>
+        <span class="news-meta">07 Jul 03:54 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/07/no-sweat-most-claims-stricken-in-airpods-max-condensation-lawsuit?utm_source=rss" target="_blank" class="news-title">No sweat: Most claims stricken in AirPods Max condensation lawsuit</a>
+        <span class="news-title-th">ไม่ต้องกังวล: ข้อเรียกร้องส่วนใหญ่ถูกปัดตกในคดีความชื้น AirPods Max</span>
+        <span class="news-meta">07 Jul 03:32 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/07/everyone-should-have-a-trustworthy-vpn-at-299-per-month-proton-is-a-great-choice?utm_source=rss" target="_blank" class="news-title">Everyone should have a trustworthy VPN & at $2.99 per month, Proton is a great choice</a>
+        <span class="news-title-th">ทุกคนควรมี VPN ที่เชื่อถือได้ และ Proton ในราคา $2.99 ต่อเดือนเป็นตัวเลือกที่ดี</span>
+        <span class="news-meta">07 Jul 02:48 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/07/bullish-jp-morgan-bumps-aapl-price-target-to-345?utm_source=rss" target="_blank" class="news-title">Bullish JP Morgan bumps AAPL price target to $345</a>
+        <span class="news-title-th">JP Morgan เพิ่มเป้าหมายราคาหุ้น AAPL เป็น $345</span>
+        <span class="news-meta">07 Jul 01:23 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/07/iphone-air-2-battery-expected-to-hit-30-hours-of-use-from-a-single-charge?utm_source=rss" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone Air 2 battery expected to hit 30 hours of use from a single charge</a>
+        <span class="news-title-th">แบตเตอรี่ iPhone Air 2 คาดว่าจะใช้งานได้ 30 ชั่วโมงต่อการชาร์จครั้งเดียว</span>
+        <span class="news-meta">07 Jul 00:21 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/07/terramaster-f4-425-pro-review-excellent-set-and-forget-networking-hardware?utm_source=rss" target="_blank" class="news-title">Terramaster F4-425 Pro review: Excellent set-and-forget networking hardware</a>
+        <span class="news-title-th">รีวิว Terramaster F4-425 Pro: ฮาร์ดแวร์เครือข่ายที่ยอดเยี่ยม ติดตั้งแล้วลืมได้เลย</span>
+        <span class="news-meta">07 Jul 00:54 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/06/apple-home-ai-features-locked-behind-2tb-icloud-plan?utm_source=rss" target="_blank" class="news-title">Apple Home AI features locked behind 2TB iCloud+ plan</a>
+        <span class="news-title-th">ฟีเจอร์ Apple Home AI ถูกจำกัดอยู่หลังแผน iCloud+ 2TB</span>
+        <span class="news-meta">06 Jul 10:34 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/06/apple-is-warning-when-your-ai-prompts-go-to-googles-servers-just-like-with-chatgpt?utm_source=rss" target="_blank" class="news-title">Apple is warning when your AI prompts go to Google's servers, just like with ChatGPT</a>
+        <span class="news-title-th">Apple เตือนเมื่อพรอมต์ AI ของคุณส่งไปยังเซิร์ฟเวอร์ Google เช่นเดียวกับ ChatGPT</span>
+        <span class="news-meta">06 Jul 10:05 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/06/watchos-27-beta-3-brings-siri-ai-to-the-apple-watch?utm_source=rss" target="_blank" class="news-title">watchOS 27 beta 3 brings Siri AI to the Apple Watch</a>
+        <span class="news-title-th">watchOS 27 Beta 3 นำ Siri AI มาสู่ Apple Watch</span>
+        <span class="news-meta">06 Jul 08:57 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/06/bh-is-blowing-out-m4-pro-macbook-pro-inventory-at-1799?utm_source=rss" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">B&H is blowing out M4 Pro MacBook Pro inventory at $1,799</a>
+        <span class="news-title-th">B&H จัดโปรโมชั่นล้างสต็อก M4 Pro MacBook Pro ราคา $1,799</span>
+        <span class="news-meta">06 Jul 08:18 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/06/new-in-ios-27-beta-3-siri-ai-voice-customization-options?utm_source=rss" target="_blank" class="news-title">New in iOS 27 beta 3: Siri AI voice customization options</a>
+        <span class="news-title-th">ใหม่ใน iOS 27 Beta 3: ตัวเลือกการปรับแต่งเสียง Siri AI</span>
+        <span class="news-meta">06 Jul 07:42 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/06/fourth-developer-betas-of-ios-266-macos-266-land-for-testing?utm_source=rss" target="_blank" class="news-title">Fourth developer betas of iOS 26.6, macOS 26.6 land for testing</a>
+        <span class="news-title-th">Beta สำหรับนักพัฒนารุ่นที่ 4 ของ iOS 26.6, macOS 26.6 พร้อมให้ทดสอบแล้ว</span>
+        <span class="news-meta">06 Jul 06:36 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/06/apple-rolls-out-the-third-ios-27-macos-27-developer-betas?utm_source=rss" target="_blank" class="news-title">Apple rolls out the third iOS 27, macOS 27 developer betas</a>
+        <span class="news-title-th">Apple ปล่อย iOS 27, macOS 27 Beta 3 ให้นักพัฒนา</span>
+        <span class="news-meta">06 Jul 06:45 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/06/iphone-17-pro-max-will-represent-americas-present-in-250-years?utm_source=rss" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone 17 Pro Max will represent America's present, in 250 years</a>
+        <span class="news-title-th">iPhone 17 Pro Max จะเป็นตัวแทนปัจจุบันของอเมริกาในอีก 250 ปีข้างหน้า</span>
+        <span class="news-meta">06 Jul 06:09 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/06/apple-watch-ultra-3-drops-to-699-with-100-amazon-discount?utm_source=rss" target="_blank" class="news-title">Apple Watch Ultra 3 drops to $699 with $100 Amazon discount</a>
+        <span class="news-title-th">Apple Watch Ultra 3 ลดเหลือ $699 พร้อมส่วนลด Amazon $100</span>
+        <span class="news-meta">06 Jul 03:37 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/06/iphone-18-pro-max-may-get-significantly-longer-battery-life-after-all?utm_source=rss" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone 18 Pro Max may get significantly longer battery life after all</a>
+        <span class="news-title-th">iPhone 18 Pro Max อาจมีแบตเตอรี่ใช้งานได้นานขึ้นอย่างเห็นได้ชัดในที่สุด</span>
+        <span class="news-meta">06 Jul 03:27 ET</span>
+      </div></div>  </div>  <div>    <div class="sec-title">🇹🇭 TH News Latest      <span style="font-size:10px;color:var(--t3);font-weight:400;">iMod · iPhone iOS Thailand · Spin9 · iPhonemod</span>    </div>    <p style="font-size:11px;color:var(--t3);margin-bottom:8px;line-height:1.5;">      ข่าว Apple ภาษาไทย — ดูว่า TH media cover อะไรแล้วบ้าง ก่อนทำ script    </p>    <p class="src-label">iMod</p><div class="news-list">
+      <div class="news-item">
+        <a href="https://www.iphonemod.net/3-ways-resize-photos-iphone-ipad.html?utm_source=rss&utm_medium=rss&utm_campaign=3-ways-resize-photos-iphone-ipad" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">แนะนำ 3 วิธีลดขนาดไฟล์ภาพ สำหรับ iPhone และ iPad</a>
+        
+        <span class="news-meta">08 Jul 02:46 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.iphonemod.net/samsung-galaxy-unpacked-2026-zfold-zflip.html?utm_source=rss&utm_medium=rss&utm_campaign=samsung-galaxy-unpacked-2026-zfold-zflip" target="_blank" class="news-title">ซัมซุง เตรียมจัดงาน Galaxy Unpacked 22 ก.ค. พร้อมเปิดลงทะเบียนความสนใจ</a>
+        
+        <span class="news-meta">08 Jul 02:34 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.iphonemod.net/nothing-phone-4b-launch.html?utm_source=rss&utm_medium=rss&utm_campaign=nothing-phone-4b-launch" target="_blank" class="news-title">เปิดตัว Nothing Phone (4b) ดีไซน์ใหม่ ชิป Snapdragon 6 Gen 4</a>
+        
+        <span class="news-meta">07 Jul 11:00 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.iphonemod.net/iphone-air-2-battery-capacity-3500mah-rumor.html?utm_source=rss&utm_medium=rss&utm_campaign=iphone-air-2-battery-capacity-3500mah-rumor" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">ลือ iPhone Air 2 มีแบตเตอรี่ 3,500mAh เพิ่มขึ้น 11% และใช้ชิป A20 รุ่นใหม่</a>
+        
+        <span class="news-meta">07 Jul 11:00 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.iphonemod.net/apple-warns-ai-prompts-google-cloud-creator-studio.html?utm_source=rss&utm_medium=rss&utm_campaign=apple-warns-ai-prompts-google-cloud-creator-studio" target="_blank" class="news-title">Apple แจ้งเตือนผู้ใช้ เมื่อคำสั่ง AI ถูกส่งไปประมวลผลบนเซิร์ฟเวอร์ Google แบบเดียวกับ ChatGPT</a>
+        
+        <span class="news-meta">07 Jul 09:58 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.iphonemod.net/apple-ios-27-raw-9-photo-processing.html?utm_source=rss&utm_medium=rss&utm_campaign=apple-ios-27-raw-9-photo-processing" target="_blank" class="news-title">iOS 27 มาพร้อม RAW 9 ลดนอยส์ เพิ่มรายละเอียดได้ดีกว่าเดิม</a>
+        
+        <span class="news-meta">07 Jul 09:18 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.iphonemod.net/google-marketing-live-sea-shopping-solutions-2026.html?utm_source=rss&utm_medium=rss&utm_campaign=google-marketing-live-sea-shopping-solutions-2026" target="_blank" class="news-title">Google เปิดตัวโซลูชันการช็อปปิ้งใหม่ ขับเคลื่อนวิดีโอคอมเมิร์ซ หนุนแบรนด์จับมือครีเอเตอร์ในเอเชียตะวันออกเฉียงใต้</a>
+        
+        <span class="news-meta">07 Jul 08:14 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.iphonemod.net/india-investigating-tata-data-leak-iphone-18-pro.html?utm_source=rss&utm_medium=rss&utm_campaign=india-investigating-tata-data-leak-iphone-18-pro" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">อินเดียเร่งสอบสวน เหตุข้อมูลหลุดที่ Tata Electronics ความลับ iPhone 18 Pro รั่วไหล</a>
+        
+        <span class="news-meta">07 Jul 06:54 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.iphonemod.net/how-to-merge-and-split-pdf-file-on-iphone-ipad.html?utm_source=rss&utm_medium=rss&utm_campaign=how-to-merge-and-split-pdf-file-on-iphone-ipad" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">แนะนำ 6 วิธีรวมไฟล์ หรือแยก PDF บน iPhone และ iPad ง่าย ๆ</a>
+        
+        <span class="news-meta">07 Jul 06:54 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.iphonemod.net/samsung-confirms-galaxy-watch9-watch-ultra2-names.html?utm_source=rss&utm_medium=rss&utm_campaign=samsung-confirms-galaxy-watch9-watch-ultra2-names" target="_blank" class="news-title">Samsung ยืนยันชื่อ Galaxy Watch9 และ Watch Ultra2 รุ่นใหม่</a>
+        
+        <span class="news-meta">07 Jul 06:23 ICT</span>
+      </div></div><p class="src-label">iPhone iOS Thailand (FB)</p><div class="news-list">
+      <div class="news-item">
+        <a href="https://www.facebook.com/reel/1406348808207977/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">ทริคแสดงผลหน้าจอให้ไวขึ้น! 📱⚡️
+
+#iPhoneiOSThailand #ทริค #iphone #ความรู้เกี่ยวกับiphone</a>
+        
+        <span class="news-meta">♥ 40 · 08 Jul 10:18 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/reel/1837323160564467/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">ทริคเติมภาพขยายรูปใน iPhone! 📱🍎
+
+#iPhoneiOSThailand #ทริค #iphone #ความรู้เกี่ยวกับiphone #extend</a>
+        
+        <span class="news-meta">♥ 161 · 08 Jul 10:18 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid029EcFdcq7Q7GGnz4nx25c96MrkNPSwDLEBP8weqd6dvRTYFz7YrU9v4HS6cQWcLuHl" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">ลือ! MacBook Pro ได้ดีไซน์ใหม่แบบ MacBook Ultra แต่ Ultra ยังเหนือกว่า!? 💻 💫
+
+Apple กำลังวางแผนปรับโ</a>
+        
+        <span class="news-meta">♥ 65 · 08 Jul 10:18 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/reel/922884157493956/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">ทริคตั้งค่าiPhoneให้Siriอ่านชื่อเวลามีสายเรียกเข้า #iPhoneiOSThailand #ความรู้เกี่ยวกับiPhone #ทริค </a>
+        
+        <span class="news-meta">♥ 209 · 08 Jul 10:18 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/reel/1705936443890334/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">ทริคตั้งสี Wallpaper ใหม่ บน iOS27 📱
+
+#iPhoneiOSThailand #ทริค #iphone #ความรู้เกี่ยวกับiphone #wall</a>
+        
+        <span class="news-meta">♥ 77 · 08 Jul 10:18 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid02PN1epEc8xbFYDP6VdX6nFgB2ChZUaNPwq1XSJ2UZEqv8TBt3JzBHDmtaBz8erF8Yl" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">🚨 หลุดสเปก iPhone ปี 2026-2027 แบบจัดเต็ม!
+
+ข่าวลือรอบใหม่จาก Digital Chat Station เผยสเปก iPhone รุ</a>
+        
+        <span class="news-meta">♥ 715 · 08 Jul 10:18 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid02osVRQAEgciB4sv6kR69LB7ZkJmHzcaKaV5fRQMXgeRUg1w5FPdwSRAPscDGqSTKRl" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">🍎 Mac แพงขึ้นกระทบหนัก! นักวิเคราะห์ชี้ตลาดโน้ตบุ๊กอาจหดตัว 💻⚡
+
+Apple เพิ่งปรับขึ้นราคา MacBook หลาย</a>
+        
+        <span class="news-meta">♥ 28 · 08 Jul 10:18 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid02QgTan6vNpRhLqP8vuH9zfqtQ8rL6bPaaVp7gvu7B8UGUxJYxEwPHWyv4z8gMwypBl" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">เปลี่ยนโฉมครั้งใหญ่! iPhone 18 Pro ลือขนาดเล็กลงถึง 35% 🍎📱
+
+Apple เตรียมขยับดีไซน์ iPhone ไปอีกขั้น </a>
+        
+        <span class="news-meta">♥ 937 · 08 Jul 10:18 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/reel/27354599720858422/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhoneกล้องสีติดเหลืองตั้งค่าแก้ไขตามนี้ #iPhoneiOSThailand #ความรู้เกี่ยวกับiPhone #iPhone #ทริค</a>
+        
+        <span class="news-meta">♥ 673 · 08 Jul 10:18 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/reel/1356719539261906/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">ทริค Shortcut ช่วยค้นหาเพลง 🔍🎶
+
+#iPhoneiOSThailand #ทริค #iphone #ความรู้เกี่ยวกับiphone #shortcut #</a>
+        
+        <span class="news-meta">♥ 99 · 08 Jul 10:18 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid0rRoHHNRgwBjLPfVaAYPimckD8EPg7NZ92Y8bghmE32Jz9V4f9kGLq64TTGJ5BHBCl" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">OpenClaw ลงบน iPhone และ iPad อย่างเป็นทางการแล้ว! 🦞🍎📱
+
+OpenClaw เปิดตัวแอป iOS อย่างเป็นทางการ เปลี</a>
+        
+        <span class="news-meta">♥ 160 · 08 Jul 10:18 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid02uib3aD3oNBzRnwpxbC6K5KRVrupKpAvnqvYehbH8H3KvdxCMNRZ6sSg6jw2wfxf9l" target="_blank" class="news-title">Apple ปล่อยอัปเดต macOS Tahoe 26.5.2 แล้ว! เน้นอุดช่องโหว่สำคัญ 💻🔒🔑🛅
+
+Apple ปล่อยอัปเดต macOS Tahoe </a>
+        
+        <span class="news-meta">♥ 87 · 08 Jul 10:18 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/reel/903234318706531/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">3 ทริคการใช้งานiPhoneง่ายๆใช้งานเครื่องง่ายขึ้น #iPhoneiOSThailand #ความรู้เกี่ยวกับiPhone #iPhone #</a>
+        
+        <span class="news-meta">♥ 172 · 08 Jul 10:18 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid09LwhJbWCgDTQky38TzZoGSFWXrXTRiASAPMCFnVBJskSnJKt3thtyXHvEyZZeGFLl" target="_blank" class="news-title">เข้า Facebook ไม่ได้
+ให้อัปเดทแอป</a>
+        
+        <span class="news-meta">♥ 88 · 08 Jul 10:18 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid02JZCUWpmWq366VfB1NsoTtK6gTE6iXoC4sk9rMwoUQdAC1NNhF8huNNHA29TKMZprl" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">📱 รู้ไว้ก่อนซื้อ iPhone 18 มีลุ้นขึ้นราคาสูงกว่าคิดไว้
+
+📊 สรุปตารางคาดการณ์ราคาไทย พร้อมข้อมูลรุ่น👇
+</a>
+        
+        <span class="news-meta">♥ 4K · 08 Jul 10:18 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid0ZwfWGFMvuB8amKt52iEGFNW5Vr2us3fa7ptijjZ9FhnsgtUz72hSeD5s3baFgUfFl" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">MacBook Ultra มาแน่? จัดเต็ม 6 ฟีเจอร์ใหม่ที่ไม่เคยมีมาก่อน 🍎
+
+จากรายงานล่าสุด Apple กำลังเตรียมเปิด</a>
+        
+        <span class="news-meta">♥ 19 · 08 Jul 10:18 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid02BZoyYXC6ipDczs3nm7kcqobG9ByB5VqUUWCBkKeg4vGYJDCZDZq8GBkK6AveKvYPl" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">”iPhone 18 Pro“
+อาจแพงขึ้น! ลือหนักมาก
+ราคาเปิดตัวเกือบ 
+44,900 - 46,900 😱</a>
+        
+        <span class="news-meta">♥ 813 · 08 Jul 10:18 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/reel/2253038282132315/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">ทริค UI แอปกล้องใหม่ บน iOS27 ใน iPhone!📱 #iPhoneiOSThailand #ทริค #iphone #liquidglass #ความรู้เกี่</a>
+        
+        <span class="news-meta">♥ 62 · 08 Jul 10:18 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid027UPRtgkxc8ADNzB3fbe7LmKh2rKP5kRPx3pKHAe9VsW6bn6q6JoBAUKFv1B2RjJQl" target="_blank" class="news-title">ไอโฟนลดราคา ถูกมาก Houk & Bank X MacUp ขอนแก่น</a>
+        
+        <span class="news-meta">♥ 5 · 08 Jul 10:18 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid024Wi686KFDE7SujgqNqoGTdFgqDdn8b8QZhDzUg9kCJ6AadSyfLLacYHkk8mBZMmWl" target="_blank" class="news-title">Apple ปรับราคาแล้ว! ใครกำลังเล็งอยู่ รีบเช็กก่อนตัดสินใจ 🍎
+
+ขอบคุณข้อมูลจาก : Apple
+
+เรียบเรียงข้อมู</a>
+        
+        <span class="news-meta">♥ 828 · 08 Jul 10:18 ICT</span>
+      </div></div><p class="src-label">Spin9 (FB)</p><div class="news-list">
+      <div class="news-item">
+        <a href="https://www.facebook.com/spin9.me/posts/pfbid02o3L29YkyNEReuqfgUiK3vXjEgE8dXBsJwxWzwSS7hYMoDn2FfL47177wTqRG9PaHl" target="_blank" class="news-title">Claude Cowork มีเวอร์ชันแอปมือถือ ไว้ติดตามการทำงานของ Cowork บนเดสก์ทอป 
+.
+Claude Cowork เครื่องมือ</a>
+        
+        <span class="news-meta">♥ 21 · 08 Jul 10:20 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/spin9.me/posts/pfbid0sxUfZAuncFVc3t82jQm7ifgWXAdSHNkKCbrUWbyz98jh1nVRaAneSwu9BhaTrJxsl" target="_blank" class="news-title">ติดตามชมไลฟ์ Galaxy Unpacked เปิดตัว Samsung Galaxy รุ่นใหม่ผ่าน Facebook Samsung 20.00 น. เวลาประเท</a>
+        
+        <span class="news-meta">♥ 42 · 08 Jul 10:20 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/spin9.me/posts/pfbid02qGR2d6rahSXSUEx4mFSYkjuM1857VZ84xZnyvefY24ZdE3TjoVjAFCRp2a5PK7DVl" target="_blank" class="news-title">สรุปโปรแกรม Royal Orchid Plus โฉมใหม่ ปรับเปลี่ยนวิธีการได้สถานะ และสิทธิประโยชน์ครั้งใหญ่
+
+- เพิ่มว</a>
+        
+        <span class="news-meta">♥ 324 · 08 Jul 10:20 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/reel/2199548790828837/" target="_blank" class="news-title">รีวิว Porsche 911 GT3 S/C — GT3 เกียร์ธรรมดา เปิดประทุน 9,000rpm ตัวจบหรือยัง?
+
+รีวิวใหม่วันนี้ ผมพา</a>
+        
+        <span class="news-meta">♥ 71 · 08 Jul 10:20 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/spin9.me/posts/pfbid09cT8E936ff2qcG4uGyuCWH4pmMDDdMnnGsdKnE86ApytCmh4BbBb862ZB3Q5s9Srl" target="_blank" class="news-title">Google เปิดตัวเครื่องมือโฆษณาใหม่ กระตุ้นวิดีโอคอมเมิร์ซในเอเชียตะวันออกเฉียงใต้
+.
+Google เผยผลสำรวจ</a>
+        
+        <span class="news-meta">♥ 75 · 08 Jul 10:20 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/spin9.me/posts/pfbid0mEGbMobwhxdCfjMjeajPBoAWNs8KsFkNVARFUhTbsqfRCFE84q5cr9xhXYW4ZaMYl" target="_blank" class="news-title">Bentley เผยทีเซอร์ Torcal รถ EV รุ่นแรกของแบรนด์ 
+.
+Bentley ค่ายรถยนต์หรูสัญชาติอังกฤษ (ในเครือ Volk</a>
+        
+        <span class="news-meta">♥ 99 · 08 Jul 10:20 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/spin9.me/posts/pfbid0toqh9YQpPrUkHumdYbw5aTcfQMKYszzNcLgpn2cHmUePFDVqQkMcTZ4cGpoLhhHFl" target="_blank" class="news-title">เอมิเรตส์เพิ่มเที่ยวบิน ดูไบ-ภูเก็ตเป็น 3 เที่ยวบินต่อวัน รองรับนักท่องเที่ยวช่วงซัมเมอร์
+.
+สายการบิ</a>
+        
+        <span class="news-meta">♥ 304 · 08 Jul 10:20 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/spin9.me/posts/pfbid02QpydCg9hPWkZmzsgSWSbSQm25CAnZ5ftUvGTX86vTs3YUysfJ4zqAzTuGBjGxhYtl" target="_blank" class="news-title">BYD Seal 6 เพิ่มรุ่นย่อยใหม่ standard ราคา 799,900 บาท ขับไกล 410 กม.
+.
+เรเว่ ออโตโมทีฟ เปิดตัว BYD </a>
+        
+        <span class="news-meta">♥ 40 · 08 Jul 10:20 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/spin9.me/posts/pfbid02zSGWt6R1rqGJsKJNdAc4a66HS3TSfLo6UV1wzWCekU1YV2Q41mga48765kdCuEfRl" target="_blank" class="news-title">New AVATR 11 อัปเกรดช่วงล่างแม่เหล็กไฟฟ้า MR Suspension เคาะราคาเริ่ม 2.299 ล้านบาท
+.
+AVATR ประเทศไท</a>
+        
+        <span class="news-meta">♥ 59 · 08 Jul 10:20 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/reel/27262932516735982/" target="_blank" class="news-title">รีวิว Shokz OpenDots 2 — หูฟังคลิปออนใส่สบาย รุ่นนี้ดี!
+
+รีวิววันนี้อยู่กับหูฟังแบบ Open-Ear Clip-On</a>
+        
+        <span class="news-meta">♥ 17 · 08 Jul 10:20 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/spin9.me/posts/pfbid0jgVthDDCb4ULfgeVkenVpWSJSGSs4534XLBZ6fJU1W5kMZ2nujegCUS6e59WGWMWl" target="_blank" class="news-title">เปิดไลน์ประกอบ Chery V23 ในไทย ทยอยส่งมอบ ก.ค. นี้
+.
+Chery Thailand ประกาศเปิดไลน์การประกอบรถยนต์ไฟฟ</a>
+        
+        <span class="news-meta">♥ 113 · 08 Jul 10:20 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/spin9.me/posts/pfbid0jQfSBpmsyUen7AA3p282ZxgKvS9eKqUXPzcZbBNR5x6VkXVoQUPiZgdDK54DKDK7l" target="_blank" class="news-title">ครั้งแรกในไทย TARI ดัชนีประเมินความพร้อม AI ในองค์กร ต่อยอดให้รัฐลงทุนแผน AI ที่ใช้ได้จริง 
+.
+ครั้งแ</a>
+        
+        <span class="news-meta">♥ 56 · 08 Jul 10:20 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/spin9.me/posts/pfbid029XkijSKj9s9ebC9uZrRRFsWzuJE7Zj9smo5CnoKav4vrwrhuYXXbaEsrmsncCjE3l" target="_blank" class="news-title">2 - 5 ก.ค. นี้เท่านั้น ซื้อ SMART CLOUD PAD ภายในงาน COMMART รับฟรี AIS Premium Gift จำนวนจำกัด
+
+SMA</a>
+        
+        <span class="news-meta">♥ 22 · 08 Jul 10:20 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/spin9.me/posts/pfbid02RkbjbRN94PJfiLi6SKfdKmzAbhegL3i26Mb1d8jBC33RBNq7EmN8ESEeyuZLpWtql" target="_blank" class="news-title">ฟูจิฟิล์ม เปิดตัวกล้องฟิล์มใช้แล้วทิ้ง 2 รุ่นใหม่ เพิ่มคุณสมบัติกันน้ำ
+.
+ฟูจิฟิล์ม (ประเทศไทย) ฉลองค</a>
+        
+        <span class="news-meta">♥ 57 · 08 Jul 10:20 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/spin9.me/posts/pfbid0CZ9TYugqi6FJQ663y7AFFSF6j3RkVbDRQCXH5sbeYU5R1AE6NSM24RUjzuNQmfPxl" target="_blank" class="news-title">Sony ประกาศเลิกผลิตแผ่นเกม เหตุพฤติกรรมผู้เล่นเปลี่ยน 
+.
+Sony Interactive Entertainment จะเลิกผลิตแผ</a>
+        
+        <span class="news-meta">♥ 411 · 08 Jul 10:20 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/spin9.me/posts/pfbid02YTc79KjMuidVkPyop22emBiLDZM6Rhc7hdDK1to8gPCg6Ap46nRurYb3yyuzMRRHl" target="_blank" class="news-title">Mario Kart World มีภาษาไทยแล้ว อัปเดตเพิ่มเส้นทางใหม่ด้วย
+.
+Nintendo ประกาศ Mario Kart World รองรับภ</a>
+        
+        <span class="news-meta">♥ 156 · 08 Jul 10:20 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/spin9.me/posts/pfbid025TeBg2wtBSfF94mVAwgmYJyQwq3frj99dkVoxWUSisnxVZwM3EEM98TbTSymBkuml" target="_blank" class="news-title">LG ปรับโครงสร้าง เปิดตัวศูนย์หุ่นยนต์บุกตลาด Physical AI 
+.
+แอลจี อีเลคทรอนิคส์ ประกาศจัดตั้ง ศูนย์ธ</a>
+        
+        <span class="news-meta">♥ 37 · 08 Jul 10:20 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/spin9.me/posts/pfbid02z3E2YZofp4odPY4fSoKqnC8MkVqo2YEfaRVnoCzdAHk3AUsYjiPSGSzDLFkq7jj7l" target="_blank" class="news-title">เปิดใช้งานแล้ว Shopee Affiliate บน Instagram ปักตะกร้ารับค่าคอมบนคอนเทนต์ IG 
+.
+Shopee ร่วมกับ Meta </a>
+        
+        <span class="news-meta">♥ 114 · 08 Jul 10:20 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/spin9.me/posts/pfbid0EprWeZY9AJaWBGeiGPoexZjv5BMdLNrZ1SHDgiAwjTFAxk1H4w3qahgk6StXheMil" target="_blank" class="news-title">รัฐบาลสหรัฐฯ ยกเลิกแบน Claude Fable 5 และ Mythos 5 แล้ว จะเริ่มทยอยกลับมาใช้งานได้
+.
+กลางเดือน มิ.ย.</a>
+        
+        <span class="news-meta">♥ 90 · 08 Jul 10:20 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/spin9.me/posts/pfbid02rqw5QwKifsxdzpHa4AX6iRZt3Wbx38EyJk7ZyKkF62ZCUWRtwE6qVxLwxxkbTq8Cl" target="_blank" class="news-title">Gemini Spark โมเดล agent เปิดตัวเวอร์ชั่น macOS 
+.
+Gemini Spark โมเดล Agentic AI ที่เปิดตัวในงาน Goo</a>
+        
+        <span class="news-meta">♥ 56 · 08 Jul 10:20 ICT</span>
+      </div></div><p class="src-label">iPhonemod (FB) (FB)</p><div class="news-list">
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhonemod/posts/pfbid034xGEEJ2M1vdSvniXvjjQyU92wnkZcK5KgwG36pH88sWfbVDH3PERS2DXCswEHGXVl" target="_blank" class="news-title">ซัมซุง เตรียมจัดงาน Galaxy Unpacked 22 ก.ค. พร้อมเปิดลงทะเบียนความสนใจ
+
+วันที่ 22 กรกฎาคมนี้ ซัมซุง </a>
+        
+        <span class="news-meta">♥ 11 · 08 Jul 10:21 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhonemod/posts/pfbid02LXegFz6DvSCN7my3kU9JWUuqaQVD1XCvvbSgCxYa7BPfXH1hN44nL3fVRicKM3bsl" target="_blank" class="news-title">Apple เปิดขายสายชาร์จ Beats สีชมพูพาวเวอร์พิงค์ (Power Pink) รองรับกำลังชาร์จสูงสุด 240W ราคา 790 บา</a>
+        
+        <span class="news-meta">♥ 101 · 08 Jul 10:21 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhonemod/posts/pfbid0NSpwRXJxS6DqnCSQU7FDPeqQVme2HdjH3xEabvJBMhr4yv8YCydJCUtLAqyXvMDsl" target="_blank" class="news-title">ยอดลงทะเบียนเลือกตั้งบอร์ดประกันสังคมยังน้อย ฝั่งนายจ้างสัดส่วนน้อยมาก ทั้ง ๆ ที่เป็นเรื่องจำเป็นมาก</a>
+        
+        <span class="news-meta">♥ 261 · 08 Jul 10:21 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhonemod/posts/pfbid021A6bQB1xhH3jDPoPed2vK9tQfWiSXZrhSVvQVhEydTPfunMGEtUthvKdng3hxLiDl" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">ลือ iPhone Air 2 แบตใหญ่ขึ้น 11% แตะ 3,500mAh พร้อมชิป A20 และจอ OLED ใหม่ ลุ้นใช้งานได้นานขึ้นโดยยั</a>
+        
+        <span class="news-meta">♥ 466 · 08 Jul 10:21 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhonemod/posts/pfbid02jSQkH5bDEWEbMKu4rkpirh99sEou1xvDnCKdDzQtE2gMUddkLMseX7fpHhE7Jenel" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">แนะนำ6 วิธี การรวมไฟล์ PDF และแยกหน้าเอกสาร PDF บน iPhone และ iPad ง่าย ๆ เพื่อจัดการงานเอกสาร ได้อย</a>
+        
+        <span class="news-meta">♥ 57 · 08 Jul 10:21 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhonemod/posts/pfbid0cverdGrwSA8nCgDSuj3A19qQLjwe57M5Eh5PrZF4c5pEviTsyJ1oHnqsRjNT5kndl" target="_blank" class="news-title">มาร่วมลงความเห็นเอา #ประกันสังคมออกจากระบบราชการ ให้บริหารอย่างโปร่งใส #เลิกเอาเงินไปทำปฏิทินสักที ร</a>
+        
+        <span class="news-meta">♥ 13K · 08 Jul 10:21 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhonemod/posts/pfbid02FUCk6ekuERsyv5SopvE72G64x198KoYvbCqBvZ24WM26giLbxa1vBqsaokAyrrNWl" target="_blank" class="news-title">TECNO POVA 8 Series เปิดตัว ชูคอนเซ็ปต์ “Alive at night ยิ่งมืด ยิ่งโดดเด่น” จัดเต็มไฟ LED ปรับแต่งไ</a>
+        
+        <span class="news-meta">♥ 42 · 08 Jul 10:21 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhonemod/posts/pfbid0nansbXFuCjVFd3drBEeajpmWdhdu6WAuz7W9k6VXK5sXs9maJmBnbUNDhYtYCdgAl" target="_blank" class="news-title">Apple แจ้งเตือนผู้ใช้ ก่อนส่งคำสั่ง AI จาก Apple Creator Studio ไปประมวลผลบนเซิร์ฟเวอร์ Google
+
+Appl</a>
+        
+        <span class="news-meta">♥ 139 · 08 Jul 10:21 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/reel/4484968475119289/" target="_blank" class="news-title">Apple Watch ครองตลาดสมาร์ตวอทช์ Edge AI ในไตรมาสแรกปี 2026 คิดเป็น 90% ของยอดจัดส่ง และฟีเจอร์สุขภาพ</a>
+        
+        <span class="news-meta">♥ 217 · 08 Jul 10:21 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhonemod/posts/pfbid0Jc9XtHQVVHugqyMzHPEt3QAHUo1LMfmyznrQDuAEzKBQBCsTEKMbGMH7vQUfb4eal" target="_blank" class="news-title">iOS 27 มาพร้อม RAW 9 ใช้ Machine Learning ลดนอยส์ เพิ่มรายละเอียดภาพ RAW ได้ดีกว่าเดิม
+
+Apple เปิดตั</a>
+        
+        <span class="news-meta">♥ 247 · 08 Jul 10:21 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/reel/1928438241154299/" target="_blank" class="news-title">ซื้อ Galaxy Z Fold7 / Z Flip7 เลยดีไหม? #iMoD #Samsung #GalaxyZ #GalaxyZFold #GalaxyZFlip</a>
+        
+        <span class="news-meta">♥ 65 · 08 Jul 10:21 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhonemod/posts/pfbid05or4xkUMMqYd8feDBLrgbFZwuPaEDojNndNXxnLAzzBx3KhZMBSpyttESowS756pl" target="_blank" class="news-title">พาชมไฮไลต์ฟีเจอร์เด่น iOS 27 Beta 3 ปรับปรุงหน้าจอใช้งานหลายจุด
+
+iOS 27 Beta ยังเป็นเวอร์ชันทดสอบสำห</a>
+        
+        <span class="news-meta">♥ 32 · 08 Jul 10:21 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhonemod/posts/pfbid02UbHfRosBCcZ7bsCGH1GwgVaxXRnoURnXawuAHYoch9fZxGL9iQnhaTLzCyhEpiDBl" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">อินเดียเร่งสอบสวน! ข้อมูลลับ iPhone 18 Pro รั่วจากโรงงาน Tata Electronics ซัพพลายเออร์รายสำคัญของ Ap</a>
+        
+        <span class="news-meta">♥ 589 · 08 Jul 10:21 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhonemod/posts/pfbid0yCr1zmia8qQ6TyBoUNmaWs1Zd3BvYitsb3GskUGncSaTKYx5JZW22DoHtdZn3FFSl" target="_blank" class="news-title">Apple Watch ครองตลาดสมาร์ตวอทช์ Edge AI ในไตรมาสแรกปี 2026 กว่า 90%
+
+Counterpoint Research ระบุว่ายอ</a>
+        
+        <span class="news-meta">♥ 195 · 08 Jul 10:21 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhonemod/posts/pfbid02GXgtckg1uPKgmKMpbc43noVAMeQVadhFZZVZp4RoXQ8z6T7pw1yRfMby66hCUWGwl" target="_blank" class="news-title">ใครเริ่มใช้ TikTok ค้นหาข้อมูลหลายอย่างแทน Google ยกมือขึ้น
+
+ในช่วงหลังมานี้หลายคนก็เริ่มค้นหาสิ่งที</a>
+        
+        <span class="news-meta">♥ 944 · 08 Jul 10:21 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhonemod/posts/pfbid037CLGauZ2YeFatpLoL2k5fVhdN2o6nhZkSWRpmGryuJWm6erdyqNuHpcmcwcfY6JCl" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">หลุดความจุแบต iPhone 18 Pro และ iPhone 18 Pro Max รุ่น Pro Max เพิ่มขึ้นเกือบ 500 mAh เมื่อเทียบกับร</a>
+        
+        <span class="news-meta">♥ 1K · 08 Jul 10:21 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhonemod/posts/pfbid034Mrz5gvSRME95ywBdnS7DySUNqN4s2rCHm97yQzUmppPYEpNPtgFj35R1i9yXtgnl" target="_blank" class="news-title">SHOKZ (ช็อคซ์) อวดโฉม OpenDots 2 หูฟัง Open-Ear ดีไซน์ Clip-on รุ่นใหม่ล่าสุด
+
+เมื่อเสียงเพลงและสไตล</a>
+        
+        <span class="news-meta">♥ 45 · 08 Jul 10:21 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhonemod/posts/pfbid02aC5ZKn621iyaYYS9kC84KBWU8ZLiQnv66H4byNAy7KCa4oQigVBrtcxwtuWQidahl" target="_blank" class="news-title">Apple ปล่อย iOS 27 Beta 3 ให้นักพัฒนาทดสอบ เพิ่มการปรับแต่งเสียง Siri, Live Recognition, ปรับปรุง Ph</a>
+        
+        <span class="news-meta">♥ 49 · 08 Jul 10:21 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/iPhonemod/posts/pfbid0cWjfntaJ82Tees1JFd9kizHrEqpJQYebqbTJphYvCMryNcrT4fbAph7q3mmv1C2ql" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">ชี้เป้า iPhone, iPad, Mac, Apple Watch และสินค้า Apple อื่น ๆ โปรฯ 7.7 ที่ Shopee 
+
+iPhone 17
+https:</a>
+        
+        <span class="news-meta">♥ 163 · 08 Jul 10:21 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.facebook.com/reel/1059364119809610/" target="_blank" class="news-title">Samsung Health อัปเดตใหม่ น่าใช้งานกว่าเดิม #iMoD #Samsung #health</a>
+        
+        <span class="news-meta">♥ 87 · 08 Jul 10:21 ICT</span>
+      </div></div>  </div></div>
+
+<div class="sec">  <div class="sec-title">⚡ Competitor Topics (72h) + มุมที่เราทำได้    <span style="font-size:10px; color:var(--blue);">อย่า copy — ทำต่างมุม</span></div>  <p style="font-size:12px;color:var(--t3);margin-bottom:8px;">Topics ล่าสุด 72h จากคู่แข่ง— <strong>อย่า copy angle เดิม</strong> ทำมุมต่างได้:</p><div class="tag-box" style="margin-bottom:10px;"><span class="tag">📘 มาร่วมลงความเห็นเอา #ประกันสังคมออกจากระบบราชการ ใ</span><span class="tag">🎵 อยู่ดีๆเข้า LINE ไม่ได้? มีข้อความแปลกๆส่งจากบัญชี</span><span class="tag">📘 ทริคแก้ไข iPhone เสียงเบาผิดปกติตั้งค่าง่ายๆตามนี้</span><span class="tag">📘 📱 รู้ไว้ก่อนซื้อ iPhone 18 มีลุ้นขึ้นราคาสูงกว่าคิ</span><span class="tag">🎵 แชท LINE หายไม่ได้แปลว่าหายถาวรเสมอไป ลองเช็กการสำ</span><span class="tag">📘 Apple เตรียมปรับสีฝาหลังกระจก iPhone 18 Pro ให้เข้</span><span class="tag">📘 พลังของ AI! นักพัฒนาใช้ Claude Fable 5 พอร์ตเกม C&</span><span class="tag">🎵 Macbook Air M5 อัปเกรดแล้วเทียบกับ Macbook Pro M5 </span><span class="tag">📘 หลุดความจุแบต iPhone 18 Pro และ iPhone 18 Pro Max </span><span class="tag">📘 Shark TurboBlade พัดลมไร้ใบพัดกำลังแรง ดีไซน์สวยเป</span><span class="tag">📘 iPhone 17 Pro Max ถูกฝังในไทม์แคปซูล ฉลอง 250 ปีสห</span><span class="tag">📘 ใครเริ่มใช้ TikTok ค้นหาข้อมูลหลายอย่างแทน Google </span><span class="tag">📘 เปลี่ยนโฉมครั้งใหญ่! iPhone 18 Pro ลือขนาดเล็กลงถึ</span><span class="tag">🎵 ⚠️ หยุดฟังด่วน! ก่อนที่คนรอบตัวคุณจะตกเป็นเหยื่อ ⚠</span><span class="tag">📘 Apple ปรับราคาแล้ว! ใครกำลังเล็งอยู่ รีบเช็กก่อนตั</span></div><div class="angle-box"><div class="angle-tip">🎯 เจาะ segment ต่าง: คู่แข่งทำ Gen Z → เราทำ cluster_worker</div><div class="angle-tip">📐 ลง deep กว่า: คู่แข่งทำ overview → เราทำ 1 feature แบบละเอียด</div><div class="angle-tip">🔄 Myth-bust: คู่แข่งบอก A → เราพิสูจน์/หักล้างด้วยข้อมูลจริง</div></div></div>
+
+<div class="sec">  <div class="sec-title">🔍 Per-Channel Deep Dive — TikTok <span style="font-size:10px;color:var(--t3);font-weight:400;">7 วันล่าสุด · เรียงจากใหม่สุด → เก่าสุด</span></div>  <p style="font-size:12px; color:var(--t2); margin-bottom:1rem; line-height:1.6;">    โพสต์ TikTok คู่แข่งย้อนหลัง 7 วัน (1 Jul – 8 Jul 2026) เรียงจากใหม่สุด → เก่าสุด<br>    <strong>ใช้ทำอะไร:</strong> ดู pattern ของ title/hook · ตรวจ duration ที่ viral ·     วิเคราะห์ว่าช่องกำลัง pivot ไปทำ topic อะไร · เปรียบ views โพสต์เก่า vs ใหม่<br>    🔥 = viral (ผ่านเกณฑ์ views ≥ 100K หรือ > 5× avg ของช่องนั้น)  </p>  
+  <div class="ch-section">
+    <div class="ch-header">
+      <span>ครูหนึ่งสอนดี <span class="sub">(11 videos)</span></span>
+      <span class="sub">1.7M total views</span>
+    </div>
+    <table class="tbl">
+      <thead><tr>
+        <th>Title</th><th class="r">Views</th><th class="r">Likes</th>
+        <th class="r">ER%</th><th class="r">Dur</th><th class="r">Posted</th>
+      </tr></thead>
+      <tbody>
+      <tr>
+        <td style="max-width:280px;" title="UKIKI 20,000mAh Powerbank All In One 10,000mAh พาวเวอร์แบงค์ชาร์จเร็ว PD22.5W สายType-C, IP ขาปลั๊กใ">
+          <a href="https://www.tiktok.com/@kru1d/video/7659976129532529927" target="_blank" style="color:inherit; text-decoration:none; ">UKIKI 20,000mAh Powerbank All In One 10,000mAh พาวเวอร์แบงค์ชาร์จเร็ว …</a>
+        </td>
+        <td class="r" style="">3K</td>
+        <td class="r">110</td>
+        <td class="r" style="color:#d97706;">4.3%</td>
+        <td class="r">46s</td>
+        <td class="r sub">08 Jul 09:19 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:280px;" title="MINISO MS106 หูฟังแปลภาษา ชุดหูฟังบลูทูธไร้สาย แบบอินเอียร์ บลูทูธ 6.0 พร้อมเวลาแฝงต่ำ อายุการใช้งาน">
+          <a href="https://www.tiktok.com/@kru1d/video/7659968343587196178" target="_blank" style="color:inherit; text-decoration:none; ">MINISO MS106 หูฟังแปลภาษา ชุดหูฟังบลูทูธไร้สาย แบบอินเอียร์ บลูทูธ 6.0…</a>
+        </td>
+        <td class="r" style="">2K</td>
+        <td class="r">97</td>
+        <td class="r" style="color:#d97706;">4.0%</td>
+        <td class="r">60s</td>
+        <td class="r sub">08 Jul 08:49 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:280px;" title="[แถมถุงผ้า, มีCCC] Live พาวเวอร์แบงค์ Disney Powerbank 20000mAh รุ่น VP20-05PD PRO | รับประกัน 2 ปี ">
+          <a href="https://www.tiktok.com/@kru1d/video/7659960641440058632" target="_blank" style="color:inherit; text-decoration:none; ">[แถมถุงผ้า, มีCCC] Live พาวเวอร์แบงค์ Disney Powerbank 20000mAh รุ่น V…</a>
+        </td>
+        <td class="r" style="">3K</td>
+        <td class="r">138</td>
+        <td class="r" style="color:#d97706;">4.4%</td>
+        <td class="r">36s</td>
+        <td class="r sub">08 Jul 08:19 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:280px;" title="[แถมถุงผ้า, มีCCC] Live พาวเวอร์แบงค์ Disney Powerbank 20000mAh รุ่น VP20-05PD PRO | รับประกัน 2 ปี ">
+          <a href="https://www.tiktok.com/@kru1d/video/7659952903343394069" target="_blank" style="color:inherit; text-decoration:none; ">[แถมถุงผ้า, มีCCC] Live พาวเวอร์แบงค์ Disney Powerbank 20000mAh รุ่น V…</a>
+        </td>
+        <td class="r" style="">4K</td>
+        <td class="r">171</td>
+        <td class="r" style="color:#d97706;">4.6%</td>
+        <td class="r">28s</td>
+        <td class="r sub">08 Jul 07:49 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:280px;" title="⚠️ หยุดฟังด่วน! ก่อนที่คนรอบตัวคุณจะตกเป็นเหยื่อ ⚠️ ตอนนี้มิจฉาชีพกำลังระบาดหนัก แอบดูดคลิปวิดีโอใน ">
+          <a href="https://www.tiktok.com/@kru1d/video/7659949367385672968" target="_blank" style="color:inherit; text-decoration:none; ">⚠️ หยุดฟังด่วน! ก่อนที่คนรอบตัวคุณจะตกเป็นเหยื่อ ⚠️ ตอนนี้มิจฉาชีพกำลั…</a>
+        </td>
+        <td class="r" style="">14K</td>
+        <td class="r">828</td>
+        <td class="r" style="color:#16a34a;">6.3%</td>
+        <td class="r">30s</td>
+        <td class="r sub">08 Jul 07:35 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:280px;" title="อยู่ดีๆเข้า LINE ไม่ได้? มีข้อความแปลกๆส่งจากบัญชีตัวเอง หรือเพื่อนทักมาถามว่าทำไมยืมเงิน? ระวังบัญช">
+          <a href="https://www.tiktok.com/@kru1d/video/7659436536630430994" target="_blank" style="color:inherit; text-decoration:none; ">อยู่ดีๆเข้า LINE ไม่ได้? มีข้อความแปลกๆส่งจากบัญชีตัวเอง หรือเพื่อนทัก…</a>
+        </td>
+        <td class="r" style="">72K</td>
+        <td class="r">4K</td>
+        <td class="r" style="color:#16a34a;">7.3%</td>
+        <td class="r">181s</td>
+        <td class="r sub">06 Jul 22:25 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:280px;" title="แชท LINE หายไม่ได้แปลว่าหายถาวรเสมอไป ลองเช็กการสำรองข้อมูลก่อน หลายคนกู้กลับได้ภายในไม่กี่นาที #แชท">
+          <a href="https://www.tiktok.com/@kru1d/video/7659070129904389383" target="_blank" style="color:inherit; text-decoration:none; ">แชท LINE หายไม่ได้แปลว่าหายถาวรเสมอไป ลองเช็กการสำรองข้อมูลก่อน หลายคน…</a>
+        </td>
+        <td class="r" style="">68K</td>
+        <td class="r">3K</td>
+        <td class="r" style="color:#d97706;">4.3%</td>
+        <td class="r">37s</td>
+        <td class="r sub">05 Jul 22:43 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:280px;" title="ไลน์ไม่แจ้งเตือนจนพลาดงานพลาดลูกค้า หรือพลาดข้อความสำคัญ? มาเช็กจุดนี้เห็นผลทันที ทำตามได้เลย  #ไ#ไล">
+          <a href="https://www.tiktok.com/@kru1d/video/7658693871551122696" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#dc2626;">ไลน์ไม่แจ้งเตือนจนพลาดงานพลาดลูกค้า หรือพลาดข้อความสำคัญ? มาเช็กจุดนี้… 🔥</a>
+        </td>
+        <td class="r" style="font-weight:600; color:#dc2626;">543K</td>
+        <td class="r">16K</td>
+        <td class="r" style="color:#d97706;">3.5%</td>
+        <td class="r">226s</td>
+        <td class="r sub">04 Jul 22:23 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:280px;" title="เปลี่ยนเบอร์ TikTok ไม่ได้เพราะระบบบอกว่า "เบอร์ถูกใช้ไปแล้ว" มาทำตาม 3 ขั้นตอนนี้เพื่อปลดล็อกและทวง">
+          <a href="https://www.tiktok.com/@kru1d/video/7658314892767694087" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#dc2626;">เปลี่ยนเบอร์ TikTok ไม่ได้เพราะระบบบอกว่า "เบอร์ถูกใช้ไปแล้ว" มาทำตาม … 🔥</a>
+        </td>
+        <td class="r" style="font-weight:600; color:#dc2626;">578K</td>
+        <td class="r">28K</td>
+        <td class="r" style="color:#16a34a;">5.6%</td>
+        <td class="r">236s</td>
+        <td class="r sub">03 Jul 21:53 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:280px;" title="ไม่ต้องเสียเวลาพิมพ์ชื่อช่องให้ปวดหัว! แจกวิธีเปิดและเปลี่ยนสี QR Code ประจำตัวใน TikTok เอาไว้ส่งให">
+          <a href="https://www.tiktok.com/@kru1d/video/7657941885524118802" target="_blank" style="color:inherit; text-decoration:none; ">ไม่ต้องเสียเวลาพิมพ์ชื่อช่องให้ปวดหัว! แจกวิธีเปิดและเปลี่ยนสี QR Code…</a>
+        </td>
+        <td class="r" style="">40K</td>
+        <td class="r">2K</td>
+        <td class="r" style="color:#16a34a;">6.8%</td>
+        <td class="r">119s</td>
+        <td class="r sub">02 Jul 21:45 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:280px;" title="อ่านแชทได้สบายใจ ไม่ต้องโดนทวงตอบ! แจกวิธีปิดสถานะ "อ่านแล้ว" ในแชท TikTok เปิดโหมดนินจาด่วน 🤫💬 #อ่า">
+          <a href="https://www.tiktok.com/@kru1d/video/7657566518787493128" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#dc2626;">อ่านแชทได้สบายใจ ไม่ต้องโดนทวงตอบ! แจกวิธีปิดสถานะ "อ่านแล้ว" ในแชท Ti… 🔥</a>
+        </td>
+        <td class="r" style="font-weight:600; color:#dc2626;">355K</td>
+        <td class="r">16K</td>
+        <td class="r" style="color:#d97706;">4.8%</td>
+        <td class="r">47s</td>
+        <td class="r sub">01 Jul 21:29 ICT</td>
+      </tr></tbody>
+    </table>
+  </div>
+  <div class="ch-section">
+    <div class="ch-header">
+      <span>เอกวิทย์ <span class="sub">(12 videos)</span></span>
+      <span class="sub">1.3M total views</span>
+    </div>
+    <table class="tbl">
+      <thead><tr>
+        <th>Title</th><th class="r">Views</th><th class="r">Likes</th>
+        <th class="r">ER%</th><th class="r">Dur</th><th class="r">Posted</th>
+      </tr></thead>
+      <tbody>
+      <tr>
+        <td style="max-width:280px;" title="3 หูฟังเรือธง 2026  Galaxy Buds4 Pro Sony XM6 AirPods Pro 3 ไม่มีตัวไหนชนะทุกด้านจริงๆ แต่มีตัวที่ “">
+          <a href="https://www.tiktok.com/@peeakewit/video/7659738687722343701" target="_blank" style="color:inherit; text-decoration:none; ">3 หูฟังเรือธง 2026  Galaxy Buds4 Pro Sony XM6 AirPods Pro 3 ไม่มีตัวไห…</a>
+        </td>
+        <td class="r" style="">11K</td>
+        <td class="r">311</td>
+        <td class="r" style="color:#d97706;">3.1%</td>
+        <td class="r">154s</td>
+        <td class="r sub">07 Jul 17:58 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:280px;" title="Macbook Air M5 อัปเกรดแล้วเทียบกับ Macbook Pro M5 ตัวไหนคุ้มกว่า  . #พี่เอกวิทย์ #macbook ">
+          <a href="https://www.tiktok.com/@peeakewit/video/7659496095030021397" target="_blank" style="color:inherit; text-decoration:none; ">Macbook Air M5 อัปเกรดแล้วเทียบกับ Macbook Pro M5 ตัวไหนคุ้มกว่า  . #พ…</a>
+        </td>
+        <td class="r" style="">37K</td>
+        <td class="r">2K</td>
+        <td class="r" style="color:#d97706;">4.9%</td>
+        <td class="r">178s</td>
+        <td class="r sub">07 Jul 02:16 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:280px;" title="D-Link DWR-BE7200G Router 5G ที่ใส่ซิมแล้วปล่อย Wi-Fi 7 ได้เอง รองรับ 5G, Wi-Fi 7 BE7200, พอร์ต 2.5G">
+          <a href="https://www.tiktok.com/@peeakewit/video/7659382564221734165" target="_blank" style="color:inherit; text-decoration:none; ">D-Link DWR-BE7200G Router 5G ที่ใส่ซิมแล้วปล่อย Wi-Fi 7 ได้เอง รองรับ …</a>
+        </td>
+        <td class="r" style="">17K</td>
+        <td class="r">393</td>
+        <td class="r" style="color:#d97706;">2.7%</td>
+        <td class="r">177s</td>
+        <td class="r sub">06 Jul 18:56 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:280px;" title="พาวเวอร์แบงก์ที่พี่เอกว่าน่าสนใจที่สุดในช่วงนี้ ไม่ใช่เพราะชาร์จเร็วที่สุด แต่เพราะมันคิดเรื่อง "สุข">
+          <a href="https://www.tiktok.com/@peeakewit/video/7658637653122010388" target="_blank" style="color:inherit; text-decoration:none; ">พาวเวอร์แบงก์ที่พี่เอกว่าน่าสนใจที่สุดในช่วงนี้ ไม่ใช่เพราะชาร์จเร็วที…</a>
+        </td>
+        <td class="r" style="">64K</td>
+        <td class="r">546</td>
+        <td class="r" style="color:#888888;">0.9%</td>
+        <td class="r">154s</td>
+        <td class="r sub">04 Jul 18:45 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:280px;" title="มือถือหาย...ซื้อใหม่ได้ แต่รูปบางรูป ไม่มีวันถ่ายใหม่ได้อีก นี่คือ Qubii Power หัวชาร์จที่ทุกครั้งที">
+          <a href="https://www.tiktok.com/@peeakewit/video/7658611617533316373" target="_blank" style="color:inherit; text-decoration:none; ">มือถือหาย...ซื้อใหม่ได้ แต่รูปบางรูป ไม่มีวันถ่ายใหม่ได้อีก นี่คือ Qub…</a>
+        </td>
+        <td class="r" style="">66K</td>
+        <td class="r">518</td>
+        <td class="r" style="color:#888888;">0.9%</td>
+        <td class="r">172s</td>
+        <td class="r sub">04 Jul 17:04 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:280px;" title="รีวิว iPhone 12 Pro ของพี่เอกหลังจากใช้งานมา 6 ปี  . #พี่เอกวิทย์ #iphone">
+          <a href="https://www.tiktok.com/@peeakewit/video/7658605762683374869" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#dc2626;">รีวิว iPhone 12 Pro ของพี่เอกหลังจากใช้งานมา 6 ปี  . #พี่เอกวิทย์ #iph… 🔥</a>
+        </td>
+        <td class="r" style="font-weight:600; color:#dc2626;">294K</td>
+        <td class="r">15K</td>
+        <td class="r" style="color:#16a34a;">5.8%</td>
+        <td class="r">95s</td>
+        <td class="r sub">04 Jul 16:41 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:280px;" title="Eloop EW35A เป็น Power Bank รุ่นแรกของ Eloop ที่มี CCC พร้อม QR Code สามารถสแกนหรือใช้ Certificate N">
+          <a href="https://www.tiktok.com/@peeakewit/video/7658258118375394580" target="_blank" style="color:inherit; text-decoration:none; ">Eloop EW35A เป็น Power Bank รุ่นแรกของ Eloop ที่มี CCC พร้อม QR Code ส…</a>
+        </td>
+        <td class="r" style="">76K</td>
+        <td class="r">574</td>
+        <td class="r" style="color:#888888;">0.8%</td>
+        <td class="r">147s</td>
+        <td class="r sub">03 Jul 18:12 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:280px;" title="ลำโพงตัวเล็ก ที่โครงสร้างด้านใน มีระบบ 2-Way Speaker, Tweeter แยก และ Passive Radiator ที่ช่วยให้เบส">
+          <a href="https://www.tiktok.com/@peeakewit/video/7658221557717896469" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#dc2626;">ลำโพงตัวเล็ก ที่โครงสร้างด้านใน มีระบบ 2-Way Speaker, Tweeter แยก และ … 🔥</a>
+        </td>
+        <td class="r" style="font-weight:600; color:#dc2626;">117K</td>
+        <td class="r">934</td>
+        <td class="r" style="color:#888888;">0.9%</td>
+        <td class="r">174s</td>
+        <td class="r sub">03 Jul 15:51 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:280px;" title=""คอตึง บ่าแข็ง จากการใช้ชีวิตยุคดิจิทัล ลองดูตัวนี้เลย SKG G7 PRO-FOLD เครื่องนวดคอดีไซน์พรีเมียมที่">
+          <a href="https://www.tiktok.com/@peeakewit/video/7658159442571119892" target="_blank" style="color:inherit; text-decoration:none; ">"คอตึง บ่าแข็ง จากการใช้ชีวิตยุคดิจิทัล ลองดูตัวนี้เลย SKG G7 PRO-FOLD…</a>
+        </td>
+        <td class="r" style="">58K</td>
+        <td class="r">343</td>
+        <td class="r" style="color:#888888;">0.6%</td>
+        <td class="r">179s</td>
+        <td class="r sub">03 Jul 11:50 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:280px;" title="ข่าวลือ… Apple อาจเปิดตัว iPhone 18 แบ่งเป็น 2 รอบ  . ##พี่เอกวิทย์##iphone">
+          <a href="https://www.tiktok.com/@peeakewit/video/7657999743997512980" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#dc2626;">ข่าวลือ… Apple อาจเปิดตัว iPhone 18 แบ่งเป็น 2 รอบ  . ##พี่เอกวิทย์##i… 🔥</a>
+        </td>
+        <td class="r" style="font-weight:600; color:#dc2626;">350K</td>
+        <td class="r">16K</td>
+        <td class="r" style="color:#16a34a;">5.1%</td>
+        <td class="r">121s</td>
+        <td class="r sub">03 Jul 01:30 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:280px;" title="Samsung Galaxy A27 5G  มือถือเล่นเกมงบหมื่น… ใช้ชิป Snapdragon 6 Gen 3 + RAM LPDDR5X + Game Booster ">
+          <a href="https://www.tiktok.com/@peeakewit/video/7657769329823386901" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#dc2626;">Samsung Galaxy A27 5G  มือถือเล่นเกมงบหมื่น… ใช้ชิป Snapdragon 6 Gen 3… 🔥</a>
+        </td>
+        <td class="r" style="font-weight:600; color:#dc2626;">144K</td>
+        <td class="r">4K</td>
+        <td class="r" style="color:#d97706;">3.2%</td>
+        <td class="r">178s</td>
+        <td class="r sub">02 Jul 10:36 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:280px;" title="UKIKI K30 ความจุ 30,000mAh รองรับ Power Delivery สูงสุด 65W มี USB-C จำนวน 2 ช่อง USB-A อีก 2 ช่อง ร">
+          <a href="https://www.tiktok.com/@peeakewit/video/7657469206291631380" target="_blank" style="color:inherit; text-decoration:none; ">UKIKI K30 ความจุ 30,000mAh รองรับ Power Delivery สูงสุด 65W มี USB-C จ…</a>
+        </td>
+        <td class="r" style="">61K</td>
+        <td class="r">442</td>
+        <td class="r" style="color:#888888;">0.8%</td>
+        <td class="r">153s</td>
+        <td class="r sub">01 Jul 15:11 ICT</td>
+      </tr></tbody>
+    </table>
+  </div></div>
+
+<div class="sec">  <div class="sec-title">📘 Per-Channel Deep Dive — Facebook <span style="font-size:10px;color:var(--t3);font-weight:400;">โพสต์ล่าสุด · เรียงจากใหม่สุด</span></div>  
+  <div class="ch-section">
+    <div class="ch-header">
+      <span>📘 iPhone iOS Thailand <span class="sub">(28 posts)</span></span>
+    </div>
+    <table class="tbl">
+      <thead><tr>
+        <th>Title</th><th class="r">Likes</th><th class="r">Comments</th>
+        <th class="r">Shares</th><th class="r">Posted</th>
+      </tr></thead>
+      <tbody>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid024LZ2xUmJiAqQH9Y6zrTxP1jix4c1rjY3UQhonWuzxxwqVSN4kTQSpeuwAY8oJApul" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">iPhone ราคาถูกล้างสต๊อก 📍
+Houk & Bank X MacUp ขอนแก่น</a>
+        </td>
+        <td class="r">♥ 5</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/2456699274830071/" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">ทริคใหม่ฟีเจอร์ Extend บนวอลเปเปอร์ใน iPhone 📱
+#iPhoneiOSThailand #ทริค #iphone …</a>
+        </td>
+        <td class="r">♥ 271</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid02o2g1rLEKoBDo1b24fAob3dSdekb3YgAGUjWiFqo3ityU7BBn77EKve8oWWHNxw7rl" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">ใครที่ใช้ iPhone มานาน 
+แต่ไม่รู้ว่า....
+”กดปุ่มพาวเวอร์ 2 ครั้ง“
+สามารถตัดสายได…</a>
+        </td>
+        <td class="r">♥ 380</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/1718610252655684/" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">ทริคตั้งค่าปิดเสียงการแจ้งเตือนดังหลายครั้ง #iPhoneiOSThailand #iphone #ทริค #คว…</a>
+        </td>
+        <td class="r">♥ 148</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/1584532273219723/" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">ทริคแก้ไข iPhone เสียงเบาผิดปกติตั้งค่าง่ายๆตามนี้ #iPhoneiOSThailand #iphone #ท…</a>
+        </td>
+        <td class="r">♥ 4K</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid0236N7VHFBDcG53gxHrezNAsXSHVRVn9EW79BZbYUuFV2dr2WCfQLc5oBFXExgEBqLl" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">ชิป AI ทำพิษ! iPhone 18 จ่อแพงขึ้นอีก 💥 📱
+
+สาวก Apple อาจต้องเตรียมใจรับราคาใหม่…</a>
+        </td>
+        <td class="r">♥ 437</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/1843203680397221/" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">ทริคตั้ง Liquid Glass ใน iPhone!📱 #iPhoneiOSThailand #ทริค #iphone #liquidglass …</a>
+        </td>
+        <td class="r">♥ 130</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid02pumti2rH5UwrHwFHx9LwegdupndYxDzPBfmsYk7UMJZbjUds8P7CFBse1HPrLwXgl" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">iPad MacBook 
+หลายรุ่นปรับราคาขึ้นแรง⬆️
+เนื่องจากพิษแรมแพง
+ทุกคนคิดเห็นยังไงกัน?…</a>
+        </td>
+        <td class="r">♥ 70</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid024Wi686KFDE7SujgqNqoGTdFgqDdn8b8QZhDzUg9kCJ6AadSyfLLacYHkk8mBZMmWl" target="_blank" style="color:inherit; text-decoration:none; ">Apple ปรับราคาแล้ว! ใครกำลังเล็งอยู่ รีบเช็กก่อนตัดสินใจ 🍎
+
+ขอบคุณข้อมูลจาก : Ap…</a>
+        </td>
+        <td class="r">♥ 828</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid027UPRtgkxc8ADNzB3fbe7LmKh2rKP5kRPx3pKHAe9VsW6bn6q6JoBAUKFv1B2RjJQl" target="_blank" style="color:inherit; text-decoration:none; ">ไอโฟนลดราคา ถูกมาก Houk & Bank X MacUp ขอนแก่น</a>
+        </td>
+        <td class="r">♥ 5</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/2253038282132315/" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">ทริค UI แอปกล้องใหม่ บน iOS27 ใน iPhone!📱 #iPhoneiOSThailand #ทริค #iphone #liqu…</a>
+        </td>
+        <td class="r">♥ 62</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid02BZoyYXC6ipDczs3nm7kcqobG9ByB5VqUUWCBkKeg4vGYJDCZDZq8GBkK6AveKvYPl" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">”iPhone 18 Pro“
+อาจแพงขึ้น! ลือหนักมาก
+ราคาเปิดตัวเกือบ 
+44,900 - 46,900 😱</a>
+        </td>
+        <td class="r">♥ 813</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid0ZwfWGFMvuB8amKt52iEGFNW5Vr2us3fa7ptijjZ9FhnsgtUz72hSeD5s3baFgUfFl" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">MacBook Ultra มาแน่? จัดเต็ม 6 ฟีเจอร์ใหม่ที่ไม่เคยมีมาก่อน 🍎
+
+จากรายงานล่าสุด A…</a>
+        </td>
+        <td class="r">♥ 19</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid02JZCUWpmWq366VfB1NsoTtK6gTE6iXoC4sk9rMwoUQdAC1NNhF8huNNHA29TKMZprl" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">📱 รู้ไว้ก่อนซื้อ iPhone 18 มีลุ้นขึ้นราคาสูงกว่าคิดไว้
+
+📊 สรุปตารางคาดการณ์ราคาไ…</a>
+        </td>
+        <td class="r">♥ 4K</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid09LwhJbWCgDTQky38TzZoGSFWXrXTRiASAPMCFnVBJskSnJKt3thtyXHvEyZZeGFLl" target="_blank" style="color:inherit; text-decoration:none; ">เข้า Facebook ไม่ได้
+ให้อัปเดทแอป</a>
+        </td>
+        <td class="r">♥ 88</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/903234318706531/" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">3 ทริคการใช้งานiPhoneง่ายๆใช้งานเครื่องง่ายขึ้น #iPhoneiOSThailand #ความรู้เกี่ย…</a>
+        </td>
+        <td class="r">♥ 172</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid02uib3aD3oNBzRnwpxbC6K5KRVrupKpAvnqvYehbH8H3KvdxCMNRZ6sSg6jw2wfxf9l" target="_blank" style="color:inherit; text-decoration:none; ">Apple ปล่อยอัปเดต macOS Tahoe 26.5.2 แล้ว! เน้นอุดช่องโหว่สำคัญ 💻🔒🔑🛅
+
+Apple ปล่อ…</a>
+        </td>
+        <td class="r">♥ 87</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid0rRoHHNRgwBjLPfVaAYPimckD8EPg7NZ92Y8bghmE32Jz9V4f9kGLq64TTGJ5BHBCl" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">OpenClaw ลงบน iPhone และ iPad อย่างเป็นทางการแล้ว! 🦞🍎📱
+
+OpenClaw เปิดตัวแอป iOS …</a>
+        </td>
+        <td class="r">♥ 160</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/1356719539261906/" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">ทริค Shortcut ช่วยค้นหาเพลง 🔍🎶
+
+#iPhoneiOSThailand #ทริค #iphone #ความรู้เกี่ยวก…</a>
+        </td>
+        <td class="r">♥ 99</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/27354599720858422/" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">iPhoneกล้องสีติดเหลืองตั้งค่าแก้ไขตามนี้ #iPhoneiOSThailand #ความรู้เกี่ยวกับiPh…</a>
+        </td>
+        <td class="r">♥ 673</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid02QgTan6vNpRhLqP8vuH9zfqtQ8rL6bPaaVp7gvu7B8UGUxJYxEwPHWyv4z8gMwypBl" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">เปลี่ยนโฉมครั้งใหญ่! iPhone 18 Pro ลือขนาดเล็กลงถึง 35% 🍎📱
+
+Apple เตรียมขยับดีไซ…</a>
+        </td>
+        <td class="r">♥ 937</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid02osVRQAEgciB4sv6kR69LB7ZkJmHzcaKaV5fRQMXgeRUg1w5FPdwSRAPscDGqSTKRl" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">🍎 Mac แพงขึ้นกระทบหนัก! นักวิเคราะห์ชี้ตลาดโน้ตบุ๊กอาจหดตัว 💻⚡
+
+Apple เพิ่งปรับข…</a>
+        </td>
+        <td class="r">♥ 28</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid02PN1epEc8xbFYDP6VdX6nFgB2ChZUaNPwq1XSJ2UZEqv8TBt3JzBHDmtaBz8erF8Yl" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">🚨 หลุดสเปก iPhone ปี 2026-2027 แบบจัดเต็ม!
+
+ข่าวลือรอบใหม่จาก Digital Chat Stati…</a>
+        </td>
+        <td class="r">♥ 715</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/1705936443890334/" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">ทริคตั้งสี Wallpaper ใหม่ บน iOS27 📱
+
+#iPhoneiOSThailand #ทริค #iphone #ความรู้เ…</a>
+        </td>
+        <td class="r">♥ 77</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/922884157493956/" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">ทริคตั้งค่าiPhoneให้Siriอ่านชื่อเวลามีสายเรียกเข้า #iPhoneiOSThailand #ความรู้เก…</a>
+        </td>
+        <td class="r">♥ 209</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhoneiOSThailand/posts/pfbid029EcFdcq7Q7GGnz4nx25c96MrkNPSwDLEBP8weqd6dvRTYFz7YrU9v4HS6cQWcLuHl" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">ลือ! MacBook Pro ได้ดีไซน์ใหม่แบบ MacBook Ultra แต่ Ultra ยังเหนือกว่า!? 💻 💫
+
+Ap…</a>
+        </td>
+        <td class="r">♥ 65</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/1837323160564467/" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">ทริคเติมภาพขยายรูปใน iPhone! 📱🍎
+
+#iPhoneiOSThailand #ทริค #iphone #ความรู้เกี่ยว…</a>
+        </td>
+        <td class="r">♥ 161</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/1406348808207977/" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">ทริคแสดงผลหน้าจอให้ไวขึ้น! 📱⚡️
+
+#iPhoneiOSThailand #ทริค #iphone #ความรู้เกี่ยวก…</a>
+        </td>
+        <td class="r">♥ 40</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:18 ICT</td>
+      </tr></tbody>
+    </table>
+  </div>
+  <div class="ch-section">
+    <div class="ch-header">
+      <span>📘 Spin9 <span class="sub">(30 posts)</span></span>
+    </div>
+    <table class="tbl">
+      <thead><tr>
+        <th>Title</th><th class="r">Likes</th><th class="r">Comments</th>
+        <th class="r">Shares</th><th class="r">Posted</th>
+      </tr></thead>
+      <tbody>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/1778298080283259/" target="_blank" style="color:inherit; text-decoration:none; ">SMART CLOUD PAD แท็บเล็ต Android ที่ใช้ Windows ได้
+
+คลิปนี้สำหรับใครที่กำลังมอง…</a>
+        </td>
+        <td class="r">♥ 35</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/1329417485978218/" target="_blank" style="color:inherit; text-decoration:none; ">Shark TurboBlade พัดลมไร้ใบพัดกำลังแรง ดีไซน์สวยเป็นเอกลักษณ์ โดดเด่นที่ความสามา…</a>
+        </td>
+        <td class="r">♥ 1K</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid02TeFFvu7s99eLSNQ62ETC77QzX4CC78Q8pcMMNLeikdGWbLCKJBujfgyopQR3jJkGl" target="_blank" style="color:inherit; text-decoration:none; ">เปิดตัว Hyundai IONIQ 5 N Line รุ่นประกอบไทย ราคาพิเศษ 1.399 ล้านบาท
+.
+Hyundai ป…</a>
+        </td>
+        <td class="r">♥ 382</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid04RaU32P6r6hFwNh29Da52nRYksMYiJYFpLZqmtW9XXv7njFsMF6dtviWAV6rUqZhl" target="_blank" style="color:inherit; text-decoration:none; ">การบินไทยแจงกรณีพนักงานต้อนรับลักลอบขนยาเสพติด
+.
+จากข่าวที่พนักงานต้อนรับบนเครื่…</a>
+        </td>
+        <td class="r">♥ 534</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid0LBLaXWcJgBKbk9JXgiPXQ79CfqMmyJWHWd5MfMPnbiAChBjLqj6caoPGHyJk5UCEl" target="_blank" style="color:inherit; text-decoration:none; ">Nano Banana ใน Gemini จะสร้างภาพที่ตรงกับความชอบและสไตล์ของเรา 
+.
+Gemini มีฟังก์…</a>
+        </td>
+        <td class="r">♥ 63</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid0UFJZqweajydupEifPYrYwW2jrTuYAzjXDCRcPufwqTsy4XRRk9bNAK74LGXnfgZzl" target="_blank" style="color:inherit; text-decoration:none; ">JAECOO 6T REEV ขับเคลื่อนสี่ล้อ เปิดตัวต่ำล้าน
+.
+OMODA & JAECOO ประเทศไทย เปิดตั…</a>
+        </td>
+        <td class="r">♥ 99</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid0258ChXxbzvwwv3B9kE8HxEYKz3vGyZxmDyi8UDcGB82NWJeLwN2X3q1YyuqgjdXEul" target="_blank" style="color:inherit; text-decoration:none; ">รัฐบาลเกาหลีใต้ และ Samsung-SK Group ลงทุนใหญ่ระดับชาติรับมือ RAM ขาดแคลน 
+.
+ข่า…</a>
+        </td>
+        <td class="r">♥ 99</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid02wYXCto9BtBTW4REPFCXeWhXKAXLgF1r7cJwNXAYQqiLGrxEcmstYGrGA35fZSF5Yl" target="_blank" style="color:inherit; text-decoration:none; ">WhatsApp เพิ่มทางเลือกให้ใช้ username แทนเบอร์โทร 
+.
+ปกติแล้วจะใช้งาน WhatsApp ไ…</a>
+        </td>
+        <td class="r">♥ 47</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid02ED9B14qg9t7FN4WvsMsn5H4rHn25ZHGum85PT6fzXvCDxbqSpnZLT9LwvBHmhUgcl" target="_blank" style="color:inherit; text-decoration:none; ">Apple Creator Studio อัปเกรดฟีเจอร์ชุดใหญ่ 
+.
+Apple อัปเกรดฟีเจอร์ AI และการทำงา…</a>
+        </td>
+        <td class="r">♥ 105</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid02sfmT5hu1JKZg4SyApBMqHHWgoaiq468YQx3nbecwaiVrNgAfjviUxz6RWxuTFTK3l" target="_blank" style="color:inherit; text-decoration:none; ">NotebookLM ทำวิดีโอสรุปแบบ Short Video สไตล์ TikTok ได้แล้ว 
+.
+NotebookLM อัปเกร…</a>
+        </td>
+        <td class="r">♥ 221</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid02rqw5QwKifsxdzpHa4AX6iRZt3Wbx38EyJk7ZyKkF62ZCUWRtwE6qVxLwxxkbTq8Cl" target="_blank" style="color:inherit; text-decoration:none; ">Gemini Spark โมเดล agent เปิดตัวเวอร์ชั่น macOS 
+.
+Gemini Spark โมเดล Agentic AI…</a>
+        </td>
+        <td class="r">♥ 56</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid0EprWeZY9AJaWBGeiGPoexZjv5BMdLNrZ1SHDgiAwjTFAxk1H4w3qahgk6StXheMil" target="_blank" style="color:inherit; text-decoration:none; ">รัฐบาลสหรัฐฯ ยกเลิกแบน Claude Fable 5 และ Mythos 5 แล้ว จะเริ่มทยอยกลับมาใช้งานไ…</a>
+        </td>
+        <td class="r">♥ 90</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid02z3E2YZofp4odPY4fSoKqnC8MkVqo2YEfaRVnoCzdAHk3AUsYjiPSGSzDLFkq7jj7l" target="_blank" style="color:inherit; text-decoration:none; ">เปิดใช้งานแล้ว Shopee Affiliate บน Instagram ปักตะกร้ารับค่าคอมบนคอนเทนต์ IG 
+.
+…</a>
+        </td>
+        <td class="r">♥ 114</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid025TeBg2wtBSfF94mVAwgmYJyQwq3frj99dkVoxWUSisnxVZwM3EEM98TbTSymBkuml" target="_blank" style="color:inherit; text-decoration:none; ">LG ปรับโครงสร้าง เปิดตัวศูนย์หุ่นยนต์บุกตลาด Physical AI 
+.
+แอลจี อีเลคทรอนิคส์ …</a>
+        </td>
+        <td class="r">♥ 37</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid02YTc79KjMuidVkPyop22emBiLDZM6Rhc7hdDK1to8gPCg6Ap46nRurYb3yyuzMRRHl" target="_blank" style="color:inherit; text-decoration:none; ">Mario Kart World มีภาษาไทยแล้ว อัปเดตเพิ่มเส้นทางใหม่ด้วย
+.
+Nintendo ประกาศ Mari…</a>
+        </td>
+        <td class="r">♥ 156</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid0CZ9TYugqi6FJQ663y7AFFSF6j3RkVbDRQCXH5sbeYU5R1AE6NSM24RUjzuNQmfPxl" target="_blank" style="color:inherit; text-decoration:none; ">Sony ประกาศเลิกผลิตแผ่นเกม เหตุพฤติกรรมผู้เล่นเปลี่ยน 
+.
+Sony Interactive Entert…</a>
+        </td>
+        <td class="r">♥ 411</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid02RkbjbRN94PJfiLi6SKfdKmzAbhegL3i26Mb1d8jBC33RBNq7EmN8ESEeyuZLpWtql" target="_blank" style="color:inherit; text-decoration:none; ">ฟูจิฟิล์ม เปิดตัวกล้องฟิล์มใช้แล้วทิ้ง 2 รุ่นใหม่ เพิ่มคุณสมบัติกันน้ำ
+.
+ฟูจิฟิล…</a>
+        </td>
+        <td class="r">♥ 57</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid029XkijSKj9s9ebC9uZrRRFsWzuJE7Zj9smo5CnoKav4vrwrhuYXXbaEsrmsncCjE3l" target="_blank" style="color:inherit; text-decoration:none; ">2 - 5 ก.ค. นี้เท่านั้น ซื้อ SMART CLOUD PAD ภายในงาน COMMART รับฟรี AIS Premium …</a>
+        </td>
+        <td class="r">♥ 22</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid0jQfSBpmsyUen7AA3p282ZxgKvS9eKqUXPzcZbBNR5x6VkXVoQUPiZgdDK54DKDK7l" target="_blank" style="color:inherit; text-decoration:none; ">ครั้งแรกในไทย TARI ดัชนีประเมินความพร้อม AI ในองค์กร ต่อยอดให้รัฐลงทุนแผน AI ที่…</a>
+        </td>
+        <td class="r">♥ 56</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid0jgVthDDCb4ULfgeVkenVpWSJSGSs4534XLBZ6fJU1W5kMZ2nujegCUS6e59WGWMWl" target="_blank" style="color:inherit; text-decoration:none; ">เปิดไลน์ประกอบ Chery V23 ในไทย ทยอยส่งมอบ ก.ค. นี้
+.
+Chery Thailand ประกาศเปิดไล…</a>
+        </td>
+        <td class="r">♥ 113</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/27262932516735982/" target="_blank" style="color:inherit; text-decoration:none; ">รีวิว Shokz OpenDots 2 — หูฟังคลิปออนใส่สบาย รุ่นนี้ดี!
+
+รีวิววันนี้อยู่กับหูฟัง…</a>
+        </td>
+        <td class="r">♥ 17</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid02zSGWt6R1rqGJsKJNdAc4a66HS3TSfLo6UV1wzWCekU1YV2Q41mga48765kdCuEfRl" target="_blank" style="color:inherit; text-decoration:none; ">New AVATR 11 อัปเกรดช่วงล่างแม่เหล็กไฟฟ้า MR Suspension เคาะราคาเริ่ม 2.299 ล้าน…</a>
+        </td>
+        <td class="r">♥ 59</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid02QpydCg9hPWkZmzsgSWSbSQm25CAnZ5ftUvGTX86vTs3YUysfJ4zqAzTuGBjGxhYtl" target="_blank" style="color:inherit; text-decoration:none; ">BYD Seal 6 เพิ่มรุ่นย่อยใหม่ standard ราคา 799,900 บาท ขับไกล 410 กม.
+.
+เรเว่ ออ…</a>
+        </td>
+        <td class="r">♥ 40</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid0toqh9YQpPrUkHumdYbw5aTcfQMKYszzNcLgpn2cHmUePFDVqQkMcTZ4cGpoLhhHFl" target="_blank" style="color:inherit; text-decoration:none; ">เอมิเรตส์เพิ่มเที่ยวบิน ดูไบ-ภูเก็ตเป็น 3 เที่ยวบินต่อวัน รองรับนักท่องเที่ยวช่ว…</a>
+        </td>
+        <td class="r">♥ 304</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid0mEGbMobwhxdCfjMjeajPBoAWNs8KsFkNVARFUhTbsqfRCFE84q5cr9xhXYW4ZaMYl" target="_blank" style="color:inherit; text-decoration:none; ">Bentley เผยทีเซอร์ Torcal รถ EV รุ่นแรกของแบรนด์ 
+.
+Bentley ค่ายรถยนต์หรูสัญชาติ…</a>
+        </td>
+        <td class="r">♥ 99</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid09cT8E936ff2qcG4uGyuCWH4pmMDDdMnnGsdKnE86ApytCmh4BbBb862ZB3Q5s9Srl" target="_blank" style="color:inherit; text-decoration:none; ">Google เปิดตัวเครื่องมือโฆษณาใหม่ กระตุ้นวิดีโอคอมเมิร์ซในเอเชียตะวันออกเฉียงใต้…</a>
+        </td>
+        <td class="r">♥ 75</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/2199548790828837/" target="_blank" style="color:inherit; text-decoration:none; ">รีวิว Porsche 911 GT3 S/C — GT3 เกียร์ธรรมดา เปิดประทุน 9,000rpm ตัวจบหรือยัง?
+
+…</a>
+        </td>
+        <td class="r">♥ 71</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid02qGR2d6rahSXSUEx4mFSYkjuM1857VZ84xZnyvefY24ZdE3TjoVjAFCRp2a5PK7DVl" target="_blank" style="color:inherit; text-decoration:none; ">สรุปโปรแกรม Royal Orchid Plus โฉมใหม่ ปรับเปลี่ยนวิธีการได้สถานะ และสิทธิประโยชน…</a>
+        </td>
+        <td class="r">♥ 324</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid0sxUfZAuncFVc3t82jQm7ifgWXAdSHNkKCbrUWbyz98jh1nVRaAneSwu9BhaTrJxsl" target="_blank" style="color:inherit; text-decoration:none; ">ติดตามชมไลฟ์ Galaxy Unpacked เปิดตัว Samsung Galaxy รุ่นใหม่ผ่าน Facebook Samsun…</a>
+        </td>
+        <td class="r">♥ 42</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/spin9.me/posts/pfbid02o3L29YkyNEReuqfgUiK3vXjEgE8dXBsJwxWzwSS7hYMoDn2FfL47177wTqRG9PaHl" target="_blank" style="color:inherit; text-decoration:none; ">Claude Cowork มีเวอร์ชันแอปมือถือ ไว้ติดตามการทำงานของ Cowork บนเดสก์ทอป 
+.
+Clau…</a>
+        </td>
+        <td class="r">♥ 21</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:20 ICT</td>
+      </tr></tbody>
+    </table>
+  </div>
+  <div class="ch-section">
+    <div class="ch-header">
+      <span>📘 iPhonemod (FB) <span class="sub">(30 posts)</span></span>
+    </div>
+    <table class="tbl">
+      <thead><tr>
+        <th>Title</th><th class="r">Likes</th><th class="r">Comments</th>
+        <th class="r">Shares</th><th class="r">Posted</th>
+      </tr></thead>
+      <tbody>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid0GhjfsPNLub4GWkbF1nEdvxgZycryPvWfo2zcYjZsBnuLnbKB3p6a1yQnBARmRcxel" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">iPhone Ultra อาจเปิดตัวพร้อม iPhone 18 Pro แต่เปิดพรีออเดอร์ช้ากว่า เดินตามรอย i…</a>
+        </td>
+        <td class="r">♥ 267</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid02MsqynL7xUYNJry3Bdghv1np47im7Lgf5UzNRk6w7x6Q4KWhnrrgVRz8AGXNfHzFFl" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">iPhone 17 Pro Max ถูกฝังในไทม์แคปซูล ฉลอง 250 ปีสหรัฐฯ เตรียมเปิดอีกครั้งในปี 22…</a>
+        </td>
+        <td class="r">♥ 1K</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid0exVREiafJfo1KQJsjs47WvpVeZZhU3G4FVoezKZnRvTS11cZip3TCiW6cXit5hp3l" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">Apple เตรียมปรับสีฝาหลังกระจก iPhone 18 Pro ให้เข้ากับเฟรมอะลูมิเนียมแนบเนียนขึ้…</a>
+        </td>
+        <td class="r">♥ 2K</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid0TDTTW7hBqMTAVxTj8jgEnBsSEg8d4oGamatAHaDcH5ozZTzAWWT1eMioAqy7e3Wrl" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">พลังของ AI! นักพัฒนาใช้ Claude Fable 5 พอร์ตเกม C&C Generals ลง iPhone และ iPad …</a>
+        </td>
+        <td class="r">♥ 2K</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid0Gmfj5vBLAnqxEjb5nS6CtVAZDhvQkR13hVREetQHE8Qy18H6dSsXvRrCbEZkbVUzl" target="_blank" style="color:inherit; text-decoration:none; ">Alibaba สั่งห้ามพนักงานใช้ Claude Code ตั้งแต่ 10 ก.ค. 2026 หลังจัดเป็นซอฟต์แวร์…</a>
+        </td>
+        <td class="r">♥ 303</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/1038004459172596/" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">ลือ! iPad Pro ใหม่ ลุ้นมี Vapor Chamber และ MacBook Ultra เปิดตัวต้นปี 2027 #iMo…</a>
+        </td>
+        <td class="r">♥ 419</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid0RFLEUKzhgpMsWibNA9uT6o4xSfBYMDQmRyodv1qQxxmctF2GLgLRw3Kh2GL2N4ekl" target="_blank" style="color:inherit; text-decoration:none; ">Apple เปิดตัว Trust Insights ใน iOS 27 ช่วยแอปตรวจจับมิจฉาชีพแบบเรียลไทม์
+
+Apple…</a>
+        </td>
+        <td class="r">♥ 520</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/1997223604496689/" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">iPhone 18, iPhone 18e ลือใช้ RAM 9GB แต่ 18e อาจยังไม่ได้จอ 120Hz #iMoD #iPhone1…</a>
+        </td>
+        <td class="r">♥ 488</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid0zBrTpZgvk6WSTFc4gSQHFNrR8gs2YrsuE5pnqqxouArqQfNEdUDb2xoVUco3JWKAl" target="_blank" style="color:inherit; text-decoration:none; ">Samsung Health อัปเดตใหม่ น่าใช้งานกว่าเดิม
+
+เดือนที่แล้ว ซัมซุง ได้เปิดตัวการอั…</a>
+        </td>
+        <td class="r">♥ 433</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/1976346466350566/" target="_blank" style="color:inherit; text-decoration:none; ">Apple Watch X ดีไซน์ใหม่ จ่อเปิดตัวปลายปี 2027 #iMoD #AppleWatch</a>
+        </td>
+        <td class="r">♥ 417</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/1059364119809610/" target="_blank" style="color:inherit; text-decoration:none; ">Samsung Health อัปเดตใหม่ น่าใช้งานกว่าเดิม #iMoD #Samsung #health</a>
+        </td>
+        <td class="r">♥ 87</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid0cWjfntaJ82Tees1JFd9kizHrEqpJQYebqbTJphYvCMryNcrT4fbAph7q3mmv1C2ql" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">ชี้เป้า iPhone, iPad, Mac, Apple Watch และสินค้า Apple อื่น ๆ โปรฯ 7.7 ที่ Shope…</a>
+        </td>
+        <td class="r">♥ 163</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid02aC5ZKn621iyaYYS9kC84KBWU8ZLiQnv66H4byNAy7KCa4oQigVBrtcxwtuWQidahl" target="_blank" style="color:inherit; text-decoration:none; ">Apple ปล่อย iOS 27 Beta 3 ให้นักพัฒนาทดสอบ เพิ่มการปรับแต่งเสียง Siri, Live Reco…</a>
+        </td>
+        <td class="r">♥ 49</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid034Mrz5gvSRME95ywBdnS7DySUNqN4s2rCHm97yQzUmppPYEpNPtgFj35R1i9yXtgnl" target="_blank" style="color:inherit; text-decoration:none; ">SHOKZ (ช็อคซ์) อวดโฉม OpenDots 2 หูฟัง Open-Ear ดีไซน์ Clip-on รุ่นใหม่ล่าสุด
+
+เ…</a>
+        </td>
+        <td class="r">♥ 45</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid037CLGauZ2YeFatpLoL2k5fVhdN2o6nhZkSWRpmGryuJWm6erdyqNuHpcmcwcfY6JCl" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">หลุดความจุแบต iPhone 18 Pro และ iPhone 18 Pro Max รุ่น Pro Max เพิ่มขึ้นเกือบ 50…</a>
+        </td>
+        <td class="r">♥ 1K</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid02GXgtckg1uPKgmKMpbc43noVAMeQVadhFZZVZp4RoXQ8z6T7pw1yRfMby66hCUWGwl" target="_blank" style="color:inherit; text-decoration:none; ">ใครเริ่มใช้ TikTok ค้นหาข้อมูลหลายอย่างแทน Google ยกมือขึ้น
+
+ในช่วงหลังมานี้หลาย…</a>
+        </td>
+        <td class="r">♥ 944</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid0yCr1zmia8qQ6TyBoUNmaWs1Zd3BvYitsb3GskUGncSaTKYx5JZW22DoHtdZn3FFSl" target="_blank" style="color:inherit; text-decoration:none; ">Apple Watch ครองตลาดสมาร์ตวอทช์ Edge AI ในไตรมาสแรกปี 2026 กว่า 90%
+
+Counterpoin…</a>
+        </td>
+        <td class="r">♥ 195</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid02UbHfRosBCcZ7bsCGH1GwgVaxXRnoURnXawuAHYoch9fZxGL9iQnhaTLzCyhEpiDBl" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">อินเดียเร่งสอบสวน! ข้อมูลลับ iPhone 18 Pro รั่วจากโรงงาน Tata Electronics ซัพพลา…</a>
+        </td>
+        <td class="r">♥ 589</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid05or4xkUMMqYd8feDBLrgbFZwuPaEDojNndNXxnLAzzBx3KhZMBSpyttESowS756pl" target="_blank" style="color:inherit; text-decoration:none; ">พาชมไฮไลต์ฟีเจอร์เด่น iOS 27 Beta 3 ปรับปรุงหน้าจอใช้งานหลายจุด
+
+iOS 27 Beta ยัง…</a>
+        </td>
+        <td class="r">♥ 32</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/1928438241154299/" target="_blank" style="color:inherit; text-decoration:none; ">ซื้อ Galaxy Z Fold7 / Z Flip7 เลยดีไหม? #iMoD #Samsung #GalaxyZ #GalaxyZFold #Ga…</a>
+        </td>
+        <td class="r">♥ 65</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid0Jc9XtHQVVHugqyMzHPEt3QAHUo1LMfmyznrQDuAEzKBQBCsTEKMbGMH7vQUfb4eal" target="_blank" style="color:inherit; text-decoration:none; ">iOS 27 มาพร้อม RAW 9 ใช้ Machine Learning ลดนอยส์ เพิ่มรายละเอียดภาพ RAW ได้ดีกว…</a>
+        </td>
+        <td class="r">♥ 247</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/reel/4484968475119289/" target="_blank" style="color:inherit; text-decoration:none; ">Apple Watch ครองตลาดสมาร์ตวอทช์ Edge AI ในไตรมาสแรกปี 2026 คิดเป็น 90% ของยอดจัด…</a>
+        </td>
+        <td class="r">♥ 217</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid0nansbXFuCjVFd3drBEeajpmWdhdu6WAuz7W9k6VXK5sXs9maJmBnbUNDhYtYCdgAl" target="_blank" style="color:inherit; text-decoration:none; ">Apple แจ้งเตือนผู้ใช้ ก่อนส่งคำสั่ง AI จาก Apple Creator Studio ไปประมวลผลบนเซิร…</a>
+        </td>
+        <td class="r">♥ 139</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid02FUCk6ekuERsyv5SopvE72G64x198KoYvbCqBvZ24WM26giLbxa1vBqsaokAyrrNWl" target="_blank" style="color:inherit; text-decoration:none; ">TECNO POVA 8 Series เปิดตัว ชูคอนเซ็ปต์ “Alive at night ยิ่งมืด ยิ่งโดดเด่น” จัด…</a>
+        </td>
+        <td class="r">♥ 42</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid0cverdGrwSA8nCgDSuj3A19qQLjwe57M5Eh5PrZF4c5pEviTsyJ1oHnqsRjNT5kndl" target="_blank" style="color:inherit; text-decoration:none; ">มาร่วมลงความเห็นเอา #ประกันสังคมออกจากระบบราชการ ให้บริหารอย่างโปร่งใส #เลิกเอาเ…</a>
+        </td>
+        <td class="r">♥ 13K</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid02jSQkH5bDEWEbMKu4rkpirh99sEou1xvDnCKdDzQtE2gMUddkLMseX7fpHhE7Jenel" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">แนะนำ6 วิธี การรวมไฟล์ PDF และแยกหน้าเอกสาร PDF บน iPhone และ iPad ง่าย ๆ เพื่อจ…</a>
+        </td>
+        <td class="r">♥ 57</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid021A6bQB1xhH3jDPoPed2vK9tQfWiSXZrhSVvQVhEydTPfunMGEtUthvKdng3hxLiDl" target="_blank" style="color:inherit; text-decoration:none; font-weight:600; color:#ff9800;">ลือ iPhone Air 2 แบตใหญ่ขึ้น 11% แตะ 3,500mAh พร้อมชิป A20 และจอ OLED ใหม่ ลุ้นใ…</a>
+        </td>
+        <td class="r">♥ 466</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid0NSpwRXJxS6DqnCSQU7FDPeqQVme2HdjH3xEabvJBMhr4yv8YCydJCUtLAqyXvMDsl" target="_blank" style="color:inherit; text-decoration:none; ">ยอดลงทะเบียนเลือกตั้งบอร์ดประกันสังคมยังน้อย ฝั่งนายจ้างสัดส่วนน้อยมาก ทั้ง ๆ ที…</a>
+        </td>
+        <td class="r">♥ 261</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid02LXegFz6DvSCN7my3kU9JWUuqaQVD1XCvvbSgCxYa7BPfXH1hN44nL3fVRicKM3bsl" target="_blank" style="color:inherit; text-decoration:none; ">Apple เปิดขายสายชาร์จ Beats สีชมพูพาวเวอร์พิงค์ (Power Pink) รองรับกำลังชาร์จสูง…</a>
+        </td>
+        <td class="r">♥ 101</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr>
+      <tr>
+        <td style="max-width:300px;">
+          <a href="https://www.facebook.com/iPhonemod/posts/pfbid034xGEEJ2M1vdSvniXvjjQyU92wnkZcK5KgwG36pH88sWfbVDH3PERS2DXCswEHGXVl" target="_blank" style="color:inherit; text-decoration:none; ">ซัมซุง เตรียมจัดงาน Galaxy Unpacked 22 ก.ค. พร้อมเปิดลงทะเบียนความสนใจ
+
+วันที่ 2…</a>
+        </td>
+        <td class="r">♥ 11</td>
+        <td class="r">💬 -</td>
+        <td class="r">↗ -</td>
+        <td class="r sub">08 Jul 10:21 ICT</td>
+      </tr></tbody>
+    </table>
+  </div></div>
+
+<div class="sec"><div class="sec-title">⚠️ Errors (2)</div><div class="err-box"><div class="err-item">⚠ droidsans: Snapshot timeout 300s for tiktok:droidsans (snapshot_id=sd_mrbhn063hlbhahqso)</div><div class="err-item">⚠ arteereview: Snapshot timeout 300s for tiktok:arteereview (snapshot_id=sd_mrbhy6sb1d931dxobn)</div></div></div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const labels = ["\u0e04\u0e23\u0e39\u0e2b\u0e19\u0e36\u0e48\u0e07\u0e2a\u0e2d\u0e19\u0e14\u0e35", "\u0e40\u0e2d\u0e01\u0e27\u0e34\u0e17\u0e22\u0e4c", "iPhone iOS Thailand", "Spin9", "iPhonemod (FB)"];
+  const views  = [670468, 211960, 0, 0, 0];
+  const viral  = [19, 14, 0, 0, 0];
+  const ctx = document.getElementById('chChart');
+  if (!ctx || !labels.length) return;
+  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const gridColor = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)';
+  const textColor = isDark ? '#aeaeb2' : '#888888';
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Avg views',
+          data: views,
+          backgroundColor: 'rgba(220,38,38,0.15)',
+          borderColor: 'rgba(220,38,38,0.75)',
+          borderWidth: 1.5,
+          borderRadius: 4,
+          yAxisID: 'y',
+        },
+        {
+          label: 'Viral count',
+          data: viral,
+          type: 'line',
+          borderColor: 'rgba(245,158,11,0.9)',
+          backgroundColor: 'rgba(245,158,11,0.1)',
+          borderWidth: 2,
+          pointRadius: 5,
+          pointBackgroundColor: 'rgba(245,158,11,0.9)',
+          fill: false,
+          yAxisID: 'y2',
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          position: 'top',
+          labels: { color: textColor, font: { size: 11 }, boxWidth: 12, padding: 12 }
+        },
+        tooltip: {
+          callbacks: {
+            label: function(ctx) {
+              const v = ctx.raw;
+              if (ctx.dataset.label === 'Avg views') {
+                if (v >= 1e6) return 'Avg: ' + (v/1e6).toFixed(1) + 'M views';
+                if (v >= 1e3) return 'Avg: ' + (v/1e3).toFixed(0) + 'K views';
+                return 'Avg: ' + v + ' views';
+              }
+              return 'Viral: ' + v;
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          grid: { color: gridColor },
+          ticks: {
+            color: textColor, font: { size: 11 },
+            callback: function(v) {
+              if (v >= 1e6) return (v/1e6).toFixed(1)+'M';
+              if (v >= 1e3) return (v/1e3).toFixed(0)+'K';
+              return v;
+            }
+          }
+        },
+        y2: {
+          position: 'right',
+          grid: { display: false },
+          ticks: { color: textColor, font: { size: 11 }, stepSize: 1 },
+          title: { display: true, text: 'Viral', color: textColor, font: { size: 10 } }
+        },
+        x: {
+          grid: { display: false },
+          ticks: { color: textColor, font: { size: 11 } }
+        }
+      }
+    }
+  });
+});
+</script>
+
+</body>
+</html>
