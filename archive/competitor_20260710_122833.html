@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Competitor Briefing · 10 Jul 12:28 ICT</title>
+<style>
+:root {
+  --bg:     #ffffff; --bg2: #f7f7f7; --bg3: #efefef;
+  --text:   #111111; --t2:  #555555; --t3:  #999999;
+  --border: #e4e4e4;
+  --red:    #dc2626; --red-bg: #fef2f2;
+  --amber:  #b45309; --amber-bg: #fffbeb;
+  --blue:   #1d4ed8; --blue-bg: #eff6ff;
+  --green:  #15803d;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:#1c1c1e; --bg2:#2c2c2e; --bg3:#3a3a3c;
+    --text:#f2f2f7; --t2:#aeaeb2; --t3:#636366;
+    --border:#38383a;
+    --red:#f87171; --red-bg:#3b1212;
+    --amber:#fbbf24; --amber-bg:#3b2a00;
+    --blue:#60a5fa; --blue-bg:#1e3a5f;
+    --green:#86efac;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+     background:var(--bg);color:var(--text);font-size:14px;line-height:1.55;}
+.wrap{max-width:980px;margin:0 auto;padding:2rem 1.25rem;}
+a{color:inherit;text-decoration:none;}
+a:hover{color:var(--blue);}
+
+/* Header */
+.hdr{display:flex;justify-content:space-between;align-items:baseline;
+     padding-bottom:1rem;border-bottom:1px solid var(--border);margin-bottom:1.75rem;}
+.hdr h1{font-size:17px;font-weight:600;}
+.hdr .meta{font-size:12px;color:var(--t3);text-align:right;}
+
+/* Metrics */
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:2rem;}
+.mc{background:var(--bg2);border-radius:10px;padding:14px 16px;}
+.mc .lbl{font-size:11px;color:var(--t3);margin-bottom:4px;}
+.mc .val{font-size:24px;font-weight:600;}
+.mc.red .val{color:var(--red);}
+.mc.amb .val{color:var(--amber);}
+
+/* Section */
+.sec{margin-bottom:2.25rem;}
+.sec-title{font-size:12px;font-weight:700;color:var(--t2);text-transform:uppercase;
+           letter-spacing:.07em;margin-bottom:.9rem;display:flex;align-items:center;gap:6px;}
+
+/* Viral */
+.viral-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.viral-card{background:var(--bg2);border-radius:10px;padding:14px;
+            border-left:3px solid var(--red);}
+.viral-meta{font-size:11px;color:var(--t3);margin-bottom:5px;}
+.viral-title{font-size:13px;font-weight:500;margin-bottom:8px;
+             display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.viral-stats{display:flex;gap:12px;font-size:12px;color:var(--t2);}
+.views-num{font-size:15px;font-weight:700;color:var(--red);}
+
+/* Chart */
+.chart-wrap{height:200px;margin-bottom:1.25rem;}
+
+/* Table */
+.tbl{width:100%;border-collapse:collapse;font-size:13px;}
+.tbl th{text-align:left;padding:7px 10px;font-size:11px;font-weight:700;
+        color:var(--t3);border-bottom:1px solid var(--border);
+        text-transform:uppercase;letter-spacing:.05em;}
+.tbl td{padding:7px 10px;border-bottom:1px solid var(--border);vertical-align:middle;}
+.tbl tr:last-child td{border-bottom:none;}
+.r{text-align:right;}
+.sub{font-size:11px;color:var(--t3);}
+
+/* Two columns */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.two-col>*{min-width:0;overflow:hidden;}
+
+/* News */
+.src-label{font-size:12px;font-weight:600;color:var(--t2);margin:10px 0 6px;}
+.news-list{display:flex;flex-direction:column;gap:4px;}
+.news-item{display:flex;flex-direction:column;gap:2px;
+           padding:8px 10px;background:var(--bg2);border-radius:8px;}
+.news-title{font-size:13px;word-break:break-word;overflow-wrap:break-word;line-height:1.45;}
+.news-title-th{font-size:11px;color:var(--t2);line-height:1.4;word-break:break-word;}
+.news-meta{font-size:11px;color:var(--t3);}
+
+/* Blacklist tags */
+.tag{display:inline-block;background:var(--amber-bg);color:var(--amber);
+     font-size:11px;padding:3px 9px;border-radius:99px;margin:3px 3px 3px 0;}
+.tag-box{padding:12px;background:var(--bg2);border-radius:10px;}
+
+/* Angle tips */
+.angle-box{display:flex;flex-direction:column;gap:4px;margin-top:0;}
+.angle-tip{font-size:12px;color:var(--t2);padding:7px 10px;
+           background:var(--blue-bg);border-radius:8px;line-height:1.4;}
+
+/* Per-channel */
+.ch-section{margin-bottom:1.25rem;}
+.ch-header{display:flex;justify-content:space-between;align-items:center;
+           padding:8px 12px;background:var(--bg2);border-radius:8px;
+           font-size:13px;font-weight:600;margin-bottom:6px;}
+
+/* Data range legend */
+.data-legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1.75rem;
+             padding:10px 14px;background:var(--bg2);border-radius:10px;}
+.dl-item{font-size:11px;color:var(--t2);}
+.dl-item strong{color:var(--text);}
+.dl-sep{color:var(--border);font-size:11px;align-self:center;}
+
+/* Errors */
+.err-box{background:var(--red-bg);border:1px solid #fca5a5;
+         border-radius:8px;padding:12px;}
+.err-item{font-size:12px;color:var(--red);padding:2px 0;}
+
+@media(max-width:640px){
+  .metrics{grid-template-columns:repeat(2,1fr);}
+  .viral-grid{grid-template-columns:1fr;}
+  .two-col{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hdr">  <div><h1>📊 Competitor Briefing</h1>  <span class="meta" style="font-size:11px; color:var(--t3);">full_scan_20260710_121542</span></div>  <div class="meta"><strong style="font-size:13px;">Full Scan</strong><br>10 Jul 12:28 ICT ICT</div></div>
+
+<div class="data-legend">  <span class="dl-item">🗓️ <strong>Scrape ล่าสุด:</strong> 10 Jul 12:28 ICT ICT</span>  <span class="dl-sep">·</span>  <span class="dl-item">📡 <strong>Posts ครอบคลุม:</strong> 7 Jul – 10 Jul 2026</span>  <span class="dl-sep">·</span>  <span class="dl-item">🔥 <strong>Viral window:</strong> 24 ชม. ล่าสุด (ไม่มีข้อมูล)</span>  <span class="dl-sep">·</span>  <span class="dl-item">🔍 <strong>Deep Dive:</strong> 7 วันล่าสุด (ไม่มีข้อมูล)</span>  <span class="dl-sep">·</span>  <span class="dl-item">🌐 <strong>EN News:</strong> 48 ชม. ล่าสุด (8 Jul – 10 Jul 2026)</span></div>
+
+<div class="metrics">  <div class="mc"><div class="lbl">Posts scraped (total)</div><div class="val">90</div></div>  <div class="mc red">    <div class="lbl">Viral Alerts <span style="font-size:10px;font-weight:400;">(24 ชม. ล่าสุด)</span></div>    <div class="val">0</div>    <div style="font-size:10px;color:var(--t3);margin-top:3px;">วิดีโอคู่แข่งที่กำลัง viral → ดู format แล้วทำต่างมุม</div>  </div>  <div class="mc"><div class="lbl">Channels</div><div class="val">4</div></div>  <div class="mc amb">    <div class="lbl">EN Headlines</div>    <div class="val">72</div>    <div style="font-size:10px;color:var(--t3);margin-top:3px;">MacRumors · 9to5Mac · AppleInsider — สัญญาณล่วงหน้าก่อน TH media 12-24h</div>  </div></div>
+
+<div class="sec">  <div class="sec-title">🔥 Viral Alerts — 24 ชม. ล่าสุด    <span style="font-size:10px; color:var(--red); font-weight:400;">วัดจาก 2 เกณฑ์: (1) views ≥ 100K ใน 48h และ/หรือ (2) views > 5× avg ของช่องนั้นใน 30 วัน — ผ่านอย่างน้อย 1 ข้อถือว่า viral</span></div>  <p style="font-size:12px;color:var(--t2);margin-bottom:10px;line-height:1.6;">    วิดีโอที่ algorithm กำลังปล่อย — <strong>ใช้ทำอะไร:</strong>     ดู hook · format · duration ที่ได้ผล แล้วสร้าง 3-5 วิดีโอใหม่ในมุมต่าง     (ไม่ copy ตรงๆ) · ส่งต่อ Viral Forensics Agent เพื่อถอด pattern อัตโนมัติ  </p>  <p style="color:#999; font-size:13px; padding:12px 0;">ยังไม่มี viral alerts ในรอบนี้ (threshold: 100K views)</p></div>
+
+<div class="sec">  <div class="sec-title">📊 Channel Performance — Thai Competitors</div>  <div class="chart-wrap"><canvas id="chChart"></canvas></div>  <p style="color:#999; font-size:13px;">ไม่มีข้อมูล channel stats</p></div>
+
+<div class="two-col sec">  <div>    <div class="sec-title">🌐 EN News Headlines      <span style="font-size:10px;color:var(--t3);font-weight:400;">MacRumors · 9to5Mac · AppleInsider</span>    </div>    <p style="font-size:11px;color:var(--t3);margin-bottom:8px;line-height:1.5;">      ข่าว Apple จากอเมริกา — มาก่อน TH media 12-24h · ใช้เป็น content source สำหรับ cluster_rumor + cluster_business    </p>    <p class="src-label">MacRumors</p><div class="news-list">
+      <div class="news-item">
+        <a href="https://www.macrumors.com/guide/ios-27-carplay/" target="_blank" class="news-title">iOS 27: 8+ New CarPlay Features</a>
+        <span class="news-title-th">iOS 27: 8+ ฟีเจอร์ CarPlay ใหม่</span>
+        <span class="news-meta">09 Jul 12:23 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/09/apple-tv-comic-con-2026/" target="_blank" class="news-title">Apple TV Taking Over Comic-Con's Hall H for the First Time With Widow's Bay, Silo and More</a>
+        <span class="news-title-th">Apple TV เตรียมยึดเวที Hall H Comic-Con เป็นครั้งแรก พร้อม Widow's Bay, Silo และอีกมากมาย</span>
+        <span class="news-meta">09 Jul 12:05 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/09/anthropic-reflect-claude-tracking/" target="_blank" class="news-title">Anthropic Adds 'Reflect' Feature to Claude for Tracking Your Usage</a>
+        <span class="news-title-th">Anthropic เพิ่มฟีเจอร์ 'Reflect' ใน Claude เพื่อติดตามการใช้งาน</span>
+        <span class="news-meta">09 Jul 09:52 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/09/openai-chatgpt-work/" target="_blank" class="news-title">OpenAI Debuts ChatGPT Work Agent and New GPT-5.6 Models</a>
+        <span class="news-title-th">OpenAI เปิดตัว ChatGPT Work Agent และโมเดล GPT-5.6 ใหม่</span>
+        <span class="news-meta">09 Jul 07:01 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/09/last-call-m5-macbook-pro/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Last Call: M5 Pro MacBook Pro Remains at Pre-Hike Price But Not for Much Longer</a>
+        <span class="news-title-th">โค้งสุดท้าย: MacBook Pro M5 Pro ยังคงราคาเดิม ก่อนปรับขึ้น</span>
+        <span class="news-meta">09 Jul 06:20 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/09/apple-prismml-larger-on-device-ai-models/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Apple Exploring Ways to Run Much Larger AI Models Directly on iPhones</a>
+        <span class="news-title-th">Apple กำลังหาวิธีรันโมเดล AI ขนาดใหญ่บน iPhone โดยตรง</span>
+        <span class="news-meta">09 Jul 05:50 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/09/apple-tv-friday-night-baseball-august/" target="_blank" class="news-title">Apple TV and MLB Release August Schedule for 'Friday Night Baseball'</a>
+        <span class="news-title-th">Apple TV และ MLB ประกาศตาราง 'Friday Night Baseball' เดือนสิงหาคม</span>
+        <span class="news-meta">09 Jul 05:13 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/09/apple-gets-boost-from-india-tariff-exemptions/" target="_blank" class="news-title">Apple's Manufacturing in India Gets Boost From New Tariff Exemptions</a>
+        <span class="news-title-th">การผลิต iPhone ในอินเดียได้แรงหนุนจากมาตรการยกเว้นภาษีใหม่</span>
+        <span class="news-meta">09 Jul 05:06 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/09/sonos-sony-anker-and-more/" target="_blank" class="news-title">Sonos, Sony, Anker and More: The Best Amazon Accessory Deals Right Now</a>
+        <span class="news-title-th">Sonos, Sony, Anker และอื่นๆ: ดีลอุปกรณ์เสริม Amazon ที่ดีที่สุดตอนนี้</span>
+        <span class="news-meta">09 Jul 03:15 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/09/siri-ai-lawsuit-settlement-claims-timing/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">'Siri AI' Lawsuit Update: Apple to Pay Owners of These iPhone Models</a>
+        <span class="news-title-th">อัปเดตคดี 'Siri AI': Apple เตรียมจ่ายเงินให้เจ้าของ iPhone รุ่นเหล่านี้</span>
+        <span class="news-meta">09 Jul 03:08 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/09/apple-pulls-ability-to-restore-iphone-5c-and-more/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Apple Pulls Ability to Restore iPhone 5c, iPad Mini, and More [Updated]</a>
+        <span class="news-title-th">Apple ระงับการกู้คืน iPhone 5c, iPad Mini และรุ่นอื่น [อัปเดต]</span>
+        <span class="news-meta">09 Jul 01:31 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/09/duckduckgo-browser-blocks-youtube-ads/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">DuckDuckGo Browser Now Blocks YouTube Ads on iPhone and Mac</a>
+        <span class="news-title-th">เบราว์เซอร์ DuckDuckGo บล็อกโฆษณา YouTube บน iPhone และ Mac ได้แล้ว</span>
+        <span class="news-meta">09 Jul 01:05 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/09/meta-super-sensing-glasses-record-everything/" target="_blank" class="news-title">Meta's 'Super Sensing' Prototype Glasses Quietly Record Everything</a>
+        <span class="news-title-th">แว่นต้นแบบ 'Super Sensing' ของ Meta แอบบันทึกทุกสิ่ง</span>
+        <span class="news-meta">09 Jul 00:14 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/09/iphone-18-pro-max-thicker-heavier/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone 18 Pro Max Said to Be Thicker and Heavier Than Predecessor</a>
+        <span class="news-title-th">iPhone 18 Pro Max ลือว่าหนาและหนักกว่ารุ่นก่อนหน้า</span>
+        <span class="news-meta">08 Jul 21:57 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/08/apple-tv-4k-latest-rumors/" target="_blank" class="news-title">Everything Coming in the 2026 Apple TV 4K</a>
+        <span class="news-title-th">ทุกสิ่งที่กำลังจะมาใน Apple TV 4K รุ่นปี 2026</span>
+        <span class="news-meta">08 Jul 12:51 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/08/meta-ai-muse-image/" target="_blank" class="news-title">Meta's New AI Image Tool Can Use Your Public Instagram Photos by Default</a>
+        <span class="news-title-th">เครื่องมือ AI สร้างภาพใหม่ของ Meta ใช้รูป Instagram สาธารณะของคุณได้โดยอัตโนมัติ</span>
+        <span class="news-meta">08 Jul 09:52 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/08/mario-kart-tour-shutting-down/" target="_blank" class="news-title">Nintendo Shutting Down Mario Kart Tour iOS Game</a>
+        <span class="news-title-th">Nintendo ประกาศปิดเกม Mario Kart Tour บน iOS</span>
+        <span class="news-meta">08 Jul 08:59 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/08/openai-gpt-live-voice/" target="_blank" class="news-title">OpenAI Introduces GPT-Live to Make ChatGPT Voice Feel Like a Real Conversation</a>
+        <span class="news-title-th">OpenAI เปิดตัว GPT-Live ทำให้โหมดเสียง ChatGPT คุยได้เหมือนคนจริง</span>
+        <span class="news-meta">08 Jul 08:03 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/08/apple-tv-emmy-nominations-2026/" target="_blank" class="news-title">Apple TV Earns Record 87 Emmy Nominations for 2026, Led by 'Pluribus' and 'Widow's Bay'</a>
+        <span class="news-title-th">Apple TV ทำสถิติคว้า 87 รางวัล Emmy ปี 2026 นำโดย 'Pluribus' และ 'Widow's Bay'</span>
+        <span class="news-meta">08 Jul 06:37 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.macrumors.com/2026/07/08/apple-to-drop-support-for-encrypted-mac-os-extended/" target="_blank" class="news-title">Apple to Drop Support for Encrypted Mac OS Extended Drives Next Year</a>
+        <span class="news-title-th">Apple เตรียมเลิกสนับสนุนไดรฟ์ Mac OS Extended แบบเข้ารหัสในปีหน้า</span>
+        <span class="news-meta">08 Jul 05:02 ET</span>
+      </div></div><p class="src-label">9to5Mac</p><div class="news-list">
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/09/apple-tv-unveils-august-friday-night-baseball-schedule/" target="_blank" class="news-title">Apple TV unveils August ‘Friday Night Baseball’ schedule</a>
+        <span class="news-title-th">Apple TV เผยตาราง 'Friday Night Baseball' เดือนสิงหาคม</span>
+        <span class="news-meta">09 Jul 13:36 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/09/best-carplay-features-tips/" target="_blank" class="news-title">The best CarPlay tips and tricks</a>
+        <span class="news-title-th">เคล็ดลับและลูกเล่น CarPlay ที่ดีที่สุด</span>
+        <span class="news-meta">09 Jul 13:03 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/09/apple-adds-social-media-questions-to-app-store-connect-age-rating-questionnaire/" target="_blank" class="news-title">Apple adds social media questions to App Store Connect age rating questionnaire</a>
+        <span class="news-title-th">Apple เพิ่มคำถามโซเชียลมีเดียในแบบสอบถามเรทติ้งอายุ App Store Connect</span>
+        <span class="news-meta">09 Jul 12:42 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/09/netflix-looking-for-engagement-in-live-tv-and-bundles-while-apple-tv-app-integration-is-right-there/" target="_blank" class="news-title">Netflix looking for engagement in live TV and bundles while Apple TV app integration is right there</a>
+        <span class="news-title-th">Netflix มองหาการมีส่วนร่วมใน Live TV และ Bundles ในขณะที่ Apple TV App มีการผสานรวมอยู่แล้ว</span>
+        <span class="news-meta">09 Jul 12:31 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/09/happy-hour-598/" target="_blank" class="news-title">iOS 27 beta 3 changes, Siri AI on Apple Watch, macOS Golden Gate features</a>
+        <span class="news-title-th">การเปลี่ยนแปลงใน iOS 27 Beta 3, Siri AI บน Apple Watch, ฟีเจอร์ macOS Golden Gate</span>
+        <span class="news-meta">09 Jul 11:58 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/09/ivanky-fusiondock-ultra-thunderbolt-5-dock-built-for-mac-workflows/" target="_blank" class="news-title">iVANKY FusionDock Ultra: The Thunderbolt 5 dock built for Mac workflows</a>
+        <span class="news-title-th">iVANKY FusionDock Ultra: Thunderbolt 5 Dock ที่สร้างมาเพื่อเวิร์กโฟลว์ Mac</span>
+        <span class="news-meta">09 Jul 11:30 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/09/apple-stops-signing-ios-versions-for-several-older-iphones-and-ipads/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Apple stops signing iOS versions for several older iPhones and iPads [U: Signing restored]</a>
+        <span class="news-title-th">Apple หยุดเซ็นชื่อ iOS เวอร์ชันเก่าสำหรับ iPhone และ iPad บางรุ่น [อัปเดต: กู้คืนการเซ็นชื่อแล้ว]</span>
+        <span class="news-meta">09 Jul 08:34 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/09/iphone-18-pro-could-bring-three-controversial-design-changes/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone 18 Pro could bring three controversial design changes</a>
+        <span class="news-title-th">iPhone 18 Pro อาจมาพร้อม 3 การเปลี่ยนแปลงดีไซน์ที่เป็นที่ถกเถียง</span>
+        <span class="news-meta">09 Jul 08:00 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/09/openai-is-discontinuing-chatgpt-atlas-its-standalone-desktop-browser/" target="_blank" class="news-title">OpenAI is discontinuing ChatGPT Atlas, its standalone desktop browser</a>
+        <span class="news-title-th">OpenAI เตรียมยุติ ChatGPT Atlas เบราว์เซอร์เดสก์ท็อปแบบสแตนด์อโลน</span>
+        <span class="news-meta">09 Jul 07:56 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/09/strava-gets-an-events-tab-with-upcoming-races-group-runs-more/" target="_blank" class="news-title">Strava gets an Events tab with upcoming races, group runs, more</a>
+        <span class="news-title-th">Strava เพิ่มแท็บ Events พร้อมการแข่งขัน, การวิ่งกลุ่ม และอื่นๆ ที่กำลังจะมาถึง</span>
+        <span class="news-meta">09 Jul 07:35 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/09/apple-tv-sets-major-comic-con-lineup-with-silo-dark-matter-widows-bay-more/" target="_blank" class="news-title">Apple TV sets major Comic-Con lineup with Silo, Dark Matter, Widow’s Bay, more</a>
+        <span class="news-title-th">Apple TV จัดเต็ม Comic-Con พร้อม Silo, Dark Matter, Widow’s Bay และอีกมากมาย</span>
+        <span class="news-meta">09 Jul 06:06 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/09/openai-announcing-the-next-chapter-for-chatgpt-today-watch-here/" target="_blank" class="news-title">OpenAI unveils ChatGPT Work agent, GPT-5.6 models now available</a>
+        <span class="news-title-th">OpenAI เปิดตัว ChatGPT Work Agent, โมเดล GPT-5.6 พร้อมใช้งานแล้ว</span>
+        <span class="news-meta">09 Jul 05:45 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/09/as-tv-time-prepares-to-shut-down-justwatch-launches-migration-tool/" target="_blank" class="news-title">As TV Time prepares to shut down, JustWatch launches migration tool</a>
+        <span class="news-title-th">ในขณะที่ TV Time เตรียมปิดตัว JustWatch เปิดตัวเครื่องมือย้ายข้อมูล</span>
+        <span class="news-meta">09 Jul 05:38 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/09/iphone-18-pro-max-component-costs-could-jump-by-nearly-300-per-report/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone 18 Pro Max component costs could jump by nearly $300, per report</a>
+        <span class="news-title-th">ค่าใช้จ่ายชิ้นส่วน iPhone 18 Pro Max อาจเพิ่มขึ้นเกือบ 300 ดอลลาร์ ตามรายงาน</span>
+        <span class="news-meta">09 Jul 04:58 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/09/daily-july-9-2026/" target="_blank" class="news-title">9to5Mac Daily: July 9, 2026 – Apple’s DMA battle, Vision Pro rumors</a>
+        <span class="news-title-th">9to5Mac Daily: 9 กรกฎาคม 2026 – การต่อสู้ DMA ของ Apple, ข่าวลือ Vision Pro</span>
+        <span class="news-meta">09 Jul 04:57 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/09/apple-tv-shares-first-trailer-for-theres-no-place-like-home-snoopy/" target="_blank" class="news-title">Apple TV shares first trailer for ‘There’s No Place Like Home, Snoopy’</a>
+        <span class="news-title-th">Apple TV แชร์ตัวอย่างแรกของ ‘There’s No Place Like Home, Snoopy’</span>
+        <span class="news-meta">09 Jul 04:17 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/09/deals-apple-watch-ultra-3-apple-tv-iphone-17-pro/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Deals: Apple Watch Ultra 3 $140 off, Apple TV 4K, iPhone 17 Pro/Max up to $449 off, charging gear, more</a>
+        <span class="news-title-th">ดีล: Apple Watch Ultra 3 ลด 140 ดอลลาร์, Apple TV 4K, iPhone 17 Pro/Max ลดสูงสุด 449 ดอลลาร์, อุปกรณ์ชาร์จ และอื่นๆ</span>
+        <span class="news-meta">09 Jul 04:14 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/09/rumored-iphone-18-pro-max-specs-point-to-apples-heaviest-iphone-in-years/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Rumored iPhone 18 Pro Max specs point to Apple’s heaviest iPhone in years</a>
+        <span class="news-title-th">สเปก iPhone 18 Pro Max ที่ลือกันชี้ว่าจะเป็น iPhone ที่หนักที่สุดของ Apple ในรอบหลายปี</span>
+        <span class="news-meta">09 Jul 03:18 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/09/claude-ai-may-ask-you-if-youre-using-it-too-much/" target="_blank" class="news-title">Claude AI may ask you if you’re using it too much</a>
+        <span class="news-title-th">Claude AI อาจถามคุณว่าคุณใช้งานมากเกินไปหรือไม่</span>
+        <span class="news-meta">09 Jul 03:05 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://9to5mac.com/2026/07/09/report-apple-interested-in-startup-that-runs-giant-ai-models-on-iphone-without-servers/" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Report: Apple interested in startup that runs giant AI models on iPhone without servers</a>
+        <span class="news-title-th">รายงาน: Apple สนใจสตาร์ทอัพที่รันโมเดล AI ขนาดใหญ่บน iPhone โดยไม่ต้องใช้เซิร์ฟเวอร์</span>
+        <span class="news-meta">09 Jul 02:43 ET</span>
+      </div></div><p class="src-label">AppleInsider</p><div class="news-list">
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/09/govee-21-inch-smart-ceiling-light-ultra-review-blurry-motifs-excellent-lighting?utm_source=rss" target="_blank" class="news-title">Govee 21-inch Smart Ceiling Light Ultra review: blurry motifs & excellent lighting</a>
+        <span class="news-title-th">รีวิว Govee 21-inch Smart Ceiling Light Ultra: ลวดลายเบลอแต่แสงดีเยี่ยม</span>
+        <span class="news-meta">09 Jul 12:44 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/09/ai-agents-move-deeper-into-business-workflows-with-chatgpt-work-gpt-56?utm_source=rss" target="_blank" class="news-title">AI agents move deeper into business workflows with ChatGPT Work & GPT-5.6</a>
+        <span class="news-title-th">AI Agents เข้าสู่เวิร์กโฟลว์ธุรกิจอย่างลึกซึ้งด้วย ChatGPT Work และ GPT-5.6</span>
+        <span class="news-meta">09 Jul 08:26 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/09/apple-going-big-at-comic-con-with-a-2-hour-panel-and-show-preview?utm_source=rss" target="_blank" class="news-title">Apple going big at Comic Con with a 2-hour panel and show preview</a>
+        <span class="news-title-th">Apple จัดเต็ม Comic Con ด้วยการเสวนา 2 ชั่วโมงและการพรีวิวโชว์</span>
+        <span class="news-meta">09 Jul 06:58 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/09/import-duty-cuts-make-india-even-more-attractive-for-iphone-manufacturing?utm_source=rss" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Import duty cuts make India even more attractive for iPhone manufacturing</a>
+        <span class="news-title-th">การลดภาษีนำเข้าทำให้อินเดียน่าสนใจยิ่งขึ้นสำหรับการผลิต iPhone</span>
+        <span class="news-meta">09 Jul 06:28 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/09/price-rises-certain-as-iphone-18-pro-max-component-costs-soar?utm_source=rss" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Price rises certain as iPhone 18 Pro Max component costs soar</a>
+        <span class="news-title-th">ราคาเพิ่มขึ้นแน่นอน เมื่อต้นทุนส่วนประกอบ iPhone 18 Pro Max พุ่งสูงขึ้น</span>
+        <span class="news-meta">09 Jul 04:33 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/09/amazons-659-apple-watch-ultra-3-deal-is-about-to-sell-out-grab-the-discount-now?utm_source=rss" target="_blank" class="news-title">Amazon's $659 Apple Watch Ultra 3 deal is about to sell out, grab the discount now</a>
+        <span class="news-title-th">ดีล Apple Watch Ultra 3 ของ Amazon ราคา 659 ดอลลาร์ กำลังจะหมด รีบคว้าส่วนลดตอนนี้</span>
+        <span class="news-meta">09 Jul 04:13 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/09/new-ai-startup-could-shrink-server-sized-models-for-use-on-iphones?utm_source=rss" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">New AI startup could shrink server-sized models for use on iPhones</a>
+        <span class="news-title-th">สตาร์ทอัพ AI ใหม่สามารถย่อโมเดลขนาดเท่าเซิร์ฟเวอร์เพื่อใช้บน iPhone ได้</span>
+        <span class="news-meta">09 Jul 03:20 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/09/iphone-18-pro-maxs-longer-battery-life-comes-at-a-cost-in-weight-and-size?utm_source=rss" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone 18 Pro Max's longer battery life comes at a cost in weight and size</a>
+        <span class="news-title-th">แบตเตอรี่ iPhone 18 Pro Max ที่ใช้งานได้นานขึ้น ต้องแลกมาด้วยน้ำหนักและขนาดที่เพิ่มขึ้น</span>
+        <span class="news-meta">08 Jul 23:15 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/08/apolosign-32-inch-smart-portable-tv-review-very-cool-but-not-great-for-apple-users?utm_source=rss" target="_blank" class="news-title">Apolosign 32-inch Smart Portable TV review: Very cool, but not great for Apple users</a>
+        <span class="news-title-th">รีวิว Apolosign 32-inch Smart Portable TV: เจ๋งมาก แต่ไม่เหมาะสำหรับผู้ใช้ Apple</span>
+        <span class="news-meta">08 Jul 12:31 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/08/encrypted-hfs-drive-support-dies-in-macos-28?utm_source=rss" target="_blank" class="news-title">Encrypted HFS+ drive support dies in macOS 28</a>
+        <span class="news-title-th">การสนับสนุนไดรฟ์ HFS+ แบบเข้ารหัสจะสิ้นสุดใน macOS 28</span>
+        <span class="news-meta">08 Jul 07:49 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/08/tv-show-purchases-on-apple-tv-are-finally-getting-free-4k-upgrades?utm_source=rss" target="_blank" class="news-title">TV show purchases on Apple TV are finally getting free 4K upgrades</a>
+        <span class="news-title-th">การซื้อรายการทีวีบน Apple TV ได้อัปเกรดเป็น 4K ฟรีแล้วในที่สุด</span>
+        <span class="news-meta">08 Jul 07:38 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/08/final-lap-for-mario-kart-tour-badly-closes-another-nintendo-mobile-gaming-chapter?utm_source=rss" target="_blank" class="news-title">Final lap for 'Mario Kart Tour' badly closes another Nintendo mobile gaming chapter</a>
+        <span class="news-title-th">'Mario Kart Tour' รอบสุดท้ายปิดฉากบทบาทเกมมือถือ Nintendo อีกบทอย่างน่าเสียดาย</span>
+        <span class="news-meta">08 Jul 06:40 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/08/widows-bay-and-pluribus-nominated-for-the-most-prestigious-emmy-awards?utm_source=rss" target="_blank" class="news-title">'Widow's Bay' & 'Pluribus' lead Apple's record-breaking charge for 2026 Emmy Awards</a>
+        <span class="news-title-th">'Widow's Bay' และ 'Pluribus' นำทัพ Apple สร้างสถิติใหม่ในงาน Emmy Awards ปี 2026</span>
+        <span class="news-meta">08 Jul 14:01 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/08/apple-testing-banned-vendor-ram-is-a-band-aid-not-a-cure?utm_source=rss" target="_blank" class="news-title">Apple testing banned vendor RAM is a Band-Aid, not a cure</a>
+        <span class="news-title-th">Apple ทดสอบ RAM จากผู้ขายที่ถูกแบนเป็นเพียงการแก้ปัญหาเฉพาะหน้า ไม่ใช่การแก้ไขถาวร</span>
+        <span class="news-meta">08 Jul 05:21 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/08/apple-the-only-bright-spot-in-a-declining-pc-market-savaged-by-ram-price-hikes?utm_source=rss" target="_blank" class="news-title">Apple the only bright spot in a declining PC market, savaged by RAM price hikes</a>
+        <span class="news-title-th">Apple เป็นเพียงจุดสว่างเดียวในตลาด PC ที่ตกต่ำ ถูกทำลายด้วยราคา RAM ที่สูงขึ้น</span>
+        <span class="news-meta">08 Jul 05:02 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/08/all-the-qualcomm-parts-used-in-the-iphone-ipad-apple-watch-and-more?utm_source=rss" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">All the Qualcomm parts used in the iPhone, iPad, Apple Watch, and more</a>
+        <span class="news-title-th">ชิ้นส่วน Qualcomm ทั้งหมดที่ใช้ใน iPhone, iPad, Apple Watch และอื่นๆ</span>
+        <span class="news-meta">08 Jul 04:34 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/08/amazon-knocks-110-off-apples-macbook-neo-today?utm_source=rss" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Amazon knocks $110 off Apple's MacBook Neo today</a>
+        <span class="news-title-th">Amazon ลดราคา MacBook Neo ของ Apple 110 ดอลลาร์ในวันนี้</span>
+        <span class="news-meta">08 Jul 04:15 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/08/apples-m5-pro-16-inch-macbook-pro-with-48gb-ram-plunges-to-3049?utm_source=rss" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">Apple's M5 Pro 16-inch MacBook Pro with 48GB RAM plunges to $3,049</a>
+        <span class="news-title-th">MacBook Pro M5 Pro ขนาด 16 นิ้วของ Apple พร้อม RAM 48GB ลดเหลือ 3,049 ดอลลาร์</span>
+        <span class="news-meta">08 Jul 03:54 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/08/lower-cost-apple-vision-pro-may-be-dropped-as-apple-focuses-on-ai?utm_source=rss" target="_blank" class="news-title">Lower cost Apple Vision Pro may be dropped as Apple focuses on AI</a>
+        <span class="news-title-th">Apple อาจเลิกพัฒนา Vision Pro รุ่นราคาถูก เพื่อมุ่งเน้น AI แทน</span>
+        <span class="news-meta">08 Jul 03:20 ET</span>
+      </div>
+      <div class="news-item">
+        <a href="https://appleinsider.com/articles/26/07/08/iphone-fold-delay-rumor-flip-flop-continues-new-leak-says-everything-is-on-time?utm_source=rss" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">iPhone Fold delay rumor flip-flop continues, new leak says everything is on time</a>
+        <span class="news-title-th">ข่าวลือ iPhone Fold พลิกผันต่อเนื่อง, การรั่วไหลใหม่ระบุว่าทุกอย่างตรงเวลา</span>
+        <span class="news-meta">08 Jul 03:13 ET</span>
+      </div></div>  </div>  <div>    <div class="sec-title">🇹🇭 TH News Latest      <span style="font-size:10px;color:var(--t3);font-weight:400;">iMod · iPhone iOS Thailand · Spin9 · iPhonemod</span>    </div>    <p style="font-size:11px;color:var(--t3);margin-bottom:8px;line-height:1.5;">      ข่าว Apple ภาษาไทย — ดูว่า TH media cover อะไรแล้วบ้าง ก่อนทำ script    </p>    <p class="src-label">iMod</p><div class="news-list">
+      <div class="news-item">
+        <a href="https://www.iphonemod.net/google-photos-%e0%b9%80%e0%b8%95%e0%b8%a3%e0%b8%b5%e0%b8%a2%e0%b8%a1%e0%b9%80%e0%b8%9e%e0%b8%b4%e0%b9%88%e0%b8%a1%e0%b9%80%e0%b8%84%e0%b8%a3%e0%b8%b7%e0%b9%88%e0%b8%ad%e0%b8%87%e0%b8%a1%e0%b8%b7.html?utm_source=rss&utm_medium=rss&utm_campaign=google-photos-%25e0%25b9%2580%25e0%25b8%2595%25e0%25b8%25a3%25e0%25b8%25b5%25e0%25b8%25a2%25e0%25b8%25a1%25e0%25b9%2580%25e0%25b8%259e%25e0%25b8%25b4%25e0%25b9%2588%25e0%25b8%25a1%25e0%25b9%2580%25e0%25b8%2584%25e0%25b8%25a3%25e0%25b8%25b7%25e0%25b9%2588%25e0%25b8%25ad%25e0%25b8%2587%25e0%25b8%25a1%25e0%25b8%25b7" target="_blank" class="news-title">Google Photos เตรียมเพิ่มเครื่องมือ ‘Video Remix’ ใหม่ ใช้ AI ช่วยตัดต่อวิดีโอในไม่กี่วินาที</a>
+        
+        <span class="news-meta">10 Jul 03:17 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.iphonemod.net/apple-broadcom-30-billion-us-chips-investment.html?utm_source=rss&utm_medium=rss&utm_campaign=apple-broadcom-30-billion-us-chips-investment" target="_blank" class="news-title">Apple เพิ่มการลงทุนกับ Broadcom ผลิตชิปในสหรัฐฯ เพิ่มอีกหลายพันล้านชิ้น</a>
+        
+        <span class="news-meta">10 Jul 03:09 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.iphonemod.net/xiaomi-18-pro-upgrades-snapdragon-8-elite.html?utm_source=rss&utm_medium=rss&utm_campaign=xiaomi-18-pro-upgrades-snapdragon-8-elite" target="_blank" class="news-title">Xiaomi 18 Pro อาจอัปเกรดกล้องครั้งใหญ่ พร้อมชิป Snapdragon 8 Elite</a>
+        
+        <span class="news-meta">10 Jul 02:25 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.iphonemod.net/iphone-18-pro-max-component-costs-jump-report.html?utm_source=rss&utm_medium=rss&utm_campaign=iphone-18-pro-max-component-costs-jump-report" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">ต้นทุนการผลิต iPhone 18 Pro Max อาจพุ่งสูงขึ้นเกือบ 300 ดอลลาร์</a>
+        
+        <span class="news-meta">10 Jul 02:04 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.iphonemod.net/open-ai-announce-chatgpt-work-and-gpt-5-6-available.html?utm_source=rss&utm_medium=rss&utm_campaign=open-ai-announce-chatgpt-work-and-gpt-5-6-available" target="_blank" class="news-title">OpenAI เปิดตัว ChatGPT Work และเปิดใช้งานโมเดล GPT-5.6 ใหม่</a>
+        
+        <span class="news-meta">10 Jul 00:24 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.iphonemod.net/apple-stops-signing-baseband-firmware-legacy-iphone-ipad.html?utm_source=rss&utm_medium=rss&utm_campaign=apple-stops-signing-baseband-firmware-legacy-iphone-ipad" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">[แก้ปัญหาแล้ว] Apple ปิด Restore สำหรับ iPhone 5c, iPad mini และอุปกรณ์รุ่นเก่าหลายรุ่น</a>
+        
+        <span class="news-meta">09 Jul 13:11 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.iphonemod.net/idc-apple-mac-shipments-growth-q2-2026.html?utm_source=rss&utm_medium=rss&utm_campaign=idc-apple-mac-shipments-growth-q2-2026" target="_blank" class="news-title">IDC เผยยอดจัดส่ง Mac เติบโตสวนทางตลาด PC ที่หดตัวลงในไตรมาส 2 ปี 2026</a>
+        
+        <span class="news-meta">09 Jul 10:46 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.iphonemod.net/iphone-18-pro-max-leaked-thicker-and-heavier.html?utm_source=rss&utm_medium=rss&utm_campaign=iphone-18-pro-max-leaked-thicker-and-heavier" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">ลือ! iPhone 18 Pro Max หนาขึ้น หนักขึ้นกว่ารุ่น Pro ก่อนหน้า</a>
+        
+        <span class="news-meta">09 Jul 10:00 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.iphonemod.net/iphone-ultra-foldable-no-delay-supply-chain-report.html?utm_source=rss&utm_medium=rss&utm_campaign=iphone-ultra-foldable-no-delay-supply-chain-report" target="_blank" class="news-title" style="color:#ff9800;font-weight:700;">แหล่งข่าวยืนยัน iPhone Ultra ไม่เลื่อน ยังคงเปิดตัว ก.ย. 2026 นี้</a>
+        
+        <span class="news-meta">09 Jul 09:05 ICT</span>
+      </div>
+      <div class="news-item">
+        <a href="https://www.iphonemod.net/redmi-note-17-pro-9000mah-battery-confirmed.html?utm_source=rss&utm_medium=rss&utm_campaign=redmi-note-17-pro-9000mah-battery-confirmed" target="_blank" class="news-title">Redmi Note 17 Pro ยืนยันมาพร้อมแบตเตอรี่ 9,000mAh และจอ 1.5K</a>
+        
+        <span class="news-meta">09 Jul 09:04 ICT</span>
+      </div></div>  </div></div>
+
+<div class="sec">  <div class="sec-title">⚡ Competitor Topics (72h) + มุมที่เราทำได้    <span style="font-size:10px; color:var(--blue);">อย่า copy — ทำต่างมุม</span></div>  <p style="color:var(--t3);font-size:13px;">ยังไม่มีข้อมูล</p></div>
+
+<div class="sec">  <div class="sec-title">🔍 Per-Channel Deep Dive — TikTok <span style="font-size:10px;color:var(--t3);font-weight:400;">7 วันล่าสุด · เรียงจากใหม่สุด → เก่าสุด</span></div>  <p style="font-size:12px; color:var(--t2); margin-bottom:1rem; line-height:1.6;">    โพสต์ TikTok คู่แข่งย้อนหลัง 7 วัน (ไม่มีข้อมูล) เรียงจากใหม่สุด → เก่าสุด<br>    <strong>ใช้ทำอะไร:</strong> ดู pattern ของ title/hook · ตรวจ duration ที่ viral ·     วิเคราะห์ว่าช่องกำลัง pivot ไปทำ topic อะไร · เปรียบ views โพสต์เก่า vs ใหม่<br>    🔥 = viral (ผ่านเกณฑ์ views ≥ 100K หรือ > 5× avg ของช่องนั้น)  </p>  <p style="color:#999; font-size:13px;">ไม่มีข้อมูล TikTok</p></div>
+
+<div class="sec"><div class="sec-title">⚠️ Errors (7)</div><div class="err-box"><div class="err-item">⚠ droidsans: Scrapers API failed 401 for tiktok:droidsans: Token expired</div><div class="err-item">⚠ arteereview: Scrapers API failed 401 for tiktok:arteereview: Token expired</div><div class="err-item">⚠ kru1d: Scrapers API failed 401 for tiktok:kru1d: Token expired</div><div class="err-item">⚠ peeakewit: Scrapers API failed 401 for tiktok:peeakewit: Token expired</div><div class="err-item">⚠ iPhoneiOSThailand: Scrapers API failed 401 for facebook:iPhoneiOSThailand: Token expired</div><div class="err-item">⚠ spin9.me: Scrapers API failed 401 for facebook:spin9.me: Token expired</div><div class="err-item">⚠ iPhonemod: Scrapers API failed 401 for facebook:iPhonemod: Token expired</div></div></div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const labels = [];
+  const views  = [];
+  const viral  = [];
+  const ctx = document.getElementById('chChart');
+  if (!ctx || !labels.length) return;
+  const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const gridColor = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)';
+  const textColor = isDark ? '#aeaeb2' : '#888888';
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Avg views',
+          data: views,
+          backgroundColor: 'rgba(220,38,38,0.15)',
+          borderColor: 'rgba(220,38,38,0.75)',
+          borderWidth: 1.5,
+          borderRadius: 4,
+          yAxisID: 'y',
+        },
+        {
+          label: 'Viral count',
+          data: viral,
+          type: 'line',
+          borderColor: 'rgba(245,158,11,0.9)',
+          backgroundColor: 'rgba(245,158,11,0.1)',
+          borderWidth: 2,
+          pointRadius: 5,
+          pointBackgroundColor: 'rgba(245,158,11,0.9)',
+          fill: false,
+          yAxisID: 'y2',
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          position: 'top',
+          labels: { color: textColor, font: { size: 11 }, boxWidth: 12, padding: 12 }
+        },
+        tooltip: {
+          callbacks: {
+            label: function(ctx) {
+              const v = ctx.raw;
+              if (ctx.dataset.label === 'Avg views') {
+                if (v >= 1e6) return 'Avg: ' + (v/1e6).toFixed(1) + 'M views';
+                if (v >= 1e3) return 'Avg: ' + (v/1e3).toFixed(0) + 'K views';
+                return 'Avg: ' + v + ' views';
+              }
+              return 'Viral: ' + v;
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          grid: { color: gridColor },
+          ticks: {
+            color: textColor, font: { size: 11 },
+            callback: function(v) {
+              if (v >= 1e6) return (v/1e6).toFixed(1)+'M';
+              if (v >= 1e3) return (v/1e3).toFixed(0)+'K';
+              return v;
+            }
+          }
+        },
+        y2: {
+          position: 'right',
+          grid: { display: false },
+          ticks: { color: textColor, font: { size: 11 }, stepSize: 1 },
+          title: { display: true, text: 'Viral', color: textColor, font: { size: 10 } }
+        },
+        x: {
+          grid: { display: false },
+          ticks: { color: textColor, font: { size: 11 } }
+        }
+      }
+    }
+  });
+});
+</script>
+
+</body>
+</html>
